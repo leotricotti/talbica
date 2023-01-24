@@ -1,0 +1,144 @@
+/* 
+=============
+Font Family 
+=============
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+/*
+===============
+Variables
+===============
+*/
+
+:root {
+  --finalCardScale: 1;
+  --stackScale: 0.92;
+  --stackShift: 10px;
+  --stackBorderRadius: 20px;
+  --stackMargin: 0;
+  --colorAlkaliMetal: #fd6863;
+  --colorNobleGas: #daa2e0;
+  --colorAlkalineEarthMetal: #feb149;
+  --colorMetalloid: #5ac0e8;
+  --colorNonmetal: #a7d04a;
+  --colorChalcogen: #89c142;
+  --colorHalogen: #ff9595;
+  --colorPoorMetal: #75a1e4;
+  --colorTransitionMetal: #99c0e5;
+  --colorLanthanide: #a0dccc;
+  --colorActinide: #7fb5ae;
+  --colorAlkaliMetalHover: #fe716f;
+  --colorNobleGasHover: #e4acea;
+  --colorAlkalineEarthMetalHover: #ffb854;
+  --colorMetalloidHover: #60cbf3;
+  --colorNonmetalHover: #b1d856;
+  --colorChalcogenHover: #92c94d;
+  --colorHalogenHover: #fe9c9d;
+  --colorPoorMetalHover: #7babed;
+  --colorTransitionMetalHover: #a1cbef;
+  --colorLanthanideHover: #a9e7d6;
+  --colorActinideHover: #86beb7;
+  --colorAlkaliMetalOpen: #e25b5b;
+  --colorNobleGasOpen: #cc82d4;
+  --colorAlkalineEarthMetalOpen: #f99a38;
+  --colorMetalloidOpen: #39abd8;
+  --colorNonmetalOpen: #93b93a;
+  --colorChalcogenOpen: #77af30;
+  --colorHalogenOpen: #e47a7b;
+  --colorPoorMetalOpen: #6a94d0;
+  --colorTransitionMetalOpen: #88afd8;
+  --colorLanthanideOpen: #84c7b5;
+  --colorActinideOpen: #609e96;
+  --rowNumberShift: 12px;
+  --webViewMargin: 0;
+  --viewportRatio: 2;
+  --textColor: black;
+  --backgroundColor: rgba(255, 255, 255, 1);
+  --stackBackgroundColor: rgba(244, 244, 244, 1);
+  --menuBackgroundColor: rgba(255, 255, 255, 1);
+  --keyboardBackgroundColor: #EEEEEE;
+  --overlayBackgroundColor: rgba(255, 255, 255, 0.9);
+  --smartFieldBackgroundColor: #F7F7F7;
+  --smartFieldHoverColor: #F2F2F2;
+  --smartFieldFocusColor: #F2F2F2;
+  --smartFieldActiveColor: #E9E9E9;
+  --smartFieldTextColor: black;
+  --resultantsTextColor: #333;
+  --resultantsHighlightedColor: #EEEEEE;
+  --compoundInfoTextColor: #333;
+  --compoundInfoBackgroundColor: #EEEEF0;
+  --compoundInfoLinkUnderlineColor: rgba(0, 0, 0, 0.25);
+  --exampleBackgroundColor: #EEEEF0;
+  --exampleHoverColor: #e3e3e4;
+  --exampleActiveColor: #D8D8D8;
+  --printBackgroundColor: rgba(255, 255, 255, 1);
+  --printOptionBackgroundColor: #EBEBEB;
+  --printOptionHoverColor: #EBEBEB;
+  --printOptionHoverBorderColor: #8A8A8A;
+  --printOptionTextColor: #8A8A8A;
+  --reactionsListTextColor: #333;
+  --reactionsListBackgroundColor: #EEEEF0;
+  --reactionsListBorderColor: #e4e3e3;
+  --reactionsListHoverColor: #e3e3e4;
+  --reactionsListActiveColor: #D8D8D8;
+  --reactionsListSwitcherBackgroundColor: rgba(220, 220, 220, 0.6);
+  --reactionsListSwitcherSelectedColor: rgba(0, 0, 0, 0.22);
+  --reactionsListCoefficientBackgroundColor: #bbbbbb;
+  --reactionsListCoefficientHoverColor: #d8d8d8;
+  --reactionBodyCoefficientBackgroundColor: #89c142;
+  --mobileSwitcherColor: #6f6f6f;
+  --mobileSwitcherActiveColor: white;
+  --tableToolsBackgroundColor: #F4F4F4;
+  --tableToolsHoverColor: #EEEEEE;
+  --tableToolsActiveColor: #E3E3E3;
+  --tableToolsTextColor: black;
+  --glossaryTextColor: #333;
+  --glossaryTextColorHover: #000;
+  --footerLineColor: #b2b2b2;
+  --helpBackgroundColor: #FAFAFA;
+  --switcherTabBackgroundColor: rgba(255, 255, 255, 0.6);
+  --switcherTabHoverColor: rgba(255, 255, 255, 0.75);
+  --switcherTabActiveColor: rgba(255, 255, 255, 1);
+  --placeholderColor: #999;
+  --caretColor: rgb(118 118 118);
+  --elementFade1: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2));
+  --elementFade2: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  --elementFade3: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  --textButtonColor: #1992FF;
+  --mobileButtonColor: #1992FF;
+  --textButtonActiveColor: #1779D1;
+  --tabButtonTextColor: #666;
+  --tabButtonBackgroundColor: rgba(255, 255, 255, 0.9);
+  --tabButtonBorderColor: #E8E8E8;
+  --tabButtonActiveBackgroundColor: rgba(255, 255, 255, 0.3);
+  --loadingGif: url(img/loading-gif.gif);
+  --iconPrintDownloadBlack: url(img/download-black.png);
+  --iconPrintDownloadWhite: url(img/download-white.png);
+  --iconClose: var(--iconCloseBlack);
+  --iconForward: var(--iconForwardBlack);
+  --iconHelp: var(--iconHelpBlack);
+  --iconAuto: var(--iconAutoBlack);
+  --iconPrint: var(--iconPrintBlack);
+  --iconPrintDownload: var(--iconPrintDownloadBlack);
+}
+
+/*
+=================
+Body Styles 
+=================
+*/
+
+body {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: var(--backgroundColor);
+  cursor: default;
+  transform-origin: left top;
+  box-sizing: border-box;
+  transition: opacity .1s ease-out, background-color .5s linear;
+  scrollbar-width: none;
+  transform: scale(calc(1 / var(--scale)));
+  width: calc(var(--scale) * 100vw);
+}
