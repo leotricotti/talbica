@@ -113,15 +113,6 @@ Variables
   --tabButtonBackgroundColor: rgba(255, 255, 255, 0.9);
   --tabButtonBorderColor: #E8E8E8;
   --tabButtonActiveBackgroundColor: rgba(255, 255, 255, 0.3);
-  --loadingGif: url(img/loading-gif.gif);
-  --iconPrintDownloadBlack: url(img/download-black.png);
-  --iconPrintDownloadWhite: url(img/download-white.png);
-  --iconClose: var(--iconCloseBlack);
-  --iconForward: var(--iconForwardBlack);
-  --iconHelp: var(--iconHelpBlack);
-  --iconAuto: var(--iconAutoBlack);
-  --iconPrint: var(--iconPrintBlack);
-  --iconPrintDownload: var(--iconPrintDownloadBlack);
 }
 
 /*
