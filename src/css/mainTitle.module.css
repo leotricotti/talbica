@@ -1,8 +1,9 @@
 .mainTitle {
-  text-align: center;
+  text-align: left;
   margin: 0;
+  padding-right: 2rem;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 1.75rem;
   color: var(--textColor);
   transition: color .5s linear;
 }
