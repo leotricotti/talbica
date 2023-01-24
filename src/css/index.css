@@ -117,13 +117,26 @@ Variables
 
 /*
 =================
+Resets
+=================
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+=================
 Body Styles 
 =================
 */
 
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  margin: 0;
   background-color: var(--backgroundColor);
   cursor: default;
   transform-origin: left top;

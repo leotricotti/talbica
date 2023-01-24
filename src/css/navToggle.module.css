@@ -2,7 +2,9 @@
   width: 2rem;
   height: 1.5rem;
   position: relative;
-  margin: .4rem 1.5rem 0;
+  display: inline-block;
+  top: -3.2rem;
+  right: -20rem;
 }
 
 .toggleLine {
