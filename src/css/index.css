@@ -132,4 +132,5 @@ body {
   scrollbar-width: none;
   transform: scale(calc(1 / var(--scale)));
   width: calc(var(--scale) * 100vw);
+  overflow-x: hidden;
 }
