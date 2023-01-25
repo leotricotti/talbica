@@ -18,3 +18,9 @@
   background-color: var(--tableToolsBackgroundColor);
   border-radius: 0 .5rem .5rem 0;
 }
+
+.isActive {
+  background-color: var(--tableToolsActiveColor);
+  cursor: default;
+  pointer-events: none;
+}

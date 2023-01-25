@@ -9,13 +9,15 @@ function ToggleMenu() {
   // const [photos, sePhotos] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
-  const handleColor = () => {
-    // setColor(!color);
-    setIsActive(!isActive);
-  };
+  // const handleColor = () => {
+  //   // setColor(!color);
+  // };
 
-  const handlePhotos = () => {
-    // sePhotos(!photos);
+  // const handlePhotos = () => {
+  //   // sePhotos(!photos);
+  // };
+
+  const handleClick = () => {
     setIsActive(!isActive);
   };
 
@@ -24,7 +26,7 @@ function ToggleMenu() {
       <TableSwitcher
         icon={colorIcon}
         title={"Colors"}
-        handleClick={handleColor}
+        handleClick={handleClick}
         className={`${styles.tableSwitcherFirstChild} ${
           isActive ? styles.isActive : ""
         }`}
@@ -32,7 +34,7 @@ function ToggleMenu() {
       <TableSwitcher
         icon={photoIcon}
         title={"Photos"}
-        handleClick={handlePhotos}
+        handleClick={handleClick}
         className={`${styles.tableSwitcherSecondChild} ${
           isActive ? styles.isActive : ""
         }`}

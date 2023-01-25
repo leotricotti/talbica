@@ -26,10 +26,3 @@
   font-weight: 500;
   color: var(--tableToolsTextColor);
 }
-
-.tableSwitcherFirstChild.isActive,
-.tableSwitcherSecondChild.isActive {
-  background-color: var(--tableToolsActiveColor);
-  cursor: default;
-  pointer-events: none;
-}
