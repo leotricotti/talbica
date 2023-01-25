@@ -1,4 +1,35 @@
 .tableSwitcherContainer {
-  width: 100%;
   display: flex;
+}
+
+.tableSwitcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableSwitcherButton {
+  width: 5rem;
+  height: 6.25rem;
+  border: transparent;
+  background-color: var(--tableToolsBackgroundColor);
+}
+
+.tableSwitcherIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.tableSwitcherMenuTitle {
+  font-size: .8125rem;
+  text-align: center;
+  font-weight: 500;
+  color: var(--tableToolsTextColor);
+}
+
+.tableSwitcherFirstChild.isActive,
+.tableSwitcherSecondChild.isActive {
+  background-color: var(--tableToolsActiveColor);
+  cursor: default;
+  pointer-events: none;
 }

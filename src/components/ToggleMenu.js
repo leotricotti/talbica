@@ -5,15 +5,18 @@ import { useState } from "react";
 import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu() {
-  const [color, setColor] = useState(false);
-  const [photos, sePhotos] = useState(false);
+  // const [color, setColor] = useState(false);
+  // const [photos, sePhotos] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   const handleColor = () => {
-    setColor(!color);
+    // setColor(!color);
+    setIsActive(!isActive);
   };
 
   const handlePhotos = () => {
-    sePhotos(!photos);
+    // sePhotos(!photos);
+    setIsActive(!isActive);
   };
 
   return (
@@ -22,11 +25,17 @@ function ToggleMenu() {
         icon={colorIcon}
         title={"Colors"}
         handleClick={handleColor}
+        className={`${styles.tableSwitcherFirstChild} ${
+          isActive ? styles.isActive : ""
+        }`}
       />
       <TableSwitcher
         icon={photoIcon}
         title={"Photos"}
         handleClick={handlePhotos}
+        className={`${styles.tableSwitcherSecondChild} ${
+          isActive ? styles.isActive : ""
+        }`}
       />
     </div>
   );
