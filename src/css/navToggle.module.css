@@ -50,6 +50,7 @@
   content: '';
   position: absolute;
   background-color: #fac05c;
+  opacity: 1;
 }
 
 .toggleLineThree {
@@ -70,11 +71,9 @@
 }
 
 .toggleLineTwo.isActive {
-  transform: translate3d(0, -12px, 0) rotate(-90deg);
-  top: 13px;
+  opacity: 0;
 }
 
 .toggleLineThree.isActive {
-  transform: translate3d(0, -12px, 0) rotate(-90deg);
-  top: 13px;
+  transform: translate3d(0, -12px, 0) rotate(-45deg);
 }
