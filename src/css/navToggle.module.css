@@ -65,16 +65,16 @@
   transition-timing-function: ease;
 }
 
-/* .toggleLineOne.isActive {
-    transform: translate3d(0, 6px, 0) rotate(45deg);
-  }
+.toggleLineOne.isActive {
+  transform: translate3d(0, 6px, 0) rotate(45deg);
+}
 
-  .toggleLineTwo.isActive {
-    transform: translate3d(0, -12px, 0) rotate(-90deg);
-    top: 13px;
-  }
+.toggleLineTwo.isActive {
+  transform: translate3d(0, -12px, 0) rotate(-90deg);
+  top: 13px;
+}
 
-  .toggleLineThree.isActive {
-    transform: translate3d(0, -12px, 0) rotate(-90deg);
-    top: 13px;
-  } */
+.toggleLineThree.isActive {
+  transform: translate3d(0, -12px, 0) rotate(-90deg);
+  top: 13px;
+}
