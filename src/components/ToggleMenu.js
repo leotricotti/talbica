@@ -1,24 +1,15 @@
+import { useState } from "react";
 import colorIcon from "../assets/images/icons/icon-palette.png";
 import photoIcon from "../assets/images/icons/icon-ruby.png";
 import TableSwitcher from "./TableSwitcher";
-import { useState } from "react";
+import TableActions from "./TableActions";
 import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu() {
-  // const [color, setColor] = useState(false);
-  // const [photos, sePhotos] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const [activeButton, setActiveButton] = useState(null);
 
-  // const handleColor = () => {
-  //   // setColor(!color);
-  // };
-
-  // const handlePhotos = () => {
-  //   // sePhotos(!photos);
-  // };
-
-  const handleClick = () => {
-    setIsActive(!isActive);
+  const handleClick = (button) => {
+    setActiveButton(button);
   };
 
   return (
@@ -26,19 +17,20 @@ function ToggleMenu() {
       <TableSwitcher
         icon={colorIcon}
         title={"Colors"}
-        handleClick={handleClick}
+        handleClick={() => handleClick("firstButton")}
         className={`${styles.tableSwitcherFirstChild} ${
-          isActive ? styles.isActive : ""
+          activeButton === "firstButton" ? styles.isActive : ""
         }`}
       />
       <TableSwitcher
         icon={photoIcon}
         title={"Photos"}
-        handleClick={handleClick}
+        handleClick={() => handleClick("secondButton")}
         className={`${styles.tableSwitcherSecondChild} ${
-          isActive ? styles.isActive : ""
+          activeButton === "secondButton" ? styles.isActive : ""
         }`}
       />
+      <TableActions />
     </div>
   );
 }

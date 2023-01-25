@@ -21,6 +21,4 @@
 
 .isActive {
   background-color: var(--tableToolsActiveColor);
-  cursor: default;
-  pointer-events: none;
 }
