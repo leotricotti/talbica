@@ -1,5 +1,6 @@
 import MainTitle from "./MainTitle";
 import NavToggle from "./NavToggle";
+import ToggleMenu from "./ToggleMenu";
 import styles from "../css/header.module.css";
 
 function Header() {
@@ -7,6 +8,7 @@ function Header() {
     <header className={styles.headerContainer}>
       <MainTitle title={"Periodic Table. Interactive Chemistry"} />
       <NavToggle />
+      <ToggleMenu />
     </header>
   );
 }
