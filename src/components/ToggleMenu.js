@@ -6,10 +6,15 @@ import TableActions from "./TableActions";
 import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu() {
-  const [activeButton, setActiveButton] = useState(null);
+  const [activeButtonSwitcher, setActiveButtonSwitcher] = useState(null);
+  const [activeButtonActions, setActiveButtonActions] = useState(false);
 
-  const handleClick = (button) => {
-    setActiveButton(button);
+  const handleClickSwitcher = (button) => {
+    setActiveButtonSwitcher(button);
+  };
+
+  const handleClickActions = (id) => {
+    setActiveButtonActions(id);
   };
 
   return (
@@ -18,21 +23,27 @@ function ToggleMenu() {
         <TableSwitcher
           icon={colorIcon}
           title={"Colors"}
-          handleClick={() => handleClick("firstButton")}
+          handleClickSwitcher={() => handleClickSwitcher("firstButton")}
           className={`${styles.tableSwitcherFirstChild} ${
-            activeButton === "firstButton" ? styles.isActive : ""
+            activeButtonSwitcher === "firstButton" ? styles.isActive : ""
           }`}
         />
         <TableSwitcher
           icon={photoIcon}
           title={"Photos"}
-          handleClick={() => handleClick("secondButton")}
+          handleClick={() => handleClickSwitcher("secondButton")}
           className={`${styles.tableSwitcherSecondChild} ${
-            activeButton === "secondButton" ? styles.isActive : ""
+            activeButtonSwitcher === "secondButton" ? styles.isActive : ""
           }`}
         />
       </div>
-      <TableActions title={"Heatmaps"} />
+      <TableActions
+        title={"Heatmaps"}
+        handleClickActions={handleClickActions}
+        className={`${styles.tableActionButtons} ${
+          activeButtonActions === id ? styles.isActive : ""
+        }`}
+      />
     </>
   );
 }

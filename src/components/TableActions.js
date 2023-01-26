@@ -1,17 +1,17 @@
 import tableActionsData from "../assets/data/tableActionsData";
 import styles from "../css/tableActions.module.css";
 
-function TableActions({ title, handleclick }) {
+function TableActions({ title, className, handleClickActions }) {
   return (
     <section className={styles.tableActionsContainer}>
       <h3 className={styles.tableActionsMainTitle}>{title}</h3>
       <div className={styles.gridContainer}>
         {tableActionsData.map((item) => {
           return (
-            <div className={styles.gridItem}>
+            <div className={styles.gridItem} key={item.id}>
               <button
-                className={styles.tableActionButtons}
-                onClick={handleclick}
+                className={className}
+                onClick={() => handleClickActions(item.id)}
               >
                 {" "}
                 <div

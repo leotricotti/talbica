@@ -1,9 +1,9 @@
 import styles from "../css/tableSwitcher.module.css";
 
-function TableSwitcher({ icon, title, className, handleClick }) {
+function TableSwitcher({ icon, title, className, handleClickSwitcher }) {
   return (
     <div className={styles.tableSwitcher}>
-      <button className={className} onClick={handleClick}>
+      <button className={className} onClick={handleClickSwitcher}>
         <img
           src={icon}
           alt="Switcher button"
