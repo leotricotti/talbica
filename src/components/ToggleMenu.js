@@ -13,25 +13,27 @@ function ToggleMenu() {
   };
 
   return (
-    <div className={styles.tableSwitcherContainer}>
-      <TableSwitcher
-        icon={colorIcon}
-        title={"Colors"}
-        handleClick={() => handleClick("firstButton")}
-        className={`${styles.tableSwitcherFirstChild} ${
-          activeButton === "firstButton" ? styles.isActive : ""
-        }`}
-      />
-      <TableSwitcher
-        icon={photoIcon}
-        title={"Photos"}
-        handleClick={() => handleClick("secondButton")}
-        className={`${styles.tableSwitcherSecondChild} ${
-          activeButton === "secondButton" ? styles.isActive : ""
-        }`}
-      />
-      <TableActions />
-    </div>
+    <>
+      <div className={styles.tableSwitcherContainer}>
+        <TableSwitcher
+          icon={colorIcon}
+          title={"Colors"}
+          handleClick={() => handleClick("firstButton")}
+          className={`${styles.tableSwitcherFirstChild} ${
+            activeButton === "firstButton" ? styles.isActive : ""
+          }`}
+        />
+        <TableSwitcher
+          icon={photoIcon}
+          title={"Photos"}
+          handleClick={() => handleClick("secondButton")}
+          className={`${styles.tableSwitcherSecondChild} ${
+            activeButton === "secondButton" ? styles.isActive : ""
+          }`}
+        />
+      </div>
+      <TableActions title={"Heatmaps"} />
+    </>
   );
 }
 

@@ -28,7 +28,7 @@ const tableActionsData = [
     url: require("../images/heatmaps/icon-atom.png"),
   },
   {
-    name: "Abundance in the universe",
+    name: "Abundance in universe",
     url: require("../images/heatmaps/icon-galaxy.png"),
   },
   {

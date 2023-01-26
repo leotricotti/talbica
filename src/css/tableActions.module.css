@@ -1,7 +1,51 @@
-.tableActionsContainer {}
+.tableActionsContainer {
+  width: 100%;
+  height: auto;
+  margin: 1.25rem 0 3.125rem 0;
+}
 
-.tableActionButton {}
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
-.tableActionsImage {}
+.gridItem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.tableActionTitle {}
+.tableActionsMainTitle {
+  text-align: left;
+  font-size: 24px;
+  color: var(--textColor);
+}
+
+.tableActionButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border: transparent;
+  background-color: transparent;
+  border-radius: .5rem;
+  padding: 1.125rem 0 .625rem 0;
+}
+
+.tableActionsImage {
+  width: 42px;
+  height: 42px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.tableActionTitle {
+  margin-top: .4375rem;
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--tableToolsTextColor);
+}
