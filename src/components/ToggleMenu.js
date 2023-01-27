@@ -7,14 +7,9 @@ import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu() {
   const [activeButtonSwitcher, setActiveButtonSwitcher] = useState(null);
-  const [activeButtonActions, setActiveButtonActions] = useState(false);
 
-  const handleClickSwitcher = (button) => {
-    setActiveButtonSwitcher(button);
-  };
-
-  const handleClickActions = (id) => {
-    setActiveButtonActions(id);
+  const handleClickSwitcher = (buttonName) => {
+    setActiveButtonSwitcher(buttonName);
   };
 
   return (
@@ -31,19 +26,13 @@ function ToggleMenu() {
         <TableSwitcher
           icon={photoIcon}
           title={"Photos"}
-          handleClick={() => handleClickSwitcher("secondButton")}
+          handleClickSwitcher={() => handleClickSwitcher("secondButton")}
           className={`${styles.tableSwitcherSecondChild} ${
             activeButtonSwitcher === "secondButton" ? styles.isActive : ""
           }`}
         />
       </div>
-      <TableActions
-        title={"Heatmaps"}
-        handleClickActions={handleClickActions}
-        className={`${styles.tableActionButtons} ${
-          activeButtonActions === id ? styles.isActive : ""
-        }`}
-      />
+      <TableActions title={"Heatmaps"} />
     </>
   );
 }

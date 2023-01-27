@@ -9,20 +9,6 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.gridItem {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tableActionsMainTitle {
-  text-align: left;
-  font-size: 24px;
-  color: var(--textColor);
-}
-
 .tableActionButtons {
   display: flex;
   justify-content: center;
@@ -33,6 +19,12 @@
   background-color: transparent;
   border-radius: .5rem;
   padding: 1.125rem 0 .625rem 0;
+}
+
+.tableActionsMainTitle {
+  text-align: left;
+  font-size: 24px;
+  color: var(--textColor);
 }
 
 .tableActionsImage {
@@ -48,4 +40,19 @@
   font-size: .8125rem;
   font-weight: 500;
   color: var(--tableToolsTextColor);
+}
+
+.gridItem {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: transparent;
+}
+
+.isActiveTableActions {
+  background-color: var(--tableToolsActiveColor);
+  border-radius: .5rem;
 }
