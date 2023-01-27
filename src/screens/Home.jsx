@@ -1,10 +1,10 @@
-import Header from "../components/Header";
+import HeaderMobile from "../components/HeaderMobile";
 import styles from "../css/home.module.css";
 
 function Home() {
   return (
     <main className={styles.tableContainer}>
-      <Header />
+      <HeaderMobile />
       <h1>Hello</h1>
     </main>
   );

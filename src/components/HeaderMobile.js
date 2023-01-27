@@ -1,10 +1,10 @@
 import { useState } from "react";
 import MainTitle from "./MainTitle";
-import NavToggle from "./NavToggle";
+import ToggleBtn from "./ToggleBtn";
 import ToggleMenu from "./ToggleMenu";
-import styles from "../css/header.module.css";
+import styles from "../css/headerMobile.module.css";
 
-function Header() {
+function HeaderMobile() {
   const [isOpen, setIsopen] = useState(false);
 
   function handleClick() {
@@ -14,7 +14,7 @@ function Header() {
   return (
     <header className={styles.headerContainer}>
       <MainTitle title={"Periodic Table. Interactive Chemistry"} />
-      <NavToggle
+      <ToggleBtn
         classNameOne={isOpen ? styles.isActiveOne : ""}
         classNameTwo={isOpen ? styles.isActiveTwo : ""}
         classNameThree={isOpen ? styles.isActiveThree : ""}
@@ -25,4 +25,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderMobile;

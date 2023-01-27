@@ -1,6 +1,6 @@
-import styles from "../css/navToggle.module.css";
+import styles from "../css/toggleBtn.module.css";
 
-function NavToggle({
+function ToggleBtn({
   classNameOne,
   classNameTwo,
   classNameThree,
@@ -21,4 +21,4 @@ function NavToggle({
   );
 }
 
-export default NavToggle;
+export default ToggleBtn;
