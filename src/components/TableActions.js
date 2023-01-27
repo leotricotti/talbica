@@ -3,14 +3,14 @@ import tableActionsData from "../assets/data/tableActionsData";
 import styles from "../css/tableActions.module.css";
 
 function TableActions({ title }) {
-  const [activated, setActivated] = useState(null);
+  const [activated, setActivated] = useState(tableActionsData[0].id);
 
   const handleClickActions = (id) => {
     setActivated(id);
   };
 
   return (
-    <section className={styles.tableActionsContainer}>
+    <div className={styles.tableActionsContainer}>
       <h3 className={styles.tableActionsMainTitle}>{title}</h3>
       <div className={styles.gridContainer}>
         {tableActionsData.map((item) => {
@@ -34,7 +34,7 @@ function TableActions({ title }) {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 }
 
