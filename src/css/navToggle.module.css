@@ -65,15 +65,3 @@
   transition-duration: .15s;
   transition-timing-function: ease;
 }
-
-.toggleLineOne.isActive {
-  transform: translate3d(0, 6px, 0) rotate(45deg);
-}
-
-.toggleLineTwo.isActive {
-  opacity: 0;
-}
-
-.toggleLineThree.isActive {
-  transform: translate3d(0, -12px, 0) rotate(-45deg);
-}

@@ -1,16 +1,34 @@
+import { useState } from "react";
+import tableSwitcherData from "../assets/data/tableSwitcherData";
 import styles from "../css/tableSwitcher.module.css";
 
-function TableSwitcher({ icon, title, className, handleClickSwitcher }) {
+function TableSwitcher({ title }) {
+  const [activated, setActivated] = useState(null);
+
+  const handleClick = (id) => {
+    setActivated(id);
+  };
+
   return (
-    <div className={styles.tableSwitcher}>
-      <button className={className} onClick={handleClickSwitcher}>
-        <img
-          src={icon}
-          alt="Switcher button"
-          className={styles.tableSwitcherIcon}
-        />
-        <p className={styles.tableSwitcherMenuTitle}>{title}</p>
-      </button>
+    <div className={styles.tableSwitcherContainer}>
+      {tableSwitcherData.map((item) => (
+        <button
+          key={item.id}
+          className={` ${styles.tableSwitcher} ${
+            item.id === activated ? styles.isActive : ""
+          }`}
+          onClick={() => handleClick(item.id)}
+        >
+          <div>
+            <img
+              src={item.url}
+              alt="Switcher button"
+              className={styles.tableSwitcherIcon}
+            />
+            <p className={styles.tableSwitcherMenuTitle}>{item.name}</p>
+          </div>
+        </button>
+      ))}
     </div>
   );
 }

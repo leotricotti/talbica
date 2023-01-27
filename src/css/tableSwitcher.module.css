@@ -1,7 +1,28 @@
+.tableSwitcherContainer {
+  display: flex;
+  padding-top: 1.25rem;
+}
+
 .tableSwitcher {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 5rem;
+  height: 6.25rem;
+  border: transparent;
+  background-color: var(--tableToolsBackgroundColor);
+}
+
+.tableSwitcher:first-child {
+  border-radius: .5rem 0 0 .5rem;
+}
+
+.tableSwitcher:last-child {
+  border-radius: 0 .5rem .5rem 0;
+}
+
+.isActive {
+  background-color: var(--tableToolsActiveColor);
 }
 
 .tableSwitcherButton {

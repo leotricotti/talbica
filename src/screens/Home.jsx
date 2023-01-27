@@ -5,6 +5,7 @@ function Home() {
   return (
     <main className={styles.tableContainer}>
       <Header />
+      <h1>Hello</h1>
     </main>
   );
 }

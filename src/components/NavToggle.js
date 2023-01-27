@@ -1,31 +1,19 @@
-import { useState } from "react";
 import styles from "../css/navToggle.module.css";
 
-function NavToggle() {
-  const [isOpen, setIsopen] = useState(false);
-
-  function handleClick() {
-    setIsopen(!isOpen);
-  }
-
+function NavToggle({
+  classNameOne,
+  classNameTwo,
+  classNameThree,
+  handleClick,
+}) {
   return (
     <div className={styles.mobileToggleButton}>
       <button className={styles.toggleButton} onClick={handleClick}>
         <span className={styles.toggleContainer}>
+          <span className={`${styles.toggleLineOne} ${classNameOne}`}></span>
+          <span className={`${styles.toggleLineTwo} ${classNameTwo}`}></span>
           <span
-            className={`${styles.toggleLineOne} ${
-              isOpen ? styles.isActive : ""
-            }`}
-          ></span>
-          <span
-            className={`${styles.toggleLineTwo} ${
-              isOpen ? styles.isActive : ""
-            }`}
-          ></span>
-          <span
-            className={`${styles.toggleLineThree} ${
-              isOpen ? styles.isActive : ""
-            }`}
+            className={`${styles.toggleLineThree} ${classNameThree}`}
           ></span>
         </span>
       </button>

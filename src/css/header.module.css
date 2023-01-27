@@ -2,3 +2,15 @@
   width: 100%;
   height: auto;
 }
+
+.isActiveOne {
+  transform: translate3d(0, 6px, 0) rotate(45deg);
+}
+
+.isActiveTwo {
+  opacity: 0;
+}
+
+.isActiveThree {
+  transform: translate3d(0, -12px, 0) rotate(-45deg);
+}

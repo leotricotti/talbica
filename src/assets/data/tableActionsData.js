@@ -35,16 +35,17 @@ const tableActionsData = [
     url: require("../images/heatmaps/icon-atom.png"),
   },
   {
+    id: 8,
     name: "Abundance in universe",
     url: require("../images/heatmaps/icon-galaxy.png"),
   },
   {
-    id: 8,
+    id: 9,
     name: "Abundance in earth crust",
     url: require("../images/heatmaps/icon-earth.png"),
   },
   {
-    id: 9,
+    id: 10,
     name: "Half-life period",
     url: require("../images/heatmaps/icon-halflife.png"),
   },
