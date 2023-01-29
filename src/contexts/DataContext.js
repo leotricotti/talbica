@@ -5,14 +5,14 @@ import {
   useEffect,
   useCallback,
 } from "react";
-import useErrorHandler from "../customHooks/useErrorHandler";
 
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [dataFromApi, setDataFromApi] = useState(null);
+  const [cachedData, setCachedData] = useState(null);
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, handleError, clearError] = useErrorHandler();
 
   const options = useMemo(() => {
     return {
@@ -25,8 +25,13 @@ export const DataProvider = ({ children }) => {
   }, []);
 
   const fetchData = useCallback(async () => {
+    if (cachedData) {
+      setDataFromApi(cachedData);
+      return;
+    }
+
     setIsLoading(true);
-    clearError();
+    setError(null);
 
     try {
       const response = await fetch(
@@ -37,19 +42,21 @@ export const DataProvider = ({ children }) => {
         throw new Error(response.statusText);
       }
       const json = await response.json();
+      setCachedData(json);
       setDataFromApi(json);
     } catch (err) {
-      handleError(err.message);
+      setError(err.message);
     } finally {
       setIsLoading(false);
     }
-  }, [options, clearError, handleError]);
+  }, [options, cachedData]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   const value = { dataFromApi, error, isLoading };
+  console.log(dataFromApi, value);
 
   return (
     <DataContext.Provider value={{ value }}>{children}</DataContext.Provider>
