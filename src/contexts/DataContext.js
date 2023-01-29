@@ -10,9 +10,11 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [dataFromApi, setDataFromApi] = useState(null);
-  const [cachedData, setCachedData] = useState(null);
+  const [cachedData, setCachedData] = useState(dataFromApi);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  console.log(cachedData);
 
   const options = useMemo(() => {
     return {
@@ -55,8 +57,7 @@ export const DataProvider = ({ children }) => {
     fetchData();
   }, [fetchData]);
 
-  const value = { dataFromApi, error, isLoading };
-  console.log(dataFromApi, value);
+  const value = { cachedData, error, isLoading };
 
   return (
     <DataContext.Provider value={{ value }}>{children}</DataContext.Provider>

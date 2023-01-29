@@ -4,7 +4,7 @@ import Home from "./screens/Home";
 function App() {
   return (
     <DataProvider>
-      <Home />;
+      <Home />
     </DataProvider>
   );
 }
