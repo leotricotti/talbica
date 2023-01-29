@@ -1,20 +1,20 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import usePrevious from "./usePrevius";
 import styles from "../css/tableRowTitle.module.css";
 
 function TableRowTitle({ period }) {
-  const [periodNumber, setPeriodNumber] = useState("");
-  const prevPeriodNumberRef = useRef();
+  const [periodNumber, setPeriodNumber] = useState([]);
+  const previusPeriodNumber = usePrevious(periodNumber);
+
+  console.log(previusPeriodNumber);
 
   useEffect(() => {
-    prevPeriodNumberRef.current = periodNumber;
     setPeriodNumber(period);
-  }, [periodNumber, period]);
-
-  console.log(prevPeriodNumberRef.current, periodNumber);
+  }, [period]);
 
   return (
     <div className={styles.title}>
-      {prevPeriodNumberRef !== periodNumber ? <h3>Period {period}</h3> : ""}
+      {previusPeriodNumber !== periodNumber ? <h3>Period {period}</h3> : ""}
     </div>
   );
 }
