@@ -1,12 +1,12 @@
 import { useEffect, useState, useCallback, useMemo } from "react";
-// import styles from "../css/table.module.css";
+import Spinner from "./Spinner";
+import TableRowTitle from "./TableRowTitle";
+import styles from "../css/table.module.css";
 
-function Table({ title }) {
+function Table() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(data);
 
   const options = useMemo(() => {
     return {
@@ -44,7 +44,7 @@ function Table({ title }) {
   }, [fetchData]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Spinner />;
   }
 
   if (error) {
@@ -55,7 +55,23 @@ function Table({ title }) {
     return <p>No data found</p>;
   }
 
-  return;
+  return (
+    <main className={styles.tableWrapper}>
+      {data.map((item) => (
+        <div className={styles.table} key={item.atomicNumber}>
+          <TableRowTitle period={item.period} />
+          <div className={styles.tableRow}>
+            <div className={styles.tableElement}>
+              <span className={styles.atomicNumber}>{item.atomicNumber}</span>
+              <span className={styles.symbol}>{item.symbol}</span>
+              <span className={styles.name}>{item.name}</span>
+              <span className={styles.atomicMass}>{item.atomicMass}</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </main>
+  );
 }
 
 export default Table;

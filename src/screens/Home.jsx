@@ -4,11 +4,10 @@ import styles from "../css/home.module.css";
 
 function Home() {
   return (
-    <main className={styles.tableContainer}>
+    <div className={styles.tableContainer}>
       <HeaderMobile />
       <Table />
-      <h1>Hello</h1>
-    </main>
+    </div>
   );
 }
 
