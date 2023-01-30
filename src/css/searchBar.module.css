@@ -1,0 +1,30 @@
+.searchBarContainer {
+  width: 100%;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.searchBar {
+  width: 90%;
+  font-size: 1.2rem;
+  color: var(--textColor);
+  background-color: var(--smartFieldBackgroundColor);
+  border: transparent;
+  border-radius: .8rem;
+  padding: 1.1rem 1rem;
+}
+
+.searchBar::placeholder {
+  font-size: 1.2rem;
+  color: var(--placeholderColor);
+}
+
+.helpIcon {
+  background-image: url('../assets/images/icons/help_black.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 2rem;
+  height: 2rem;
+}
