@@ -14,8 +14,6 @@ export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(cachedData);
-
   const options = useMemo(() => {
     return {
       method: "GET",
