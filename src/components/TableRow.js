@@ -1,6 +1,6 @@
 import styles from "../css/tableRow.module.css";
 
-function TableRow(item) {
+function TableRow({ item }) {
   return (
     <div className={styles.table} key={item.atomicNumber}>
       <div className={styles.tableRow}>
