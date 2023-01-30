@@ -30,13 +30,17 @@ function Table() {
           if (prevPeriod !== item.period) {
             prevPeriod = item.period;
             return (
-              <div>
-                <TableRowTitle period={item.period} />
+              <div key={item.name}>
+                <TableRowTitle period={item.period} item={item} />
                 <TableRow item={item} />
               </div>
             );
           } else {
-            return <TableRow item={item} />;
+            return (
+              <div key={item.name}>
+                <TableRow item={item} />
+              </div>
+            );
           }
         })
       )}
