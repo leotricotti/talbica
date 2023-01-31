@@ -1,0 +1,19 @@
+.tableRow {
+  width: 100%;
+  height: auto;
+}
+
+.tableElement {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.atomicNumber {}
+
+.symbol {}
+
+.name {}
+
+.atomicMass {}

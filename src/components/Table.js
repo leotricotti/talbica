@@ -26,23 +26,26 @@ function Table() {
       {isLoading ? (
         <Spinner />
       ) : (
-        cachedData.map((item) => {
-          if (prevPeriod !== item.period) {
-            prevPeriod = item.period;
-            return (
-              <div key={item.name}>
-                <TableRowTitle period={item.period} item={item} />
-                <TableRow item={item} />
-              </div>
-            );
-          } else {
-            return (
-              <div key={item.name}>
-                <TableRow item={item} />
-              </div>
-            );
-          }
-        })
+        <div>
+          {cachedData.map((item, index) => {
+            if (prevPeriod !== item.period) {
+              prevPeriod = item.period;
+              return (
+                <div key={item.period}>
+                  <TableRowTitle period={item.period} item={item} />
+                  <div>
+                    {cachedData
+                      .filter((i) => i.period === item.period)
+                      .map((i) => (
+                        <TableRow key={i.name} item={i} />
+                      ))}
+                  </div>
+                </div>
+              );
+            }
+            return null;
+          })}
+        </div>
       )}
     </main>
   );
