@@ -1,13 +1,13 @@
 .tableElement {
-  width: auto;
-  height: auto;
+  width: 5.3rem;
+  height: 6.125rem;
   color: #fff;
   background-color: var(--colorAlkalineEarthMetal);
   display: flex;
   flex-direction: column;
   border-radius: .5rem;
 
-  padding: .4rem .9rem .4rem .4rem;
+  padding: .4375rem .3125rem;
 }
 
 .atomicNumber {

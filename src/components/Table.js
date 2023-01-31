@@ -20,6 +20,8 @@ function Table() {
     return <Spinner />;
   }
 
+  console.log(cachedData);
+
   return (
     <main className={styles.tableWrapper}>
       {isLoading ? (
