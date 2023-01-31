@@ -1,5 +1,6 @@
 import TableRowElement from "./TableRowElement";
 import TableRowTitle from "./TableRowTitle";
+import tableColors from "../assets/data/tableColors";
 import styles from "../css/tableRow.module.css";
 
 function TableRow({ prevPeriod, dataFromApi }) {
@@ -15,7 +16,11 @@ function TableRow({ prevPeriod, dataFromApi }) {
                 {dataFromApi
                   .filter((i) => i.period === item.period)
                   .map((i) => (
-                    <TableRowElement key={i.name} item={i} />
+                    <TableRowElement
+                      key={i.name}
+                      item={i}
+                      colors={tableColors}
+                    />
                   ))}
               </div>
             </div>
