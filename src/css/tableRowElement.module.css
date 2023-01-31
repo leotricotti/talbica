@@ -1,19 +1,37 @@
-.tableRow {
-  width: 100%;
-  height: auto;
-}
-
 .tableElement {
-  width: 100%;
+  width: auto;
   height: auto;
+  color: #fff;
+  background-color: var(--colorAlkalineEarthMetal);
   display: flex;
   flex-direction: column;
+  border-radius: .5rem;
+
+  padding: .4rem .9rem .4rem .4rem;
 }
 
-.atomicNumber {}
+.atomicNumber {
+  font-size: .75rem;
+  font-weight: 500;
+  margin-left: .125rem;
+}
 
-.symbol {}
+.symbol {
+  font-size: 2.25rem;
+  font-weight: 900;
+  line-height: 2rem;
+  margin-top: -.125rem;
+  margin-bottom: .125rem;
+}
 
-.name {}
+.name {
+  font-size: .815rem;
+  font-weight: 600;
+}
 
-.atomicMass {}
+.atomicMass {
+  color: var(--textColor);
+  font-size: .75rem;
+  font-weight: 500;
+  margin-top: .1rem;
+}

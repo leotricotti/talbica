@@ -1,11 +1,21 @@
 .tableWrapper {
+  width: 100%;
+  height: auto;
   padding-top: 1.5rem;
 }
 
-.tableRowContainer {}
+.tableRowContainer {
+  width: 100%;
+  height: auto;
+}
 
-.tableRow {}
+.tableRow {
+  width: 100%;
+  height: auto;
+}
 
-.tableRowFlex {
-  display: flex;
+.tableRowGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .3rem;
 }

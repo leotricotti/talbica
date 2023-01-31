@@ -13,11 +13,6 @@ Variables
 */
 
 :root {
-  --finalCardScale: 1;
-  --stackScale: 0.92;
-  --stackShift: 10px;
-  --stackBorderRadius: 20px;
-  --stackMargin: 0;
   --colorAlkaliMetal: #fd6863;
   --colorNobleGas: #daa2e0;
   --colorAlkalineEarthMetal: #feb149;
@@ -51,9 +46,6 @@ Variables
   --colorTransitionMetalOpen: #88afd8;
   --colorLanthanideOpen: #84c7b5;
   --colorActinideOpen: #609e96;
-  --rowNumberShift: 12px;
-  --webViewMargin: 0;
-  --viewportRatio: 2;
   --textColor: black;
   --backgroundColor: rgba(255, 255, 255, 1);
   --stackBackgroundColor: rgba(244, 244, 244, 1);

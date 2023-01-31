@@ -11,7 +11,7 @@ function TableRow({ prevPeriod, dataFromApi }) {
           return (
             <div className={styles.tableRow} key={item.period}>
               <TableRowTitle period={item.period} item={item} />
-              <div className={styles.tableRowFlex}>
+              <div className={styles.tableRowGrid}>
                 {dataFromApi
                   .filter((i) => i.period === item.period)
                   .map((i) => (
