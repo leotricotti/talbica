@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
 import TableRow from "./TableRow";
-import TableRowTitle from "./TableRowTitle";
 import Spinner from "./Spinner";
-import styles from "../css/table.module.css";
+import styles from "../css/tableRow.module.css";
 
 function Table() {
   const { cachedData, error, isLoading } = useContext(DataContext).value;
@@ -26,26 +25,7 @@ function Table() {
       {isLoading ? (
         <Spinner />
       ) : (
-        <div>
-          {cachedData.map((item, index) => {
-            if (prevPeriod !== item.period) {
-              prevPeriod = item.period;
-              return (
-                <div key={item.period}>
-                  <TableRowTitle period={item.period} item={item} />
-                  <div>
-                    {cachedData
-                      .filter((i) => i.period === item.period)
-                      .map((i) => (
-                        <TableRow key={i.name} item={i} />
-                      ))}
-                  </div>
-                </div>
-              );
-            }
-            return null;
-          })}
-        </div>
+        <TableRow dataFromApi={cachedData} prevPeriod={prevPeriod} />
       )}
     </main>
   );

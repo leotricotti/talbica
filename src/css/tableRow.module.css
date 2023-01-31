@@ -1,19 +1,11 @@
-.tableRow {
-  width: 100%;
-  height: auto;
+.tableWrapper {
+  padding-top: 1.5rem;
 }
 
-.tableElement {
-  width: 100%;
-  height: auto;
+.tableRowContainer {}
+
+.tableRow {}
+
+.tableRowFlex {
   display: flex;
-  flex-direction: column;
 }
-
-.atomicNumber {}
-
-.symbol {}
-
-.name {}
-
-.atomicMass {}

@@ -1,14 +1,28 @@
+import TableRowElement from "./TableRowElement";
+import TableRowTitle from "./TableRowTitle";
 import styles from "../css/tableRow.module.css";
 
-function TableRow({ item }) {
+function TableRow({ prevPeriod, dataFromApi }) {
   return (
-    <div className={styles.tableRow} key={item.atomicNumber}>
-      <div className={styles.tableElement}>
-        <span className={styles.atomicNumber}>{item.atomicNumber}</span>
-        <span className={styles.symbol}>{item.symbol}</span>
-        <span className={styles.name}>{item.name}</span>
-        <span className={styles.atomicMass}>{item.atomicMass}</span>
-      </div>
+    <div className={styles.tableRowContainer}>
+      {dataFromApi.map((item) => {
+        if (prevPeriod !== item.period) {
+          prevPeriod = item.period;
+          return (
+            <div className={styles.tableRow} key={item.period}>
+              <TableRowTitle period={item.period} item={item} />
+              <div className={styles.tableRowFlex}>
+                {dataFromApi
+                  .filter((i) => i.period === item.period)
+                  .map((i) => (
+                    <TableRowElement key={i.name} item={i} />
+                  ))}
+              </div>
+            </div>
+          );
+        }
+        return null;
+      })}
     </div>
   );
 }
