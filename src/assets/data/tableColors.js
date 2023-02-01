@@ -4,12 +4,11 @@ const tableColors = [
   "--colorAlkalineEarthMetal",
   "--colorMetalloid",
   "--colorNonmetal",
-  "--colorChalcogen",
   "--colorHalogen",
   "--colorPoorMetal",
   "--colorTransitionMetal",
   "--colorLanthanoid",
-  "--colorActinide",
+  "--colorActinoid",
 ];
 
 export default tableColors;
