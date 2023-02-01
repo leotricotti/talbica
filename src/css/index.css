@@ -13,6 +13,7 @@ Variables
 */
 
 :root {
+  --colorAlkaliMetal: #fd6863;
   --colorNobleGas: #daa2e0;
   --colorAlkalineEarthMetal: #feb149;
   --colorMetalloid: #5ac0e8;
@@ -21,7 +22,7 @@ Variables
   --colorHalogen: #ff9595;
   --colorPoorMetal: #75a1e4;
   --colorTransitionMetal: #99c0e5;
-  --colorLanthanide: #a0dccc;
+  --colorLanthanoid: #a0dccc;
   --colorActinide: #7fb5ae;
   --colorAlkaliMetalHover: #fe716f;
   --colorNobleGasHover: #e4acea;

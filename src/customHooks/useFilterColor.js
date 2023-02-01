@@ -3,9 +3,11 @@ import { useState, useEffect } from "react";
 export function useFilterColor(blockColor, colors) {
   const [filteredColor, setFilteredColor] = useState(null);
 
+  console.log(blockColor);
+
   useEffect(() => {
-    const color = colors.find((c) => c.name === blockColor);
-    setFilteredColor(color?.color || null);
+    const color = colors.find((c) => c === blockColor);
+    setFilteredColor(color);
   }, [blockColor, colors]);
 
   return filteredColor;

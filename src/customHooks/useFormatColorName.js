@@ -4,6 +4,8 @@ const useFormatColorName = (grupBlockApi) => {
   const [output, setOutput] = useState("");
 
   useEffect(() => {
+    if (!grupBlockApi) return;
+
     const words = grupBlockApi.split(" ");
     const formattedWords = words.map((word, index) => {
       if (index === 0) {

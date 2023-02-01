@@ -4,6 +4,10 @@ import tableColors from "../assets/data/tableColors";
 import styles from "../css/tableRow.module.css";
 
 function TableRow({ prevPeriod, dataFromApi }) {
+  const colors = tableColors.map((color) => {
+    return color;
+  });
+
   return (
     <div className={styles.tableRowContainer}>
       {dataFromApi.map((item) => {
@@ -16,11 +20,7 @@ function TableRow({ prevPeriod, dataFromApi }) {
                 {dataFromApi
                   .filter((i) => i.period === item.period)
                   .map((i) => (
-                    <TableRowElement
-                      key={i.name}
-                      item={i}
-                      colors={tableColors}
-                    />
+                    <TableRowElement key={i.name} item={i} colors={colors} />
                   ))}
               </div>
             </div>
