@@ -38,7 +38,6 @@ function useFilterData(data) {
         });
       }
     }
-
     for (const period in dataByPeriod) {
       const actinoid = dataByPeriod[period].filter(
         (item) => item.groupBlock === "actinoid"
