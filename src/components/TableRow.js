@@ -23,8 +23,12 @@ function TableRow({ dataFromApi }) {
             <TableRowTitle groupBlock={groupBlock} />
           )}
           <div className={styles.tableRowGrid}>
-            {items.map((item, index) => (
-              <TableRowElement key={index} item={item} colors={colors} />
+            {items.map((item) => (
+              <TableRowElement
+                key={item.atomicNumber}
+                item={item}
+                colors={colors}
+              />
             ))}
           </div>
         </div>
