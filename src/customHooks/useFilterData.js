@@ -3,6 +3,8 @@ import { useState, useMemo } from "react";
 function useFilterData(data) {
   const [filteredData, setFilteredData] = useState([]);
 
+  console.log(filteredData);
+
   useMemo(() => {
     const dataByPeriod = [];
     data.forEach((item) => {
@@ -18,28 +20,29 @@ function useFilterData(data) {
         (item) =>
           item.groupBlock !== "lanthanoid" && item.groupBlock !== "actinoid"
       );
+      if (items.length > 0) {
+        filteredData.push({
+          type: "period",
+          period,
+          items: items,
+        });
+      }
+    }
 
-      console.log(items);
-      const matchingItems = items.filter(
+    for (const period in dataByPeriod) {
+      const matchingItems = dataByPeriod[period].filter(
         (item) =>
           item.groupBlock === "lanthanoid" || item.groupBlock === "actinoid"
       );
       if (matchingItems.length > 0) {
-        matchingItems.forEach((item) => {
-          filteredData.push({
-            type: "groupBlock",
-            groupBlock: item.groupBlock,
-            items: dataByPeriod[period],
-          });
-        });
-      } else if (items.length > 0) {
         filteredData.push({
-          type: "period",
+          type: "groupBlock",
           period,
-          items,
+          items: matchingItems,
         });
       }
     }
+
     setFilteredData(filteredData);
   }, [data]);
 
