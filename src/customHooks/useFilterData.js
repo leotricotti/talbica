@@ -28,7 +28,6 @@ function useFilterData(data) {
         });
       }
     }
-
     for (const period in dataByPeriod) {
       const matchingItems = dataByPeriod[period].filter(
         (item) =>
