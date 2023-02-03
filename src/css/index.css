@@ -124,12 +124,5 @@ Body Styles
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   background-color: var(--backgroundColor);
-  cursor: default;
-  transform-origin: left top;
-  box-sizing: border-box;
-  transition: opacity .1s ease-out, background-color .5s linear;
-  scrollbar-width: none;
-  transform: scale(calc(1 / var(--scale)));
-  width: calc(var(--scale) * 100vw);
   overflow-x: hidden;
 }
