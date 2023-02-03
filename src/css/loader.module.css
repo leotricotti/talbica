@@ -30,7 +30,7 @@
   transform: scale(.65) translate(-100%, -50%);
   background-color: var(--colorHalogen);
   border-color: var(--colorHalogen);
-  animation: loaderUp 1.3s linear;
+  animation: loaderUp 1s linear;
 }
 
 .atomicNumberBromine {
@@ -77,7 +77,7 @@
   transform: scale(.65) translateY(-50%);
   background-color: var(--colorAlkalineEarthMetal);
   border-color: var(--colorAlkalineEarthMetal);
-  animation: loaderDown 1.3s linear;
+  animation: loaderDown 1s linear;
 }
 
 .atomicNumberBarium {

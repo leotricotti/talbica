@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
 import TableRow from "./TableRow";
 import Loader from "./Loader";
-import styles from "../css/tableRow.module.css";
+import styles from "../css/table.module.css";
 
 function Table() {
   const { cachedData, error, isLoading } = useContext(DataContext).value;
@@ -19,6 +19,8 @@ function Table() {
   if (!cachedData) {
     return <Loader />;
   }
+
+  console.log(cachedData);
 
   return (
     <main className={styles.tableWrapper}>

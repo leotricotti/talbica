@@ -10,6 +10,8 @@ function TableRowElement({ item, colors }) {
   const formattedColor = useFormatColorName(item.groupBlock);
   const backgroundColor = useFilterColor(formattedColor, colors);
 
+  console.log(formattedColor);
+
   return (
     <div
       className={styles.tableRowElement}

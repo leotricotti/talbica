@@ -1,13 +1,14 @@
 .tableRowElement {
+  opacity: 1;
   width: 5.3rem;
   height: 6.125rem;
   color: #fff;
-  background-color: var(--colorAlkaliMetal);
   display: flex;
   flex-direction: column;
   border-radius: .5rem;
-
   padding: .4375rem .3125rem;
+  transition: background-color 1s ease-out;
+  animation: loadElement 1s linear;
 }
 
 .atomicNumber {
@@ -34,4 +35,14 @@
   font-size: .75rem;
   font-weight: 500;
   margin-top: .1rem;
+}
+
+@keyframes loadElement {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

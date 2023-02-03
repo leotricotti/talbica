@@ -19,7 +19,8 @@ Variables
   --colorMetalloid: #5ac0e8;
   --colorNonmetal: #a7d04a;
   --colorHalogen: #ff9595;
-  --colorPoorMetal: #75a1e4;
+  --colorMetal: #75a1e4;
+  --colorPost-transitionMetal: #75a1e4;
   --colorTransitionMetal: #99c0e5;
   --colorLanthanoid: #a0dccc;
   --colorActinoid: #7fb5ae;
