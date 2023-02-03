@@ -3,17 +3,17 @@ import styles from "../css/loader.module.css";
 function Loader() {
   return (
     <div className={styles.loaderElementContainer}>
-      <div className={styles.bromineContainer}>
-        <span className={styles.atomicNumber}>35</span>
-        <span className={styles.symbol}>Br</span>
-        <span className={styles.name}>Bromine</span>
-        <span className={styles.atomicMass}>79.904</span>
+      <div className={` ${styles.element} ${styles.bromineElement}`}>
+        <span className={styles.atomicNumberBromine}>35</span>
+        <span className={styles.symbolBromine}>Br</span>
+        <span className={styles.nameBromine}>Bromine</span>
+        <span className={styles.atomicMassBromine}>79.904</span>
       </div>
-      <div className={styles.bariumContainer}>
-        <span className={styles.atomicNumber}>56</span>
-        <span className={styles.symbol}>Ba</span>
-        <span className={styles.name}>Barium</span>
-        <span className={styles.atomicMass}>137.327</span>
+      <div className={`${styles.element} ${styles.bariumElement} `}>
+        <span className={styles.atomicNumberBarium}>56</span>
+        <span className={styles.symbolBarium}>Ba</span>
+        <span className={styles.nameBarium}>Barium</span>
+        <span className={styles.atomicMassBarium}>137.327</span>
       </div>
     </div>
   );
