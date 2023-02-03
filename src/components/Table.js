@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
 import TableRow from "./TableRow";
-import Spinner from "./Spinner";
+import Loader from "./Loader";
 import styles from "../css/tableRow.module.css";
 
 function Table() {
@@ -9,7 +9,7 @@ function Table() {
   let prevPeriod;
 
   if (isLoading) {
-    return <Spinner />;
+    return <Loader />;
   }
 
   if (error) {
@@ -17,7 +17,7 @@ function Table() {
   }
 
   if (!cachedData) {
-    return <Spinner />;
+    return <Loader />;
   }
 
   console.log(cachedData);
@@ -25,7 +25,7 @@ function Table() {
   return (
     <main className={styles.tableWrapper}>
       {isLoading ? (
-        <Spinner />
+        <Loader />
       ) : (
         <TableRow dataFromApi={cachedData} prevPeriod={prevPeriod} />
       )}
