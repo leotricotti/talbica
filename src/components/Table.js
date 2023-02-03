@@ -20,8 +20,6 @@ function Table() {
     return <Loader />;
   }
 
-  console.log(cachedData);
-
   return (
     <main className={styles.tableWrapper}>
       {isLoading ? (
