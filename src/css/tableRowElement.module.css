@@ -6,7 +6,6 @@
   flex-direction: column;
   border-radius: .5rem;
   padding: .4375rem .3125rem;
-  animation: loadElement 1s linear;
 }
 
 .atomicNumber {
@@ -33,26 +32,4 @@
   font-size: .75rem;
   font-weight: 500;
   margin-top: .1rem;
-}
-
-@keyframes loadElement {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: .25;
-  }
-
-  50% {
-    opacity: .50;
-  }
-
-  75% {
-    opacity: .75;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }

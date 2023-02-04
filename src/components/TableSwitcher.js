@@ -2,7 +2,7 @@ import { useState } from "react";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
 import styles from "../css/tableSwitcher.module.css";
 
-function TableSwitcher({ title }) {
+function TableSwitcher() {
   const [activated, setActivated] = useState(tableSwitcherData[0].id);
 
   const handleClick = (id) => {
