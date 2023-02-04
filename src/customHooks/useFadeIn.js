@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-function useFadeIn(duration = 1) {
+function useFadeIn(duration) {
   const [isFaded, setIsFaded] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsFaded(true);
-    }, duration * 1000);
+    }, duration);
     return () => clearTimeout(timer);
   }, [duration]);
 

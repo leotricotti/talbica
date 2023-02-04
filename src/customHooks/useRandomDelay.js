@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
-function useRandomDelay(min, max) {
+function useRandomDelay() {
   const [delay, setDelay] = useState("");
 
   useEffect(() => {
-    setDelay((Math.random() * (max - min) + min).toFixed(4).toString() + "s");
-  }, [max, min]);
+    setDelay(Math.random().toFixed(4).toString());
+  }, []);
 
   return delay;
 }
