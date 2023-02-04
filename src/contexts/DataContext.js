@@ -9,8 +9,7 @@ import {
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [dataFromApi, setDataFromApi] = useState(null);
-  const [cachedData, setCachedData] = useState(dataFromApi);
+  const [cachedData, setCachedData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -26,7 +25,6 @@ export const DataProvider = ({ children }) => {
 
   const fetchData = useCallback(async () => {
     if (cachedData) {
-      setDataFromApi(cachedData);
       return;
     }
 
@@ -43,7 +41,6 @@ export const DataProvider = ({ children }) => {
       }
       const json = await response.json();
       setCachedData(json);
-      setDataFromApi(json);
     } catch (err) {
       setError(err.message);
     } finally {
