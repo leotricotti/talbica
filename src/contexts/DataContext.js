@@ -49,7 +49,7 @@ export const DataProvider = ({ children }) => {
     } finally {
       setTimeout(() => {
         setIsLoading(false);
-      }, 400);
+      }, 500);
     }
   }, [options, cachedData]);
 
