@@ -6,7 +6,7 @@ function useFadeIn(duration) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsFaded(true);
-    }, duration);
+    }, duration * 100);
     return () => clearTimeout(timer);
   }, [duration]);
 
