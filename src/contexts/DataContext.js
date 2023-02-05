@@ -20,7 +20,9 @@ export const DataProvider = ({ children }) => {
       .then((res) => res.json())
       .then((json) => {
         setTableData(json);
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
       })
       .catch((err) => {
         setError(err.message);
