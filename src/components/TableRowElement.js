@@ -15,7 +15,7 @@ function TableRowElement({ item, colors }) {
   const backgroundColor = useFilterColor(formattedColor, colors);
 
   return (
-    <div
+    <button
       className={`${styles.tableRowElement} ${isFaded ? styles.show : ""}`}
       style={{
         backgroundColor: `var(${backgroundColor})`,
@@ -26,7 +26,7 @@ function TableRowElement({ item, colors }) {
       <span className={styles.symbol}>{item.symbol}</span>
       <span className={styles.name}>{displayName}</span>
       <span className={styles.atomicMass}>{displayMass}</span>
-    </div>
+    </button>
   );
 }
 
