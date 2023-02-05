@@ -26,7 +26,7 @@ export const DataProvider = ({ children }) => {
         setError(err.message);
         setIsLoading(false);
       });
-  }, []);
+  }, [setError]);
 
   const value = { tableData, error, isLoading };
 
