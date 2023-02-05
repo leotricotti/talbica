@@ -1,11 +1,10 @@
 import CardModalHeader from "./CardModalHeader";
 import styles from "../css/cardModal.module.css";
 
-function CardModal({ item, show, closeBtn }) {
-  console.log(show);
+function CardModal({ dataFromApi, show, closeBtn }) {
   return (
     <div className={show ? styles.showCard : styles.hideCard}>
-      <CardModalHeader item={item} closeBtn={closeBtn} />
+      <CardModalHeader dataFromApi={dataFromApi} closeBtn={closeBtn} />
     </div>
   );
 }

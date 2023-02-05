@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { DataProvider } from "./contexts/DataContext";
+import CardModal from "./components/CardModal";
 import Home from "./screens/Home";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <DataProvider>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/card" element={<CardModal />} />
       </Routes>
     </DataProvider>
   );

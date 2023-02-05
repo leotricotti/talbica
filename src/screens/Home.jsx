@@ -8,7 +8,7 @@ import CardModal from "../components/CardModal";
 import styles from "../css/home.module.css";
 
 function Home() {
-  const { tableData, error, isLoading } = useContext(DataContext).value;
+  const { dataFromApi, error, isLoading } = useContext(DataContext).value;
 
   if (isLoading) {
     return <Loader />;
@@ -18,7 +18,7 @@ function Home() {
     return <p>{error}</p>;
   }
 
-  if (!tableData) {
+  if (!dataFromApi) {
     return <Loader />;
   }
 
@@ -26,8 +26,8 @@ function Home() {
     <div className={styles.tableContainer}>
       <HeaderMobile />
       <SearcBar />
-      <Table tableData={tableData} />
-      <CardModal item={tableData} />
+      <Table dataFromApi={dataFromApi} />
+      <CardModal dataFromApi={dataFromApi} />
     </div>
   );
 }

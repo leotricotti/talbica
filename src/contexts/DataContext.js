@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const [tableData, setTableData] = useState(null);
+  const [dataFromApi, setDataFromApi] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,7 +19,7 @@ export const DataProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((json) => {
-        setTableData(json);
+        setDataFromApi(json);
         setTimeout(() => {
           setIsLoading(false);
         }, 1000);
@@ -30,7 +30,7 @@ export const DataProvider = ({ children }) => {
       });
   }, [setError]);
 
-  const value = { tableData, error, isLoading };
+  const value = { dataFromApi, error, isLoading };
 
   return (
     <DataContext.Provider value={{ value }}>{children}</DataContext.Provider>
