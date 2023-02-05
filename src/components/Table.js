@@ -6,13 +6,13 @@ function Table({ isLoading, dataFromApi }) {
   let prevPeriod;
 
   return (
-    <main className={styles.tableWrapper}>
+    <div className={styles.tableWrapper}>
       {isLoading ? (
         <Loader />
       ) : (
         <TableRow dataFromApi={dataFromApi} prevPeriod={prevPeriod} />
       )}
-    </main>
+    </div>
   );
 }
 
