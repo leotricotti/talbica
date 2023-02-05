@@ -5,7 +5,7 @@ import Loader from "./Loader";
 import styles from "../css/table.module.css";
 
 function Table() {
-  const { cachedData, error, isLoading } = useContext(DataContext).value;
+  const { tableData, error, isLoading } = useContext(DataContext).value;
   let prevPeriod;
 
   if (isLoading) {
@@ -16,7 +16,7 @@ function Table() {
     return <p>{error}</p>;
   }
 
-  if (!cachedData) {
+  if (!tableData) {
     return <Loader />;
   }
 
@@ -25,7 +25,7 @@ function Table() {
       {isLoading ? (
         <Loader />
       ) : (
-        <TableRow dataFromApi={cachedData} prevPeriod={prevPeriod} />
+        <TableRow dataFromApi={tableData} prevPeriod={prevPeriod} />
       )}
     </main>
   );

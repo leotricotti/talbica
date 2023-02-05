@@ -7,7 +7,7 @@
   border-radius: .5rem;
   padding: .4375rem .3125rem;
   opacity: 0;
-  transition: all .25s ease-in;
+  transition: all .25s linear;
 }
 
 .show {

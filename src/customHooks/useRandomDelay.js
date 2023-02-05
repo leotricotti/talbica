@@ -5,7 +5,7 @@ function useRandomDelay() {
 
   useEffect(() => {
     setDelay(Math.random().toFixed(4).toString() + "s");
-  }, []);
+  }, [delay]);
 
   return delay;
 }

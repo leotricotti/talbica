@@ -10,7 +10,7 @@ function TableRowElement({ item, colors }) {
   const displayMass = useFormatMass(item.atomicMass);
   const displayName = useTruncateName(item.name);
   const isFaded = useFadeIn(1);
-  const randomDelay = useRandomDelay();
+  const randomDelay = useRandomDelay(null);
   const formattedColor = useFormatColorName(item.groupBlock);
   const backgroundColor = useFilterColor(formattedColor, colors);
 
