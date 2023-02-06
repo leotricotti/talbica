@@ -22,8 +22,19 @@
   margin: -2.35rem 0 -1.125rem -.3rem;
 }
 
-.name {}
+.name {
+  color: #fff;
+  font-size: 2.625rem;
 
-.atomicMass {}
+}
 
-.description {}
+.atomicMass {
+  font-size: 1.75rem;
+  margin-top: -.33rem;
+
+}
+
+.description {
+  font-size: .8rem;
+  padding-top: .625rem;
+}
