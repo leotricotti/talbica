@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { DataProvider } from "./contexts/DataContext";
-import CardModal from "./components/CardModal";
-import CardModalHeader from "./components/CardModalHeader";
+import CardModal from "./screens/CardModal";
 import Home from "./screens/Home";
 
 function App() {
@@ -10,7 +9,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/card" element={<CardModal />} />
-        <Route path="/cardHeader" element={<CardModalHeader />} />
       </Routes>
     </DataProvider>
   );
