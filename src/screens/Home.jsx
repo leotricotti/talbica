@@ -4,7 +4,6 @@ import Loader from "../components/Loader";
 import HeaderMobile from "../components/HeaderMobile";
 import Table from "../components/Table";
 import SearcBar from "../components/SearchBar";
-import CardModal from "../components/CardModal";
 import styles from "../css/home.module.css";
 
 function Home() {
@@ -27,7 +26,6 @@ function Home() {
       <HeaderMobile />
       <SearcBar />
       <Table dataFromApi={dataFromApi} />
-      <CardModal dataFromApi={dataFromApi} />
     </div>
   );
 }
