@@ -4,8 +4,18 @@ function useCutString(data) {
   const [cutData, setCutData] = useState("");
 
   useEffect(() => {
-    const cutIndex = data.indexOf(".", data.indexOf(".") + 1);
-    setCutData(data.slice(0, cutIndex));
+    let count = 0;
+    let cutIndex = -1;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] === ".") {
+        count++;
+        if (count === 4) {
+          cutIndex = i;
+          break;
+        }
+      }
+    }
+    setCutData(data.slice(0, cutIndex + 1));
   }, [data]);
 
   return cutData;
