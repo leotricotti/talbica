@@ -2,7 +2,7 @@ import { useState } from "react";
 import CardModalHeader from "../components/CardModalHeader";
 import styles from "../css/cardModal.module.css";
 
-function CardModal({ show }) {
+function CardModal({ dataFromApi, showModal }) {
   const [closeModal, setCloseModal] = useState(false);
 
   function closeCardModal() {
@@ -10,8 +10,8 @@ function CardModal({ show }) {
   }
 
   return (
-    <div className={show ? styles.showCard : styles.hideCard}>
-      <CardModalHeader handleClick={closeCardModal} />
+    <div className={showModal ? styles.showCard : styles.hideCard}>
+      <CardModalHeader dataFromApi={dataFromApi} handleClick={closeCardModal} />
     </div>
   );
 }
