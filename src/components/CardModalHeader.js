@@ -1,9 +1,9 @@
 import styles from "../css/cardModalHeader.module.css";
 
-function CardModalHeader({ dataFromApi, closeBtn }) {
+function CardModalHeader({ dataFromApi, handleClick }) {
   return dataFromApi.map((item) => (
     <div key={item.atomicNumber} className={styles.CardModalHeader}>
-      <button className={styles.closeBtn} onClick={closeBtn}>
+      <button className={styles.closeBtn} onClick={() => handleClick}>
         <span>X</span>
       </button>
       <span className={styles.atomicNumber}>{item.atomicNumber}</span>

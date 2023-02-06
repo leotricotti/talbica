@@ -8,7 +8,7 @@ function App() {
     <DataProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path=":elementId" element={<CardModal />} />
+        <Route path="/card" element={<CardModal />} />
       </Routes>
     </DataProvider>
   );

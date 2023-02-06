@@ -1,13 +1,17 @@
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 import CardModalHeader from "../components/CardModalHeader";
 import styles from "../css/cardModal.module.css";
 
-function CardModal({ show, closeBtn }) {
-  const elementId = useParams();
-  console.log(elementId);
+function CardModal({ show }) {
+  const [closeModal, setCloseModal] = useState(false);
+
+  function closeCardModal() {
+    setCloseModal(!closeModal);
+  }
+
   return (
     <div className={show ? styles.showCard : styles.hideCard}>
-      <CardModalHeader dataFromApi={elementId} closeBtn={closeBtn} />
+      <CardModalHeader handleClick={closeCardModal} />
     </div>
   );
 }
