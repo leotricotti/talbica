@@ -5,7 +5,7 @@ function CardModal({ dataFromApi, onClose }) {
   return (
     <div className={styles.cardModalContainer}>
       <button className={styles.closeBtn} onClick={onClose}>
-        <span>X</span>
+        <span className={styles.closeIcon}>x</span>
       </button>
       <CardHeader dataFromApi={dataFromApi} />
     </div>

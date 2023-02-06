@@ -47,6 +47,7 @@ Variables
   --colorLanthanideOpen: #84c7b5;
   --colorActinideOpen: #609e96;
   --textColor: black;
+  --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
   --backgroundColor: rgba(255, 255, 255, 1);
   --stackBackgroundColor: rgba(244, 244, 244, 1);
   --menuBackgroundColor: rgba(255, 255, 255, 1);
@@ -123,7 +124,7 @@ Body Styles
 */
 
 body {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: var(--ff-body);
   background-color: var(--backgroundColor);
   overflow-x: hidden;
 }
