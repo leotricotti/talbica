@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { DataProvider } from "./contexts/DataContext";
-import CardModal from "./screens/CardModal";
+import CardModal from "./components/CardModal";
 import CardModalHeader from "./components/CardModalHeader";
 import Home from "./screens/Home";
 

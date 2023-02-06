@@ -6,7 +6,7 @@ import useFadeIn from "../customHooks/useFadeIn";
 import useRandomDelay from "../customHooks/useRandomDelay";
 import styles from "../css/tableRowElement.module.css";
 
-function TableRowElement({ item, colors }) {
+function TableRowElement({ item, colors, handleClickCardModal }) {
   const displayMass = useFormatMass(item.atomicMass);
   const displayName = useTruncateName(item.name);
   const isFaded = useFadeIn(1);
@@ -16,6 +16,7 @@ function TableRowElement({ item, colors }) {
 
   return (
     <button
+      onClick={handleClickCardModal}
       className={`${styles.tableRowElement} ${isFaded ? styles.show : ""}`}
       style={{
         backgroundColor: `var(${backgroundColor})`,

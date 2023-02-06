@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CardModalHeader from "../components/CardModalHeader";
+import CardModalHeader from "./CardModalHeader";
 import styles from "../css/cardModal.module.css";
 
 function CardModal({ dataFromApi, showModal }) {
