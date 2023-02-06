@@ -37,7 +37,11 @@ function TableRowElement({ item, colors }) {
         <span className={styles.atomicMass}>{displayMass}</span>
       </button>
       {selectedElement && (
-        <Card dataFromApi={item} onClose={() => setSelectedElement(false)} />
+        <Card
+          dataFromApi={item}
+          onClose={() => setSelectedElement(false)}
+          backgroundColor={backgroundColor}
+        />
       )}
     </>
   );
