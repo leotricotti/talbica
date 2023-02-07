@@ -13,6 +13,7 @@ Variables
 */
 
 :root {
+  --stackScale: 0.92;
   --colorAlkaliMetal: #fd6863;
   --colorNobleGas: #daa2e0;
   --colorAlkalineEarthMetal: #feb149;
