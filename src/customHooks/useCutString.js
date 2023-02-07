@@ -15,7 +15,11 @@ function useCutString(data) {
         }
       }
     }
-    setCutData(data.slice(0, cutIndex + 1));
+    if (cutIndex !== -1) {
+      setCutData(data.slice(0, cutIndex + 1));
+    } else {
+      setCutData(data);
+    }
   }, [data]);
 
   return cutData;

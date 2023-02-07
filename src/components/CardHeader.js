@@ -7,6 +7,8 @@ function CardModalHeader({ dataFromApi }) {
   const history = useCutString(item.history);
   const formatMass = useFormatMass(item.atomicMass);
 
+  console.log(history);
+
   return (
     <div key={item.atomicNumber} className={styles.cardlHeaderContainer}>
       <span className={styles.atomicNumber}>{item.atomicNumber}</span>
