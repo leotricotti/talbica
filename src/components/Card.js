@@ -1,7 +1,7 @@
 import CardHeader from "./CardHeader";
 import styles from "../css/card.module.css";
 
-function CardModal({ dataFromApi, backgroundColor, onClose }) {
+function Card({ dataFromApi, backgroundColor, onClose }) {
   return (
     <div
       className={styles.cardModalContainer}
@@ -17,4 +17,4 @@ function CardModal({ dataFromApi, backgroundColor, onClose }) {
   );
 }
 
-export default CardModal;
+export default Card;
