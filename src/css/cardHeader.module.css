@@ -40,3 +40,30 @@
   padding-top: .7rem;
   line-height: 1.5;
 }
+
+.maskText {
+  width: 100%;
+  height: 6rem;
+  mask-image: linear-gradient(black, transparent);
+}
+
+.cardBtnContainer {
+  width: 100%;
+  height: fit-content;
+  position: absolute;
+  top: 24rem;
+  left: 0;
+  margin-right: auto;
+}
+
+
+.cardBtn {
+  background-color: var(#fff);
+  border: transparent;
+  margin-left: 1rem;
+  padding: .1875rem .5625rem;
+  border-radius: .3125rem;
+  font-size: .75rem;
+  font-family: var(--ff-body);
+  font-weight: 600;
+}

@@ -12,7 +12,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
       <button className={styles.closeBtn} onClick={onClose}>
         <span className={styles.closeIcon}>x</span>
       </button>
-      <CardHeader dataFromApi={dataFromApi} />
+      <CardHeader dataFromApi={dataFromApi} backgroundColor={backgroundColor} />
     </div>
   );
 }
