@@ -127,5 +127,4 @@ Body Styles
 body {
   font-family: var(--ff-body);
   background-color: var(--backgroundColor);
-  overflow-x: hidden;
 }

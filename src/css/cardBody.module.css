@@ -2,7 +2,10 @@
   width: 100%;
   position: absolute;
   top: 27rem;
-  left: 1rem;
+  left: 0rem;
+  padding: 0 1rem;
+  overflow-y: scroll;
+  margin: 0 auto;
 }
 
 .cardBodyTitle {
@@ -22,5 +25,13 @@
 .propertyValue {
   position: absolute;
   top: .52rem;
+  left: 60%;
+}
+
+.propertySymbol {
+  font-size: .825rem;
+  opacity: .5;
+  position: absolute;
+  top: .65rem;
   left: 50%;
 }
