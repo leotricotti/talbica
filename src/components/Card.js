@@ -1,10 +1,11 @@
 import CardHeader from "./CardHeader";
+import CardBody from "./CarBody";
 import styles from "../css/card.module.css";
 
 function Card({ dataFromApi, backgroundColor, onClose }) {
   return (
     <div
-      className={styles.cardModalContainer}
+      className={styles.cardContainer}
       style={{
         backgroundColor: `var(${backgroundColor})`,
       }}
@@ -13,6 +14,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
         <span className={styles.closeIcon}>x</span>
       </button>
       <CardHeader dataFromApi={dataFromApi} backgroundColor={backgroundColor} />
+      <CardBody dataFromApi={dataFromApi} />
     </div>
   );
 }
