@@ -5,12 +5,11 @@
   top: 38rem;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: var(--reactionsListBackgroundColor);
-  opacity: .5;
+  background-color: var(--reactionsListSwitcherBackgroundColor);
   border-radius: 3.125rem;
   padding: .25rem;
   transition: opacity 150ms ease-out, transform 150ms ease-out;
-  backdrop-filter: blur(1rem1);
+  backdrop-filter: blur(10px);
   z-index: 1;
   display: flex;
   align-items: center;
@@ -25,7 +24,7 @@
   height: 2rem;
   border-radius: 2.5rem;
   transform: translateX(0);
-
+  z-index: -1;
 }
 
 .modeSwitcherPhoto {

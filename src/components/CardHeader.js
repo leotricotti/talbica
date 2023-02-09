@@ -2,7 +2,7 @@ import useCutString from "../customHooks/useCutString";
 import useFormatMass from "../customHooks/useFormatMass";
 import styles from "../css/cardHeader.module.css";
 
-function CardModalHeader({ dataFromApi, backgroundColor }) {
+function CardHeader({ dataFromApi, backgroundColor }) {
   const item = dataFromApi;
   const history = useCutString(item.history);
   const formatMass = useFormatMass(item.atomicMass);
@@ -26,4 +26,4 @@ function CardModalHeader({ dataFromApi, backgroundColor }) {
   );
 }
 
-export default CardModalHeader;
+export default CardHeader;
