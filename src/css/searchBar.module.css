@@ -20,11 +20,3 @@
   font-size: 1.2rem;
   color: var(--placeholderColor);
 }
-
-.helpIcon {
-  background-image: url('../assets/images/icons/help_black.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 2rem;
-  height: 2rem;
-}
