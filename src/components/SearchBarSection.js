@@ -1,6 +1,6 @@
 import SearcBar from "./SearchBar";
 import SearchBarHelp from "./SearchBarHelp";
-import styles from "../css/seachBarSection.module.css";
+import styles from "../css/searchBarSection.module.css";
 
 function SearchBarSection() {
   return (
