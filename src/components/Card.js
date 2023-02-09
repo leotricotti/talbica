@@ -1,5 +1,6 @@
 import CardHeader from "./CardHeader";
 import CardBody from "./CarBody";
+import ModeSwitcherMobile from "./ModeSwitcherMobile";
 import styles from "../css/card.module.css";
 
 function Card({ dataFromApi, backgroundColor, onClose }) {
@@ -15,6 +16,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
       </button>
       <CardHeader dataFromApi={dataFromApi} backgroundColor={backgroundColor} />
       <CardBody dataFromApi={dataFromApi} />
+      <ModeSwitcherMobile />
     </div>
   );
 }
