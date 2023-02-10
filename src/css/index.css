@@ -73,6 +73,8 @@ Variables
   --tabButtonBackgroundColor: rgba(255, 255, 255, 0.9);
   --tabButtonBorderColor: #E8E8E8;
   --tabButtonActiveBackgroundColor: rgba(255, 255, 255, 0.3);
+  --reactionsListSwitcherBackgroundColor: rgba(220, 220, 220, 0.6);
+  --reactionsListSwitcherSelectedColor: rgba(0, 0, 0, 0.22);
 }
 
 /*
