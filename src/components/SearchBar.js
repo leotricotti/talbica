@@ -8,6 +8,7 @@ function SearcBar() {
         type="text"
         placeholder="Type element name"
       />
+      <div className={styles.helpIcon}></div>
     </div>
   );
 }
