@@ -1,0 +1,44 @@
+.modeSwitcherContainer {
+  width: 96%;
+  height: 2.5rem;
+  position: fixed;
+  top: 38rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: var(--reactionsListSwitcherBackgroundColor);
+  border-radius: 3.125rem;
+  padding: .25rem;
+  transition: opacity 150ms ease-out, transform 150ms ease-out;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.modeSwitcherContainer::before {
+  position: absolute;
+  display: block;
+  content: '';
+  background-color: var(--reactionsListSwitcherSelectedColor);
+  width: calc(50% - .25rem);
+  height: 2rem;
+  border-radius: 2.5rem;
+  transform: translateX(0);
+  z-index: -1;
+}
+
+.modeSwitcherPhoto {
+  width: 50%;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.modeSwitcherInfo {
+  width: 50%;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
+.active {
+  color: var(--mobileSwitcherActiveColor);
+}

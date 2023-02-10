@@ -1,35 +1,18 @@
-import { useContext } from "react";
-import { DataContext } from "../contexts/DataContext";
 import TableRow from "./TableRow";
-import Spinner from "./Spinner";
-import styles from "../css/tableRow.module.css";
+import Loader from "./Loader";
+import styles from "../css/table.module.css";
 
-function Table() {
-  const { cachedData, error, isLoading } = useContext(DataContext).value;
+function Table({ isLoading, dataFromApi }) {
   let prevPeriod;
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  if (error) {
-    return <p>{error}</p>;
-  }
-
-  if (!cachedData) {
-    return <Spinner />;
-  }
-
-  console.log(cachedData);
-
   return (
-    <main className={styles.tableWrapper}>
+    <div className={styles.tableWrapper}>
       {isLoading ? (
-        <Spinner />
+        <Loader />
       ) : (
-        <TableRow dataFromApi={cachedData} prevPeriod={prevPeriod} />
+        <TableRow dataFromApi={dataFromApi} prevPeriod={prevPeriod} />
       )}
-    </main>
+    </div>
   );
 }
 

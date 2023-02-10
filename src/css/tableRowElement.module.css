@@ -1,13 +1,21 @@
-.tableElement {
+.tableRowElement {
   width: 5.3rem;
   height: 6.125rem;
   color: #fff;
-  background-color: var(--colorAlkaliMetal);
   display: flex;
+  font-family: var(--font-family);
   flex-direction: column;
+  border: transparent;
+  justify-content: space-around;
   border-radius: .5rem;
-
   padding: .4375rem .3125rem;
+  opacity: 0;
+  transition: all .25s linear;
+  cursor: pointer;
+}
+
+.show {
+  opacity: 1;
 }
 
 .atomicNumber {

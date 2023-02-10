@@ -12,7 +12,7 @@ function HeaderMobile() {
   }
 
   return (
-    <header className={styles.headerContainer}>
+    <div className={styles.headerContainer}>
       <MainTitle title={"Periodic Table. Interactive Chemistry"} />
       <ToggleBtn
         classNameOne={isOpen ? styles.isActiveOne : ""}
@@ -21,7 +21,7 @@ function HeaderMobile() {
         handleClick={handleClick}
       />
       {isOpen && <ToggleMenu />}
-    </header>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ Font Family
 =============
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800;900&display=swap');
 
 /*
 ===============
@@ -13,13 +13,15 @@ Variables
 */
 
 :root {
+  --stackScale: 0.92;
   --colorAlkaliMetal: #fd6863;
   --colorNobleGas: #daa2e0;
   --colorAlkalineEarthMetal: #feb149;
   --colorMetalloid: #5ac0e8;
   --colorNonmetal: #a7d04a;
   --colorHalogen: #ff9595;
-  --colorPoorMetal: #75a1e4;
+  --colorMetal: #75a1e4;
+  --colorPost-transitionMetal: #75a1e4;
   --colorTransitionMetal: #99c0e5;
   --colorLanthanoid: #a0dccc;
   --colorActinoid: #7fb5ae;
@@ -46,6 +48,7 @@ Variables
   --colorLanthanideOpen: #84c7b5;
   --colorActinideOpen: #609e96;
   --textColor: black;
+  --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
   --backgroundColor: rgba(255, 255, 255, 1);
   --stackBackgroundColor: rgba(244, 244, 244, 1);
   --menuBackgroundColor: rgba(255, 255, 255, 1);
@@ -122,14 +125,6 @@ Body Styles
 */
 
 body {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: var(--ff-body);
   background-color: var(--backgroundColor);
-  cursor: default;
-  transform-origin: left top;
-  box-sizing: border-box;
-  transition: opacity .1s ease-out, background-color .5s linear;
-  scrollbar-width: none;
-  transform: scale(calc(1 / var(--scale)));
-  width: calc(var(--scale) * 100vw);
-  overflow-x: hidden;
 }

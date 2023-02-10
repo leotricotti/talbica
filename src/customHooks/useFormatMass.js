@@ -4,7 +4,7 @@ export function useFormatMass(mass) {
   const [displayMass, setDisplayMass] = useState(null);
 
   useEffect(() => {
-    const atomicMass = typeof mass === "string" ? parseFloat(mass) : mass;
+    const atomicMass = parseFloat(mass);
 
     const formattedMass =
       atomicMass % 1 === 0

@@ -1,0 +1,37 @@
+.carBodyContainer {
+  width: 100%;
+  position: absolute;
+  top: 27rem;
+  left: 0rem;
+  padding: 0 1rem;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+
+.cardBodyTitle {
+  font-size: 1rem;
+}
+
+.propertyItems {
+  width: 100%;
+  position: relative;
+  padding-top: .5rem;
+}
+
+.propertyTitle {
+  font-size: .875rem;
+}
+
+.propertyValue {
+  position: absolute;
+  top: .52rem;
+  left: 60%;
+}
+
+.propertySymbol {
+  font-size: .825rem;
+  opacity: .5;
+  position: absolute;
+  top: .65rem;
+  left: 50%;
+}
