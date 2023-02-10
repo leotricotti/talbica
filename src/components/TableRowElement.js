@@ -41,6 +41,7 @@ function TableRowElement({ item, colors }) {
           dataFromApi={item}
           onClose={() => setSelectedElement(false)}
           backgroundColor={backgroundColor}
+          selectedElement={selectedElement}
         />
       )}
     </>

@@ -3,12 +3,14 @@ import CardBody from "./CarBody";
 import ModeSwitcherMobile from "./ModeSwitcherMobile";
 import styles from "../css/card.module.css";
 
-function Card({ dataFromApi, backgroundColor, onClose }) {
+function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
   return (
     <>
       <div className={styles.overlayBlack}></div>
       <div
-        className={styles.cardContainer}
+        className={`${styles.cardContainer} ${
+          selectedElement ? styles.active : ""
+        }`}
         style={{
           backgroundColor: `var(${backgroundColor})`,
         }}
@@ -19,6 +21,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
         <CardHeader
           dataFromApi={dataFromApi}
           backgroundColor={backgroundColor}
+          selectedElement={selectedElement}
         />
         <CardBody dataFromApi={dataFromApi} />
         <ModeSwitcherMobile />
