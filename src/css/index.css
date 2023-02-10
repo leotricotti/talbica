@@ -13,7 +13,6 @@ Variables
 */
 
 :root {
-  --stackScale: 0.92;
   --colorAlkaliMetal: #fd6863;
   --colorNobleGas: #daa2e0;
   --colorAlkalineEarthMetal: #feb149;
@@ -50,42 +49,14 @@ Variables
   --textColor: black;
   --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
   --backgroundColor: rgba(255, 255, 255, 1);
-  --stackBackgroundColor: rgba(244, 244, 244, 1);
-  --menuBackgroundColor: rgba(255, 255, 255, 1);
-  --keyboardBackgroundColor: #EEEEEE;
-  --overlayBackgroundColor: rgba(255, 255, 255, 0.9);
+  --overlayBackgroundColor: #000;
   --smartFieldBackgroundColor: #F7F7F7;
-  --smartFieldTextColor: black;
-  --compoundInfoTextColor: #333;
-  --compoundInfoBackgroundColor: #EEEEF0;
-  --compoundInfoLinkUnderlineColor: rgba(0, 0, 0, 0.25);
-  --exampleBackgroundColor: #EEEEF0;
-  --exampleHoverColor: #e3e3e4;
-  --exampleActiveColor: #D8D8D8;
-  --printBackgroundColor: rgba(255, 255, 255, 1);
-  --printOptionBackgroundColor: #EBEBEB;
-  --printOptionHoverColor: #EBEBEB;
-  --printOptionHoverBorderColor: #8A8A8A;
-  --printOptionTextColor: #8A8A8A;
-  --reactionsListTextColor: #333;
-  --reactionsListBackgroundColor: #EEEEF0;
-  --reactionsListBorderColor: #e4e3e3;
-  --reactionsListHoverColor: #e3e3e4;
-  --reactionsListActiveColor: #D8D8D8;
-  --reactionsListSwitcherBackgroundColor: rgba(220, 220, 220, 0.6);
-  --reactionsListSwitcherSelectedColor: rgba(0, 0, 0, 0.22);
-  --reactionsListCoefficientBackgroundColor: #bbbbbb;
-  --reactionsListCoefficientHoverColor: #d8d8d8;
-  --reactionBodyCoefficientBackgroundColor: #89c142;
   --mobileSwitcherColor: #6f6f6f;
   --mobileSwitcherActiveColor: white;
   --tableToolsBackgroundColor: #F4F4F4;
   --tableToolsHoverColor: #EEEEEE;
   --tableToolsActiveColor: #E3E3E3;
   --tableToolsTextColor: black;
-  --glossaryTextColor: #333;
-  --glossaryTextColorHover: #000;
-  --footerLineColor: #b2b2b2;
   --helpBackgroundColor: #FAFAFA;
   --switcherTabBackgroundColor: rgba(255, 255, 255, 0.6);
   --switcherTabHoverColor: rgba(255, 255, 255, 0.75);
