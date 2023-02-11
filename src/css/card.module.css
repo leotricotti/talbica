@@ -5,12 +5,19 @@
   top: 3rem;
   left: 0;
   border-radius: 1rem 1rem 0 0;
-  opacity: 0;
   z-index: 1;
-  transition: all 5s ease-in-out;
 }
 
-.active {
+.cardEnter {
+  opacity: 0;
+}
+
+.cardEnterActive {
+  opacity: 1;
+  transition: opacity 5000ms;
+}
+
+.cardEnterDone {
   opacity: 1;
 }
 
