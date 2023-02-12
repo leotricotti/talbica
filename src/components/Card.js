@@ -13,20 +13,9 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
     setShowCard(true);
   }, [selectedElement]);
 
-  const handleClose = () => {
-    setShowCard(false);
-    setTimeout(() => {
-      onClose();
-    }, 5000);
-  };
-
   return (
     <>
-      <div
-        className={`${styles.overlayBlack} ${
-          showCard ? styles.overlayOpen : styles.overlayClose
-        } `}
-      ></div>
+      <div className={styles.cardOverlay}></div>
       <CSSTransition
         nodeRef={nodeRef}
         in={showCard}
@@ -46,7 +35,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
             backgroundColor: `var(${backgroundColor})`,
           }}
         >
-          <button className={styles.closeBtn} onClick={handleClose}>
+          <button className={styles.closeBtn} onClick={onClose}>
             <span className={styles.closeIcon}>x</span>
           </button>
           <CardHeader

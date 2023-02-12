@@ -1,7 +1,6 @@
 import styles from "../css/tableRowTitle.module.css";
 
 function TableRowTitle({ period, groupBlock }) {
-  console.log(groupBlock);
   return groupBlock === "lanthanoid" || groupBlock === "actinoid" ? (
     <h3 className={`${styles.groupTitle} ${styles.title}`}>{groupBlock}</h3>
   ) : (
