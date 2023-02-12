@@ -8,24 +8,6 @@
   z-index: 1;
 }
 
-.cardEnter {
-  transform: translateY(100%);
-}
-
-.cardEnterActive {
-  transform: translateY(0);
-  transition: transform .65s cubic-bezier(.16, 1, .3, 1) 0s, left .2s cubic-bezier(.165, .84, .44, 1) 0s, top .2s cubic-bezier(.165, .84, .44, 1) 0s
-}
-
-.cardExit {
-  transform: translateY(0);
-}
-
-.cardExitActive {
-  transform: translateY(100%);
-  transition: transform 1.5s cubic-bezier(.16, 1, .3, 1) 0s, left 1.5s cubic-bezier(.165, .84, .44, 1) 0s, top 1.5s cubic-bezier(.165, .84, .44, 1) 0s
-}
-
 .overlayBlack {
   width: 100%;
   height: 100%;
@@ -37,7 +19,7 @@
 }
 
 .overlayOpen {
-  animation: overlayIn 5s linear;
+  animation: overlayIn .5s linear;
 }
 
 @keyframes overlayIn {
@@ -51,7 +33,7 @@
 }
 
 .overlayClose {
-  animation: overlayOut 5s linear;
+  animation: overlayOut .5s linear;
 }
 
 @keyframes overlayOut {
@@ -63,7 +45,6 @@
     opacity: 0;
   }
 }
-
 
 .closeBtn {
   width: 3rem;

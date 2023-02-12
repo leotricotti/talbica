@@ -25,6 +25,8 @@ function TableRowElement({ item, colors }) {
     setSelectedElement(false);
   };
 
+  console.log(selectedElement);
+
   return (
     <>
       <button
