@@ -36,6 +36,35 @@
   z-index: 0;
 }
 
+.overlayOpen {
+  animation: overlayIn 5s linear;
+}
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.overlayClose {
+  animation: overlayOut 5s linear;
+}
+
+@keyframes overlayOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+
 .closeBtn {
   width: 3rem;
   height: 3rem;

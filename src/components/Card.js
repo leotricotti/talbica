@@ -17,14 +17,16 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
     setShowCard(false);
     setTimeout(() => {
       onClose();
-    }, 100);
+    }, 5000);
   };
-
-  console.log(showCard);
 
   return (
     <>
-      <div className={styles.overlayBlack}></div>
+      <div
+        className={`${styles.overlayBlack} ${
+          showCard ? styles.overlayOpen : styles.overlayClose
+        } `}
+      ></div>
       <CSSTransition
         nodeRef={nodeRef}
         in={showCard}
