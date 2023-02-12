@@ -91,6 +91,11 @@ Resets
   padding: 0;
 }
 
+button {
+  background-color: transparent;
+  border: transparent;
+}
+
 /*
 =================
 Body Styles 
