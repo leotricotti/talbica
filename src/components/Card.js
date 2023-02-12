@@ -15,6 +15,9 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
 
   const handleClose = () => {
     setShowCard(false);
+    setTimeout(() => {
+      onClose();
+    }, 100);
   };
 
   console.log(showCard);
