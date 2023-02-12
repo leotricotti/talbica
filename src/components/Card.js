@@ -13,10 +13,9 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
     setShowCard(true);
   }, [selectedElement]);
 
-  // const handleClose = () => {
-  //   setShowCard(false);
-  //   onClose();
-  // };
+  const handleClose = () => {
+    setShowCard(false);
+  };
 
   console.log(showCard);
 
@@ -26,7 +25,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
       <CSSTransition
         nodeRef={nodeRef}
         in={showCard}
-        timeout={500}
+        timeout={1000}
         classNames={{
           enter: styles.cardEnter,
           enterActive: styles.cardEnterActive,
@@ -42,10 +41,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
             backgroundColor: `var(${backgroundColor})`,
           }}
         >
-          <button
-            className={styles.closeBtn}
-            onClick={() => setShowCard(false)}
-          >
+          <button className={styles.closeBtn} onClick={handleClose}>
             <span className={styles.closeIcon}>x</span>
           </button>
           <CardHeader
