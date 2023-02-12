@@ -22,9 +22,8 @@ function TableRowElement({ item, colors }) {
   };
 
   const handleClose = () => {
-    setTimeout({
-      setSelectedElement(false);
-  }, 500);
+    setSelectedElement(false);
+  };
 
   return (
     <>
