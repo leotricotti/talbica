@@ -19,12 +19,10 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
       <CSSTransition
         nodeRef={nodeRef}
         in={showCard}
-        timeout={1000}
+        timeout={500}
         classNames={{
           enter: styles.cardEnter,
           enterActive: styles.cardEnterActive,
-          exit: styles.cardExit,
-          exitActive: styles.cardExitActive,
         }}
         unmountOnExit
       >
