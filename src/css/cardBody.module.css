@@ -1,8 +1,5 @@
 .carBodyContainer {
   width: 100%;
-  position: absolute;
-  top: 27rem;
-  left: 0rem;
   padding: 0 1rem;
   overflow-y: scroll;
   margin: 0 auto;

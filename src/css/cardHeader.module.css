@@ -1,5 +1,6 @@
 .cardlHeaderContainer {
   width: 100%;
+  height: auto;
   padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
@@ -46,6 +47,7 @@
   mask-image: linear-gradient(black, transparent);
 }
 
+
 .cardBtnContainer {
   width: 100%;
   height: fit-content;
@@ -64,4 +66,8 @@
   font-size: .75rem;
   font-family: var(--ff-body);
   font-weight: 600;
+}
+
+.displayNone {
+  display: none;
 }

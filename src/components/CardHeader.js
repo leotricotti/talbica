@@ -31,7 +31,10 @@ function CardHeader({ dataFromApi, backgroundColor }) {
           backgroundColor: `var(${backgroundColor})`,
         }}
       >
-        <button className={styles.cardBtn} onClik={handleClick}>
+        <button
+          className={`${!showMoreOpen ? styles.cardBtn : styles.displayNone}`}
+          onClick={handleClick}
+        >
           Show more
         </button>
       </div>
