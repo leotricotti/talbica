@@ -2,7 +2,7 @@
   width: 96%;
   height: 2.5rem;
   position: fixed;
-  top: 38rem;
+  top: 38.5rem;
   left: 50%;
   transform: translate(-50%, 0);
   background-color: var(--reactionsListSwitcherBackgroundColor);
