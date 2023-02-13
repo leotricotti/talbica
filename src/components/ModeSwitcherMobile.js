@@ -16,13 +16,17 @@ function ModeSwitcherMobile() {
         }`}
       ></div>
       <button
-        className={styles.modeSwitcherInfo}
+        className={`${styles.modeSwitcherInfo} ${
+          mode === "info" ? styles.infoModeActive : ""
+        }`}
         onClick={() => handleClick("info")}
       >
         Info
       </button>
       <button
-        className={styles.modeSwitcherPhoto}
+        className={`${styles.modeSwitcherPhoto} ${
+          mode === "photo" ? styles.photoModeActive : ""
+        }`}
         onClick={() => handleClick("photo")}
       >
         Photo
