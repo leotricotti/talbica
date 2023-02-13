@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { CSSTransition } from "react-transition-group";
 import useCutString from "../customHooks/useCutString";
 import useFormatMass from "../customHooks/useFormatMass";
 import styles from "../css/cardHeader.module.css";
