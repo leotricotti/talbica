@@ -7,8 +7,6 @@ export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  console.log(dataFromApi);
-
   useEffect(() => {
     setIsLoading(true);
 
