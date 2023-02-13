@@ -40,12 +40,6 @@
   text-align: center;
 }
 
-.photoActive {
-  animation: photoSelected 1s linear;
-  color: var(--mobileSwitcherActiveColor)
-}
-
-
 .modeSwitcherInfo {
   width: 50%;
   font-size: 1.125rem;
