@@ -19,7 +19,6 @@
   font-weight: 900;
   line-height: 1;
   margin: -2rem 0 -1.3rem -.9rem;
-
 }
 
 .name {
@@ -47,10 +46,8 @@
   mask-image: linear-gradient(black, transparent);
 }
 
-
 .cardBtnContainer {
   width: 100%;
-  height: fit-content;
   position: absolute;
   top: 24rem;
   left: 0;
@@ -58,8 +55,7 @@
 }
 
 .cardBtn {
-  background-color: var(#fff);
-  border: transparent;
+  background-color: #fff;
   margin-left: 1rem;
   padding: .1875rem .5625rem;
   border-radius: .3125rem;
