@@ -44,7 +44,7 @@
   width: 100%;
   height: 6rem;
   mask-image: linear-gradient(black, transparent);
-  transition: mask-image .3s ease-out;
+  transition: all .3s ease-in-out;
 }
 
 .cardBtnContainer {
@@ -64,7 +64,7 @@
   border: transparent;
   font-family: var(--ff-body);
   font-weight: 600;
-  transition: opacity .3s ease-out, visibility .3s ease-out, display .3s ease-out;
+  transition: all .3s ease-in-out;
 }
 
 .displayNone {

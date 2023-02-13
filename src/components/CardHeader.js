@@ -32,7 +32,9 @@ function CardHeader({ dataFromApi, backgroundColor }) {
         }}
       >
         <button
-          className={`${!showMoreOpen ? styles.cardBtn : styles.displayNone}`}
+          className={`${styles.cardBtn}  ${
+            showMoreOpen ? styles.displayNone : ""
+          }`}
           onClick={handleClick}
         >
           Show more
