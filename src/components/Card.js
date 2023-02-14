@@ -13,8 +13,20 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
     setShowCard(true);
   }, [selectedElement]);
 
+  useEffect(() => {
+    document.body.style.overflow = showCard ? "hidden" : "auto";
+    document.documentElement.scrollTop = 0;
+  }, [showCard]);
+
+  const handleClose = () => {
+    setTimeout(() => {
+      onClose();
+    }, 100);
+    setShowCard(false);
+  };
+
   return (
-    <>
+    <div>
       <div className={styles.cardOverlay}></div>
       <CSSTransition
         nodeRef={nodeRef}
@@ -33,7 +45,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
             backgroundColor: `var(${backgroundColor})`,
           }}
         >
-          <button className={styles.closeBtn} onClick={onClose}>
+          <button className={styles.closeBtn} onClick={handleClose}>
             <span className={styles.closeIcon}>x</span>
           </button>
           <CardHeader
@@ -45,7 +57,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
           <ModeSwitcherMobile />
         </div>
       </CSSTransition>
-    </>
+    </div>
   );
 }
 

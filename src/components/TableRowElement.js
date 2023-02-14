@@ -21,9 +21,7 @@ function TableRowElement({ item, colors }) {
     setSelectedElement(true);
   };
 
-  const handleClose = () => {
-    setSelectedElement(false);
-  };
+  console.log(selectedElement);
 
   return (
     <>
@@ -43,7 +41,7 @@ function TableRowElement({ item, colors }) {
       {selectedElement && (
         <Card
           dataFromApi={item}
-          onClose={handleClose}
+          onClose={() => setSelectedElement(false)}
           backgroundColor={backgroundColor}
           selectedElement={selectedElement}
         />
