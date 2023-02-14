@@ -35,6 +35,8 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
         classNames={{
           enter: styles.cardEnter,
           enterActive: styles.cardEnterActive,
+          extit: styles.cardExtit,
+          exitActive: styles.cardExitActive,
         }}
         unmountOnExitshowSwitcher
       >
@@ -56,7 +58,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
           <CardBody dataFromApi={dataFromApi} />
         </div>
       </CSSTransition>
-      <ModeSwitcherMobile showSwitcher={showCard} />
+      <ModeSwitcherMobile />
     </>
   );
 }

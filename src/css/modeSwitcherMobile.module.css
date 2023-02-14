@@ -4,6 +4,7 @@
   position: fixed;
   top: 38.5rem;
   left: 50%;
+  transform: translate(-50%, 0);
   background-color: var(--reactionsListSwitcherBackgroundColor);
   border-radius: 3.125rem;
   padding: .25rem;
@@ -11,8 +12,8 @@
   z-index: 1;
   display: flex;
   align-items: center;
+  animation: switcherTranslation .5s ease-in-out;
 }
-
 
 .modeSwitcherActive {
   position: absolute;
@@ -54,4 +55,14 @@
 
 .infoModeActive {
   color: var(--mobileSwitcherActiveColor);
+}
+
+@keyframes switcherTranslation {
+  from {
+    transform: translate(-50%, 150%);
+  }
+
+  to {
+    transform: translate(-50%, 0);
+  }
 }
