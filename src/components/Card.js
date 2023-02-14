@@ -26,7 +26,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
   };
 
   return (
-    <div>
+    <>
       <div className={styles.cardOverlay}></div>
       <CSSTransition
         nodeRef={nodeRef}
@@ -36,7 +36,7 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
           enter: styles.cardEnter,
           enterActive: styles.cardEnterActive,
         }}
-        unmountOnExit
+        unmountOnExitshowSwitcher
       >
         <div
           ref={nodeRef}
@@ -54,10 +54,10 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
             selectedElement={selectedElement}
           />
           <CardBody dataFromApi={dataFromApi} />
-          <ModeSwitcherMobile />
         </div>
       </CSSTransition>
-    </div>
+      <ModeSwitcherMobile showSwitcher={showCard} />
+    </>
   );
 }
 
