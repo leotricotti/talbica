@@ -38,7 +38,6 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
           extit: styles.cardExtit,
           exitActive: styles.cardExitActive,
         }}
-        unmountOnExitshowSwitcher
       >
         <div
           ref={nodeRef}
