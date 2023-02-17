@@ -1,7 +1,12 @@
-import SearchBarHelp from "./SearchBarHelp";
 import styles from "../css/searchBar.module.css";
 
 function SearcBar() {
+  const [showHelp, setShowHelp] = useState(false);
+
+  const handleShowClick = () => {
+    setShowHelp(!showHelp);
+  };
+
   return (
     <div className={styles.searchBarContainer}>
       <input
@@ -9,7 +14,7 @@ function SearcBar() {
         type="text"
         placeholder="Type element name"
       />
-      <div className={styles.helpIcon}></div>
+      <button className={styles.helpIcon} onClick={handleShowClick}></button>
     </div>
   );
 }
