@@ -1,3 +1,5 @@
+import { useState } from "react";
+import SearchBarHelp from "./SearchBarHelp";
 import styles from "../css/searchBar.module.css";
 
 function SearcBar() {
@@ -15,6 +17,7 @@ function SearcBar() {
         placeholder="Type element name"
       />
       <button className={styles.helpIcon} onClick={handleShowClick}></button>
+      <SearchBarHelp />
     </div>
   );
 }
