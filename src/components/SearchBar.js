@@ -1,3 +1,4 @@
+import SearchBarHelp from "./SearchBarHelp";
 import styles from "../css/searchBar.module.css";
 
 function SearcBar() {
