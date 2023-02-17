@@ -4,6 +4,12 @@ import styles from "../css/searchBar.module.css";
 
 function SearcBar() {
   const [showHelp, setShowHelp] = useState(false);
+  const [closeHelp, setCloseHelp] = useState(false);
+
+  const handleCloseClick = () => {
+    setCloseHelp(!closeHelp);
+    console.log("Hello!");
+  };
 
   const handleShowClick = () => {
     setShowHelp(!showHelp);
@@ -17,7 +23,7 @@ function SearcBar() {
         placeholder="Type element name"
       />
       <button className={styles.helpIcon} onClick={handleShowClick}></button>
-      {showHelp && <SearchBarHelp />}
+      {showHelp && <SearchBarHelp handleClose={handleCloseClick} />}
     </div>
   );
 }

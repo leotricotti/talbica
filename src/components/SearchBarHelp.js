@@ -1,13 +1,12 @@
-import { useState } from "react";
 import iconClose from "../assets/images/icons/icon-close.svg";
 import styles from "../css/searchBarHelp.module.css";
 
-function SearchBarHelp() {
+function SearchBarHelp({ handleClose }) {
   return (
     <>
       <div className={styles.overlay}></div>
       <div className={styles.helpContainer}>
-        <button className={styles.closeBtn}>
+        <button className={styles.closeBtn} onClick={handleClose}>
           <img src={iconClose} alt="Close button" />
         </button>
         <h3 className={styles.title}>Search by name</h3>
