@@ -17,9 +17,8 @@ function SearcBar() {
         placeholder="Type element name"
       />
       <button className={styles.helpIcon} onClick={handleShowClick}></button>
-      <SearchBarHelp />
+      {showHelp && <SearchBarHelp />}
     </div>
   );
 }
-
 export default SearcBar;
