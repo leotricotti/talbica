@@ -40,3 +40,31 @@
   font-size: .9375rem;
   padding: 1rem 1.250rem;
 }
+
+.animationOpen {
+  animation: modalOpen .3s ease-in-out;
+}
+
+@keyframes modalOpen {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animationClose {
+  animation: modalClose .3s ease-in-out;
+}
+
+@keyframes modalClose {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
