@@ -8,7 +8,7 @@ function SearchBarHelp({ handleClose }) {
   const handleClick = () => {
     setTimeout(() => {
       handleClose();
-    }, 500);
+    }, 300);
     setIsAnimated(false);
   };
 

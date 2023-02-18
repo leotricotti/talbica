@@ -42,7 +42,7 @@
 }
 
 .animationOpen {
-  animation: modalOpen .5s ease-in-out;
+  animation: modalOpen .3s ease-in-out;
 }
 
 @keyframes modalOpen {
@@ -56,7 +56,7 @@
 }
 
 .animationClose {
-  animation: modalClose .5s ease-in-out;
+  animation: modalClose .3s ease-in-out;
 }
 
 @keyframes modalClose {

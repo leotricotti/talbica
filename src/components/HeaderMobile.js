@@ -20,7 +20,7 @@ function HeaderMobile() {
         classNameThree={isOpen ? styles.isActiveThree : ""}
         handleClick={handleClick}
       />
-      {isOpen && <ToggleMenu />}
+      {isOpen && <ToggleMenu isOpen={isOpen} />}
     </div>
   );
 }

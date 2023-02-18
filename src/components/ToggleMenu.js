@@ -1,9 +1,10 @@
 import TableSwitcher from "./TableSwitcher";
 import TableActions from "./TableActions";
+import styles from "../css/toggleMenu.module.css";
 
-function ToggleMenu() {
+function ToggleMenu({ isOpen }) {
   return (
-    <div>
+    <div className={`${true ? styles.openToggle : styles.hiddeToggle}`}>
       <TableSwitcher />
       <TableActions title={"Heatmaps"} />
     </div>
