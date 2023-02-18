@@ -6,12 +6,13 @@
   top: 0;
   left: 0;
   z-index: 0;
+  opacity: .8;
 }
 
 .helpContainer {
   width: 100%;
   height: 100vh;
-  background-color: var(--backgroundColor);
+  background-color: #fff;
   position: absolute;
   top: 3rem;
   left: 0;
@@ -20,6 +21,7 @@
   line-height: 1.7;
   font-size: .9375rem;
   border-radius: 1rem 1rem 0 0;
+  opacity: 1;
 }
 
 .closeBtn {
@@ -42,10 +44,10 @@
 }
 
 .animationOpen {
-  animation: modalOpen .3s ease-in-out;
+  animation: animationOpen .3s ease-in-out;
 }
 
-@keyframes modalOpen {
+@keyframes animationOpen {
   from {
     transform: translateY(100%);
   }
@@ -56,15 +58,31 @@
 }
 
 .animationClose {
-  animation: modalClose .3s ease-in-out;
+  animation: animationClose .3s ease-in-out;
 }
 
-@keyframes modalClose {
+@keyframes animationClose {
   from {
     transform: translateY(0);
   }
 
   to {
     transform: translateY(100%);
+  }
+}
+
+.overlayOpen {
+  animation: overlayOpen .25s ease-in-out;
+}
+
+@keyframes overlayOpen {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: .8;
   }
 }

@@ -14,7 +14,9 @@ function SearchBarHelp({ handleClose }) {
 
   return (
     <>
-      <div className={styles.overlay}></div>
+      <div
+        className={`${styles.overlay} ${isAnimated ? styles.overlayOpen : ""}`}
+      ></div>
       <div
         className={`${styles.helpContainer}
       ${isAnimated ? styles.animationOpen : styles.animationClose}`}
