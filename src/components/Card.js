@@ -12,8 +12,6 @@ function Card({ dataFromApi, backgroundColor, onClose, selectedElement }) {
     document.documentElement.scrollTop = 0;
   }, [showCard]);
 
-  console.log(showCard);
-
   const handleClose = () => {
     setTimeout(() => {
       onClose();

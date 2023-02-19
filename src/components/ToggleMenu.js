@@ -4,17 +4,28 @@ import TableActions from "./TableActions";
 import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu({ isOpen }) {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(null);
 
   useEffect(() => {
-    setOpenMenu(true);
     document.body.style.overflow = openMenu ? "hidden" : "auto";
-  }, [isOpen, openMenu]);
+  }, [openMenu]);
+
+  useEffect(() => {
+    handleMenu(isOpen);
+  }, [isOpen]);
+
+  const handleMenu = (menu) => {
+    setOpenMenu(menu);
+  };
 
   return (
-    <div className={`${openMenu ? styles.openToggle : ""}`}>
-      <TableSwitcher />
-      <TableActions title={"Heatmaps"} />
+    <div className={`${openMenu ? styles.openToggle : styles.closeToggle}`}>
+      {openMenu && (
+        <>
+          <TableSwitcher />
+          <TableActions title={"Heatmaps"} />
+        </>
+      )}
     </div>
   );
 }
