@@ -96,6 +96,10 @@ button {
   border: transparent;
 }
 
+li {
+  list-style: none;
+}
+
 /*
 =================
 Body Styles 

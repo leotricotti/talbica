@@ -8,7 +8,7 @@ import useRandomDelay from "../customHooks/useRandomDelay";
 import Card from "./Card";
 import styles from "../css/tableRowElement.module.css";
 
-function TableRowElement({ item, colors }) {
+function TableRowElement({ item, colors, setShowCard }) {
   const [selectedElement, setSelectedElement] = useState(false);
   const displayMass = useFormatMass(item.atomicMass);
   const displayName = useTruncateName(item.name);
@@ -19,6 +19,12 @@ function TableRowElement({ item, colors }) {
 
   const handleClick = () => {
     setSelectedElement(true);
+    setShowCard(true);
+  };
+
+  const handleCLose = () => {
+    setSelectedElement(false);
+    setShowCard(false);
   };
 
   return (
@@ -39,7 +45,7 @@ function TableRowElement({ item, colors }) {
       {selectedElement && (
         <Card
           dataFromApi={item}
-          onClose={() => setSelectedElement(false)}
+          onClose={handleCLose}
           backgroundColor={backgroundColor}
           selectedElement={selectedElement}
         />

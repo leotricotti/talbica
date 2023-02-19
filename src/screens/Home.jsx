@@ -24,7 +24,7 @@ function Home() {
   return (
     <div className={styles.tableContainer}>
       <HeaderMobile />
-      <SearcBar />
+      <SearcBar dataFromApi={dataFromApi} />
       <Table dataFromApi={dataFromApi} />
     </div>
   );
