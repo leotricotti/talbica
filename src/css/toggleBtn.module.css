@@ -8,6 +8,7 @@
   padding-left: 1.125rem;
   padding-top: 0;
   transition: transform .25s ease-out;
+  z-index: 3;
 }
 
 .toggleButton {

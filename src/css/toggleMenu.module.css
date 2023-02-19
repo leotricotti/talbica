@@ -1,31 +1,15 @@
 .openToggle {
-  animation: openToggle .1s ease-in-out;
+  animation: openToggle .3s ease-in-out;
 }
 
 @keyframes openToggle {
   from {
-    transform: translateY(-10%);
+    transform: translateY(-20%);
     opacity: 0;
-    height: 0;
   }
 
   to {
     transform: translateY(0%);
     opacity: 1;
-    height: auto;
-  }
-}
-
-.hiddeToggle {
-  animation: hiddeToggle 10s ease-in-out;
-}
-
-@keyframes hiddeToggle {
-  from {
-    transform: translateY(0)
-  }
-
-  to {
-    transform: translateY(-100%)
   }
 }

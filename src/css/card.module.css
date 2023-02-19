@@ -8,6 +8,7 @@
   z-index: 1;
   overflow: scroll;
   padding-bottom: 6rem;
+  z-index: 6;
 }
 
 .cardOverlay {
@@ -17,7 +18,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 5;
   opacity: .8;
 }
 
