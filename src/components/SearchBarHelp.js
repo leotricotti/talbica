@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import iconClose from "../assets/images/icons/icon-close.svg";
 import styles from "../css/searchBarHelp.module.css";
 
@@ -11,6 +11,10 @@ function SearchBarHelp({ handleClose }) {
     }, 300);
     setIsAnimated(false);
   };
+
+  useEffect(() => {
+    document.body.style.overflow = isAnimated ? "hidden" : "auto";
+  }, [isAnimated]);
 
   return (
     <>

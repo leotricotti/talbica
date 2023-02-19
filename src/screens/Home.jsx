@@ -3,7 +3,7 @@ import { DataContext } from "../contexts/DataContext";
 import Loader from "../components/Loader";
 import HeaderMobile from "../components/HeaderMobile";
 import Table from "../components/Table";
-import SearcBarSection from "../components/SearchBarSection";
+import SearcBar from "../components/SearchBar";
 import styles from "../css/home.module.css";
 
 function Home() {
@@ -24,7 +24,7 @@ function Home() {
   return (
     <div className={styles.tableContainer}>
       <HeaderMobile />
-      <SearcBarSection />
+      <SearcBar />
       <Table dataFromApi={dataFromApi} />
     </div>
   );
