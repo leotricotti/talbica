@@ -1,5 +1,5 @@
 .openToggle {
-  animation: openToggle .3s ease-in-out;
+  animation: openToggle .15s ease-in-out;
 }
 
 @keyframes openToggle {
