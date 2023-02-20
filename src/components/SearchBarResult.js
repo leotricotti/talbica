@@ -1,18 +1,9 @@
-import { useEffect } from "react";
 import TableRowElement from "./TableRowElement";
 import styles from "../css/searchBarResults.module.css";
 
-function SearchBarResults({ showInfo, colors, showResult }) {
-  // useEffect(() => {
-  //   document.body.style.overflow = showResult ? "hidden" : "auto";
-  // }, [showResult]);
-
+function SearchBarResults({ showInfo, colors }) {
   return (
-    <div
-      className={`${styles.resultsContainer} ${
-        !showResult ? styles.toTop : ""
-      }`}
-    >
+    <div className={styles.resultsContainer}>
       {showInfo.map((item) => {
         return (
           <div key={item.atomicNumber} className={styles.element}>

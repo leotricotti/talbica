@@ -6,24 +6,30 @@ import SearchBarHelp from "./SearchBarHelp";
 import styles from "../css/searchBar.module.css";
 
 function SearcBar({ dataFromApi }) {
-  const { updateOverflow } = useContext(StylesContext).value;
   const colors = tableColors.map((color) => {
     return color;
   });
+  const {
+    updateOverflow,
+    clearInput,
+    searchValue,
+    setSearchValue,
+    showInfo,
+    setShowInfo,
+  } = useContext(StylesContext).value;
   const [showHelp, setShowHelp] = useState(false);
-  const [searchValue, setSearchValue] = useState("");
-  const [showInfo, setShowInfo] = useState([]);
   const [showResult, setShowResult] = useState(false);
 
   const handleShowClick = () => {
     setShowHelp(!showHelp);
-    updateOverflow();
+    clearInput();
   };
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
     setShowResult(true);
     setSearchValue(inputValue);
+    updateOverflow();
     const filteredData = dataFromApi.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
