@@ -11,22 +11,22 @@ function SearcBar({ dataFromApi }) {
   const [showHelp, setShowHelp] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [showInfo, setShowInfo] = useState([]);
+  const [showResult, setShowResult] = useState(false);
 
   const handleShowClick = () => {
     setShowHelp(!showHelp);
   };
 
+  console.log(showResult);
+
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
+    setShowResult(true);
     setSearchValue(inputValue);
     const filteredData = dataFromApi.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
     setShowInfo(filteredData);
-  };
-
-  const clearInput = () => {
-    setSearchValue("");
   };
 
   return (
@@ -49,7 +49,7 @@ function SearcBar({ dataFromApi }) {
           <SearchBarResults
             showInfo={showInfo}
             colors={colors}
-            clearInput={clearInput}
+            showResult={showResult}
           />
         </>
       )}

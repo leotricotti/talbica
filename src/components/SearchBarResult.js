@@ -1,32 +1,27 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import TableRowElement from "./TableRowElement";
 import styles from "../css/searchBarResults.module.css";
 
-function SearchBarResults({ showInfo, colors }) {
-  const [showCard, setShowCard] = useState(false);
-
-  if (showCard) {
-    document.body.style.overflow = "hidden";
-  }
-
-  console.log(showCard);
+function SearchBarResults({ showInfo, colors, showResult }) {
+  useEffect(() => {
+    document.body.style.overflow = showResult ? "hidden" : "auto";
+  }, [showResult]);
 
   return (
     <div
-      className={`${styles.resultsContainer} ${showCard ? styles.toTop : ""}`}
+      className={`${styles.resultsContainer} ${
+        !showResult ? styles.toTop : ""
+      }`}
     >
       {showInfo.map((item) => {
         return (
-          <ul key={item.atomicNumber}>
-            <li key={item.atomicNumber}>
-              <TableRowElement
-                key={item.atomicNumber}
-                item={item}
-                colors={colors}
-                setShowCard={setShowCard}
-              />
-            </li>
-          </ul>
+          <div key={item.atomicNumber} className={styles.element}>
+            <TableRowElement
+              key={item.atomicNumber}
+              item={item}
+              colors={colors}
+            />
+          </div>
         );
       })}
     </div>
