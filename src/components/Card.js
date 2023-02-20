@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { StylesContext } from "../contexts/StylesContext";
 import CardHeader from "./CardHeader";
 import CardBody from "./CarBody";
 import ModeSwitcherMobile from "./ModeSwitcherMobile";
 import styles from "../css/card.module.css";
 
 function Card({ dataFromApi, backgroundColor, onClose }) {
+  const { updateOverflow, clearInput } = useContext(StylesContext).value;
   const [showCard, setShowCard] = useState(true);
 
   const handleClose = () => {
@@ -12,6 +14,8 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
       onClose();
     }, 300);
     setShowCard(false);
+    updateOverflow();
+    clearInput();
   };
 
   return (

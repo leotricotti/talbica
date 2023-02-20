@@ -32,6 +32,7 @@ export const StylesProvider = ({ children }) => {
   const value = {
     updateOverflow,
     updateToTop,
+    toTop,
     clearInput,
     searchValue,
     setSearchValue,

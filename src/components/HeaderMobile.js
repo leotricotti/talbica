@@ -6,12 +6,12 @@ import ToggleMenu from "./ToggleMenu";
 import styles from "../css/headerMobile.module.css";
 
 function HeaderMobile() {
-  const { updateOverflow } = useContext(StylesContext).value;
+  const { clearInput } = useContext(StylesContext).value;
   const [isOpen, setIsopen] = useState(false);
 
   const handleClick = () => {
     setIsopen(!isOpen);
-    updateOverflow();
+    clearInput();
   };
 
   return (
