@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { StylesContext } from "../contexts/StylesContext";
 import MainTitle from "./MainTitle";
 import ToggleBtn from "./ToggleBtn";
 import ToggleMenu from "./ToggleMenu";
 import styles from "../css/headerMobile.module.css";
 
 function HeaderMobile() {
+  const { updateOverflow } = useContext(StylesContext).value;
   const [isOpen, setIsopen] = useState(false);
 
-  function handleClick() {
+  const handleClick = () => {
     setIsopen(!isOpen);
-  }
+    updateOverflow();
+  };
 
   return (
     <div className={styles.headerContainer}>

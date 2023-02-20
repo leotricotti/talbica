@@ -4,7 +4,8 @@
 }
 
 .isActiveOne {
-  transform: translate3d(0, 6px, 0) rotate(45deg);
+  transform-origin: center;
+  transform: translate3d(0, 8px, 0) rotate(45deg);
 }
 
 .isActiveTwo {
@@ -12,5 +13,6 @@
 }
 
 .isActiveThree {
-  transform: translate3d(0, -12px, 0) rotate(-45deg);
+  transform-origin: center;
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
 }
