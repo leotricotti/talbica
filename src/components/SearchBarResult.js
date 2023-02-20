@@ -3,9 +3,9 @@ import TableRowElement from "./TableRowElement";
 import styles from "../css/searchBarResults.module.css";
 
 function SearchBarResults({ showInfo, colors, showResult }) {
-  useEffect(() => {
-    document.body.style.overflow = showResult ? "hidden" : "auto";
-  }, [showResult]);
+  // useEffect(() => {
+  //   document.body.style.overflow = showResult ? "hidden" : "auto";
+  // }, [showResult]);
 
   return (
     <div

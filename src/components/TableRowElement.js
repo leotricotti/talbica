@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { StylesContext } from "../contexts/StylesContext";
 import useFormatMass from "../customHooks/useFormatMass";
 import useTruncateName from "../customHooks/useFormatName";
 import useFilterColor from "../customHooks/useFilterColor";
@@ -9,6 +10,7 @@ import Card from "./Card";
 import styles from "../css/tableRowElement.module.css";
 
 function TableRowElement({ item, colors }) {
+  const { updateOverflow, updateToTop } = useContext(StylesContext).value;
   const [selectedElement, setSelectedElement] = useState(false);
   const displayMass = useFormatMass(item.atomicMass);
   const displayName = useTruncateName(item.name);
@@ -19,10 +21,14 @@ function TableRowElement({ item, colors }) {
 
   const handleClick = () => {
     setSelectedElement(true);
+    updateOverflow();
+    updateToTop();
   };
 
   const handleCLose = () => {
     setSelectedElement(false);
+    updateOverflow();
+    updateToTop();
   };
 
   return (

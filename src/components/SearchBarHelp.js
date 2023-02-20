@@ -12,9 +12,9 @@ function SearchBarHelp({ handleClose }) {
     setIsAnimated(false);
   };
 
-  useEffect(() => {
-    document.body.style.overflow = isAnimated ? "hidden" : "auto";
-  }, [isAnimated]);
+  // useEffect(() => {
+  //   document.body.style.overflow = isAnimated ? "hidden" : "auto";
+  // }, [isAnimated]);
 
   return (
     <>

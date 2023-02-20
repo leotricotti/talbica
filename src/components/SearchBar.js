@@ -17,8 +17,6 @@ function SearcBar({ dataFromApi }) {
     setShowHelp(!showHelp);
   };
 
-  console.log(showResult);
-
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
     setShowResult(true);
