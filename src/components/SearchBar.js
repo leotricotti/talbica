@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { StylesContext } from "../contexts/StylesContext";
 import tableColors from "../assets/data/tableColors";
 import SearchBarResults from "./SearchBarResult";
 import SearchBarHelp from "./SearchBarHelp";
 import styles from "../css/searchBar.module.css";
 
 function SearcBar({ dataFromApi }) {
+  const { updateOverflow } = useContext(StylesContext).value;
   const colors = tableColors.map((color) => {
     return color;
   });
@@ -15,6 +17,7 @@ function SearcBar({ dataFromApi }) {
 
   const handleShowClick = () => {
     setShowHelp(!showHelp);
+    updateOverflow();
   };
 
   const handleInputChange = (e) => {

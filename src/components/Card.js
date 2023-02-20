@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import CardHeader from "./CardHeader";
 import CardBody from "./CarBody";
 import ModeSwitcherMobile from "./ModeSwitcherMobile";
@@ -6,11 +6,6 @@ import styles from "../css/card.module.css";
 
 function Card({ dataFromApi, backgroundColor, onClose }) {
   const [showCard, setShowCard] = useState(true);
-
-  // useEffect(() => {
-  //   document.body.style.overflow = showCard ? "hidden" : "auto";
-  //   document.documentElement.scrollTop = 0;
-  // }, [showCard]);
 
   const handleClose = () => {
     setTimeout(() => {

@@ -6,10 +6,6 @@ import styles from "../css/toggleMenu.module.css";
 function ToggleMenu({ isOpen }) {
   const [openMenu, setOpenMenu] = useState(null);
 
-  // useEffect(() => {
-  //   document.body.style.overflow = openMenu ? "hidden" : "auto";
-  // }, [openMenu]);
-
   useEffect(() => {
     handleMenu(isOpen);
   }, [isOpen]);
