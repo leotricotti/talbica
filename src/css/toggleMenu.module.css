@@ -1,9 +1,7 @@
 .openToggle {
-  width: 100%;
   height: 30vh;
   background-color: var(--backgroundColor);
   animation: openToggle .3s ease-in-out;
-  z-index: 7;
 }
 
 @keyframes openToggle {
@@ -19,7 +17,6 @@
 }
 
 .closeToggle {
-  width: 100%;
   height: 0;
   background-color: var(--backgroundColor);
   animation: closeToggle .3s ease-in-out;
@@ -27,8 +24,8 @@
 
 @keyframes closeToggle {
   from {
-    height: 30vh;
     opacity: 1;
+    height: 30vh;
   }
 
   to {

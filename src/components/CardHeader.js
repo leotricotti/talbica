@@ -20,7 +20,7 @@ function CardHeader({ dataFromApi, backgroundColor }) {
       <span className={styles.atomicMass}>{formatMass}</span>
       <p
         className={`${styles.description} ${
-          !showMoreOpen ? styles.maskText : ""
+          !showMoreOpen ? styles.maskText : styles.maskTextOpen
         }`}
       >
         {history}
