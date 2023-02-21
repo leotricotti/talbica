@@ -7,7 +7,7 @@ import styles from "../css/headerMobile.module.css";
 
 function HeaderMobile() {
   const { updateOverflow, clearInput } = useContext(StylesContext).value;
-  const [isOpen, setIsopen] = useState(false);
+  const [isOpen, setIsopen] = useState(null);
 
   const handleClick = () => {
     setIsopen(!isOpen);
