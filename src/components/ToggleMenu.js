@@ -3,7 +3,7 @@ import TableSwitcher from "./TableSwitcher";
 import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu({ isOpen }) {
-  const [openMenu, setOpenMenu] = useState(null);
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     handleMenu(isOpen);
@@ -14,7 +14,7 @@ function ToggleMenu({ isOpen }) {
   };
 
   return (
-    <div className={`${openMenu ? styles.openToggle : styles.closeToggle}`}>
+    <div className={` ${openMenu ? styles.openToggle : styles.closeToggle}`}>
       {openMenu && (
         <>
           <TableSwitcher />
