@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
+import Spinner from "../components/Spinner";
 import Loader from "../components/Loader";
 import HeaderMobile from "../components/HeaderMobile";
 import Table from "../components/Table";
@@ -18,7 +19,7 @@ function Home() {
   }
 
   if (!dataFromApi) {
-    return <Loader />;
+    return <Spinner />;
   }
 
   return (

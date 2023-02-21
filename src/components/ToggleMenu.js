@@ -14,9 +14,7 @@ function ToggleMenu({ isOpen }) {
   };
 
   return (
-    <div
-      className={`${styles.menuContainer} ${openMenu ? styles.openToggle : ""}`}
-    >
+    <div className={`${openMenu ? styles.openToggle : styles.closeToggle}`}>
       {openMenu && (
         <>
           <TableSwitcher />
