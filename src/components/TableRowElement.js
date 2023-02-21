@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import { hoverColors } from "../assets/data/tableColors";
 import useFormatColorHover from "../customHooks/useFormatColorHover";
@@ -29,8 +29,6 @@ function TableRowElement({ item, colors }) {
 
   console.log(formatedColor, formatedHoverColor);
 
-  useEffect(() => {});
-
   const handleClick = () => {
     setSelectedElement(true);
     updateOverflow();
@@ -54,7 +52,7 @@ function TableRowElement({ item, colors }) {
           backgroundColor: `var(${
             isHovered ? backgroundHoverColor : backgroundColor
           })`,
-          // transitionDelay: `${randomDelay}`,
+          transitionDelay: `${!isHovered ? randomDelay : ""}`,
         }}
       >
         <span className={styles.atomicNumber}>{item.atomicNumber}</span>
