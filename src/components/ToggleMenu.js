@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import TableSwitcher from "./TableSwitcher";
-import TableActions from "./TableActions";
 import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu({ isOpen }) {
@@ -15,11 +14,12 @@ function ToggleMenu({ isOpen }) {
   };
 
   return (
-    <div className={`${openMenu ? styles.openToggle : styles.closeToggle}`}>
+    <div
+      className={`${styles.menuContainer} ${openMenu ? styles.openToggle : ""}`}
+    >
       {openMenu && (
         <>
           <TableSwitcher />
-          <TableActions title={"Heatmaps"} />
         </>
       )}
     </div>

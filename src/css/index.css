@@ -46,11 +46,12 @@ Variables
   --colorTransitionMetalOpen: #88afd8;
   --colorLanthanideOpen: #84c7b5;
   --colorActinideOpen: #609e96;
+  --spinnerColor: #fd6863;
   --textColor: black;
   --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
-  --backgroundColor: rgba(255, 255, 255, 1);
+  --backgroundColor: rgba(255, 255, 255);
   --overlayBackgroundColor: #000;
-  --smartFieldBackgroundColor: #F7F7F7;
+  --inputBackgroundColor: #F7F7F7;
   --mobileSwitcherColor: #6f6f6f;
   --mobileSwitcherActiveColor: white;
   --tableToolsBackgroundColor: #F4F4F4;

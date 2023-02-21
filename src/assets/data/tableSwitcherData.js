@@ -6,7 +6,7 @@ const tableSwitcherData = [
   },
   {
     id: 2,
-    name: "Ruby",
+    name: "Photos",
     url: require("../images/icons/icon-ruby.png"),
   },
 ];
