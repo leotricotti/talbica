@@ -10,8 +10,6 @@ function TableRow({ dataFromApi }) {
   });
   const filteredData = useFilterData(dataFromApi);
 
-  console.log(filteredData);
-
   return (
     <div className={styles.tableRowContainer}>
       {filteredData.map(({ type, period, groupBlock, items }) => (
