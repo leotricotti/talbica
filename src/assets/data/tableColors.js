@@ -1,4 +1,4 @@
-const tableColors = [
+export const tableColors = [
   "--colorAlkaliMetal",
   "--colorNobleGas",
   "--colorAlkalineEarthMetal",
@@ -12,4 +12,16 @@ const tableColors = [
   "--colorActinoid",
 ];
 
-export default tableColors;
+export const hoverColors = [
+  "--colorAlkaliMetalHover",
+  "--colorNobleGasHover",
+  "--colorAlkalineEarthMetalHover",
+  "--colorMetalloidHover",
+  "--colorNonmetalHover",
+  "--colorHalogenHover",
+  "--colorMetal",
+  "--colorPost-transitionMetalHover",
+  "--colorTransitionMetalHover",
+  "--colorLanthanoidHover",
+  "--colorActinoidHover",
+];

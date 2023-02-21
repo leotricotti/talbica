@@ -1,7 +1,7 @@
 import useFilterData from "../customHooks/useFilterData";
 import TableRowElement from "./TableRowElement";
 import TableRowTitle from "./TableRowTitle";
-import tableColors from "../assets/data/tableColors";
+import { tableColors } from "../assets/data/tableColors";
 import styles from "../css/tableRow.module.css";
 
 function TableRow({ dataFromApi }) {

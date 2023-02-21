@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
-import tableColors from "../assets/data/tableColors";
+import { tableColors } from "../assets/data/tableColors";
 import SearchBarResults from "./SearchBarResult";
 import SearchBarHelp from "./SearchBarHelp";
 import styles from "../css/searchBar.module.css";
