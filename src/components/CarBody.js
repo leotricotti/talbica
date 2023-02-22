@@ -3,6 +3,16 @@ import styles from "../css/cardBody.module.css";
 function CardBody({ dataFromApi }) {
   const item = dataFromApi;
 
+  const capitalizeChemicalCategory = item.groupBlock.replace(
+    /(^\w{1})|(\s+\w{1})/g,
+    (letter) => letter.toUpperCase()
+  );
+
+  const wordRemoved = capitalizeChemicalCategory.replace(
+    /Earth | Post-transition/g,
+    ""
+  );
+
   return (
     <div key={item.atomicNumber} className={styles.carBodyContainer}>
       <h3 className={styles.cardBodyTitle}>Summary</h3>
@@ -16,19 +26,17 @@ function CardBody({ dataFromApi }) {
       </div>
       <div className={styles.propertyItems}>
         <span className={styles.propertyTitle}>Chemical category</span>
-        <span className={styles.propertyValue}>{item.groupBlock}</span>
-      </div>
-      <div className={styles.propertyItems}>
-        <span className={styles.propertyTitle}>Atomic weight</span>
-        <span className={styles.propertyValue}>{item.atomicWeight}</span>
-        <span className={styles.propertySymbol}>
-          m <sub>a</sub>
-        </span>
+        <span className={styles.propertyValue}>{wordRemoved}</span>
       </div>
       <div className={styles.propertyItems}>
         <span className={styles.propertyTitle}>Atomic number</span>
         <span className={styles.propertySymbol}>Z</span>
         <span className={styles.propertyValue}>{item.atomicNumber}</span>
+      </div>
+      <div className={styles.propertyItems}>
+        <span className={styles.propertyTitle}>Boiling point</span>
+        <span className={styles.propertyValue}>{item.boilingPoint}</span>
+        <span className={styles.propertySymbol}>F °</span>
       </div>
       <div className={styles.propertyItems}>
         <span className={styles.propertyTitle}>Period</span>

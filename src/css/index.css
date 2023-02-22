@@ -41,7 +41,11 @@ Variables
   --backgroundColor: rgba(255, 255, 255);
   --overlayBackgroundColor: #000;
   --inputFieldBackgroundColor: #F7F7F7;
-  --mobileSwitcherActiveColor: white;
+  --tableSwitcherActiveColor: white;
+  --tableSwitcherBackgroundColor: #F4F4F4;
+  --tableSwitcherHoverColor: #EEEEEE;
+  --tableSwitcherActiveColor: #E3E3E3;
+  --tableSwitcherTextColor: black;
 }
 
 /*

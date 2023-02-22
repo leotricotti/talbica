@@ -13,7 +13,7 @@
   width: 5rem;
   height: 6.25rem;
   border: transparent;
-  background-color: var(--tableToolsBackgroundColor);
+  background-color: var(--tableSwitcherBackgroundColor);
 }
 
 .tableSwitcher:first-child {
@@ -25,14 +25,14 @@
 }
 
 .isActive {
-  background-color: var(--tableToolsActiveColor);
+  background-color: var(--tableSwitcherActiveColor);
 }
 
 .tableSwitcherButton {
   width: 5rem;
   height: 6.25rem;
   border: transparent;
-  background-color: var(--tableToolsBackgroundColor);
+  background-color: var(--tableswitcherBackgroundColor);
 }
 
 .tableSwitcherIcon {
@@ -44,5 +44,5 @@
   font-size: .8125rem;
   text-align: center;
   font-weight: 500;
-  color: var(--tableToolsTextColor);
+  color: var(--tableSwitcherTextColor);
 }

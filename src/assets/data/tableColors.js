@@ -19,7 +19,7 @@ export const hoverColors = [
   "--colorMetalloidHover",
   "--colorNonmetalHover",
   "--colorHalogenHover",
-  "--colorMetal",
+  "--colorMetalHover",
   "--colorPost-transitionMetalHover",
   "--colorTransitionMetalHover",
   "--colorLanthanoidHover",

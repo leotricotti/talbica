@@ -27,8 +27,6 @@ function TableRowElement({ item, colors }) {
   const formatedHoverColor = useFormatColorHover(item.groupBlock);
   const backgroundHoverColor = useFilterColor(formatedHoverColor, hoverColor);
 
-  console.log(formatedColor, formatedHoverColor);
-
   const handleClick = () => {
     setSelectedElement(true);
     updateOverflow();
@@ -40,6 +38,8 @@ function TableRowElement({ item, colors }) {
     updateOverflow();
     updateToTop();
   };
+
+  console.log(hoverColor);
 
   return (
     <>
