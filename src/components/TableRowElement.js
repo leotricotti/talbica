@@ -39,7 +39,7 @@ function TableRowElement({ item, colors }) {
     updateToTop();
   };
 
-  console.log(hoverColor);
+  console.log(backgroundHoverColor);
 
   return (
     <>

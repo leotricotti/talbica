@@ -20,7 +20,7 @@
 
 .propertyValue {
   position: absolute;
-  top: .52rem;
+  font-size: .88rem;
   left: 60%;
 }
 

@@ -8,11 +8,6 @@ function CardBody({ dataFromApi }) {
     (letter) => letter.toUpperCase()
   );
 
-  const wordRemoved = capitalizeChemicalCategory.replace(
-    /Earth | Post-transition/g,
-    ""
-  );
-
   return (
     <div key={item.atomicNumber} className={styles.carBodyContainer}>
       <h3 className={styles.cardBodyTitle}>Summary</h3>
@@ -26,7 +21,9 @@ function CardBody({ dataFromApi }) {
       </div>
       <div className={styles.propertyItems}>
         <span className={styles.propertyTitle}>Chemical category</span>
-        <span className={styles.propertyValue}>{wordRemoved}</span>
+        <span className={styles.propertyValue}>
+          {capitalizeChemicalCategory}
+        </span>
       </div>
       <div className={styles.propertyItems}>
         <span className={styles.propertyTitle}>Atomic number</span>

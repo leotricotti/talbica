@@ -20,7 +20,7 @@ Variables
   --colorNonmetal: hsl(78, 59%, 55%);
   --colorHalogen: hsl(0, 100%, 79%);
   --colorMetal: hsl(216, 67%, 68%);
-  --colorPost-transitionMetal: hsl(216, 67%, 68%);
+  --colorPost-transitionMetal: hwb(216 47% 11%);
   --colorTransitionMetal: hsl(209, 59%, 75%);
   --colorLanthanoid: hsl(164, 46%, 75%);
   --colorActinoid: hsl(172, 27%, 60%);
