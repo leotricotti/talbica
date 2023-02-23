@@ -5,9 +5,18 @@ const PhotoThemeContext = createContext();
 function PhotoThemeprovider({ children }) {
   const [photoTheme, setPhotoTheme] = useState([]);
 
+  const handlePhotoTheme = (id) => {
+    if (id === 2) {
+      setPhotoTheme(true);
+    } else {
+      setPhotoTheme(false);
+    }
+  };
+
   const value = {
     photoTheme,
     setPhotoTheme,
+    handlePhotoTheme,
   };
 
   return (

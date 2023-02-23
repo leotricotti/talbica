@@ -39,8 +39,6 @@ function TableRowElement({ item, colors }) {
     updateToTop();
   };
 
-  console.log(backgroundHoverColor);
-
   return (
     <>
       <button

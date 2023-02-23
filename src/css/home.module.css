@@ -7,3 +7,10 @@
   border-radius: 0;
   padding: .625rem;
 }
+
+.photoModeActive {
+  background-image: url('../assets/images/background/static-nebula.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

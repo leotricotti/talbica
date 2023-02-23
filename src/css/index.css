@@ -35,17 +35,16 @@ Variables
   --colorTransitionMetalHover: hsl(209, 59%, 75%, 0.7);
   --colorLanthanoidHover: hsl(164, 46%, 75%, 0.7);
   --colorActinoidHover: hsl(172, 27%, 60%, 0.7);
-  --spinnerColor: #fd6863;
-  --textColor: black;
+  --spinnerColor: hsl(2, 97%, 69%);
+  --textColor: hsl(0, 0%, 0%);
   --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
   --backgroundColor: rgba(255, 255, 255);
-  --overlayBackgroundColor: #000;
-  --inputFieldBackgroundColor: #F7F7F7;
-  --tableSwitcherActiveColor: white;
-  --tableSwitcherBackgroundColor: #F4F4F4;
-  --tableSwitcherHoverColor: #EEEEEE;
-  --tableSwitcherActiveColor: #E3E3E3;
-  --tableSwitcherTextColor: black;
+  --overlayBackgroundColor: hsl(0, 0%, 0%);
+  --inputFieldBackgroundColor: hsl(0, 0%, 97%);
+  --tableSwitcherActiveColor: hsl(0, 0%, 100%);
+  --tableSwitcherBackgroundColor: hsl(0, 0%, 96%);
+  --tableSwitcherHoverColor: hsl(0, 0%, 93%);
+  --tableSwitcherActiveColor: hsl(0, 0%, 89%);
 }
 
 /*

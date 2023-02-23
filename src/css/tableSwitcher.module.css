@@ -44,5 +44,5 @@
   font-size: .8125rem;
   text-align: center;
   font-weight: 500;
-  color: var(--tableSwitcherTextColor);
+  color: var(--textColor);
 }
