@@ -1,15 +1,15 @@
 import { useState, useContext } from "react";
-import { PhotoThemeContext } from "../contexts/PhotoThemeContext";
+import { PhotoModeContext } from "../contexts/PhotoModeContext";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
 import styles from "../css/tableSwitcher.module.css";
 
 function TableSwitcher() {
-  const { handlePhotoTheme } = useContext(PhotoThemeContext).value;
+  const { handlePhotoMode } = useContext(PhotoModeContext).value;
   const [activated, setActivated] = useState(tableSwitcherData[0].id);
 
   const handleClick = (id) => {
     setActivated(id);
-    handlePhotoTheme(id);
+    handlePhotoMode(id);
   };
 
   return (

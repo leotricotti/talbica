@@ -46,3 +46,10 @@
   font-weight: 500;
   color: var(--textColor);
 }
+
+body.photoModeActive {
+  background-image: url('../assets/images/background/static-nebula.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}

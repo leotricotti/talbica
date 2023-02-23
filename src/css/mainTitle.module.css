@@ -1,12 +1,13 @@
 .mainTitle {
   width: 100%;
   height: auto;
-  background-color: #fff;
   position: relative;
+  top: .625rem;
   text-align: left;
   font-weight: 800;
   font-size: 1.75rem;
   color: var(--textColor);
   line-height: 1;
+  margin-bottom: 1.5rem;
   z-index: 2;
 }

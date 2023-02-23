@@ -1,6 +1,5 @@
 .openToggle {
   height: 30vh;
-  background-color: var(--backgroundColor);
   animation: openToggle .3s ease-in-out;
 }
 
@@ -18,7 +17,6 @@
 
 .closeToggle {
   height: 0;
-  background-color: var(--backgroundColor);
   animation: closeToggle .3s ease-in-out;
 }
 
