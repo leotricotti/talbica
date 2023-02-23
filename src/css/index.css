@@ -45,6 +45,10 @@ Variables
   --tableSwitcherBackgroundColor: hsl(0, 0%, 96%);
   --tableSwitcherHoverColor: hsl(0, 0%, 93%);
   --tableSwitcherActiveColor: hsl(0, 0%, 89%);
+  --modeSwitcherBackgroundColor: rgba(220, 220, 220, 0.6);
+  --modeSwitcherActiveBackgroundColor: rgba(0, 0, 0, 0.22);
+  --buttonColor: hsl(0, 0%, 100%);
+  --modeSwitcherActiveColor: hsl(0, 0%, 100%);
 }
 
 /*
@@ -78,5 +82,4 @@ Body Styles
 
 body {
   font-family: var(--ff-body);
-  background-color: var(--backgroundColor);
 }

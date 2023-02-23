@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import CardHeader from "./CardHeader";
 import CardBody from "./CarBody";
+import ModeSwitcherMobile from "./ModeSwitcherMobile";
 import styles from "../css/card.module.css";
 
 function Card({ dataFromApi, backgroundColor, onClose }) {
@@ -40,6 +41,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
           backgroundColor={backgroundColor}
         />
         <CardBody dataFromApi={dataFromApi} />
+        <ModeSwitcherMobile />
       </div>
     </>
   );

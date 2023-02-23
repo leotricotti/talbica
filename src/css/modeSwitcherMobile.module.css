@@ -5,7 +5,7 @@
   top: 38.5rem;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: var(--reactionsListSwitcherBackgroundColor);
+  background-color: var(--modeSwitcherBackgroundColor);
   border-radius: 3.125rem;
   padding: .25rem;
   backdrop-filter: blur(10px);
@@ -19,7 +19,7 @@
   position: absolute;
   display: block;
   content: '';
-  background-color: var(--reactionsListSwitcherSelectedColor);
+  background-color: var(--modeSwitcherActiveBackgroundColor);
   width: calc(50% - .25rem);
   height: 2rem;
   border-radius: 2.5rem;
@@ -50,11 +50,11 @@
 }
 
 .photoModeActive {
-  color: var(--mobileSwitcherActiveColor);
+  color: var(--modeSwitcherActiveColor);
 }
 
 .infoModeActive {
-  color: var(--mobileSwitcherActiveColor);
+  color: var(--modeSwitcherActiveColor);
 }
 
 @keyframes switcherTranslation {
