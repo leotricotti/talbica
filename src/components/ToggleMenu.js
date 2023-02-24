@@ -1,4 +1,4 @@
-import TableSwitcher from "./TableSwitcher";
+import ModeSwitcher from "./ModeSwitcher";
 import styles from "../css/toggleMenu.module.css";
 
 function ToggleMenu({ isOpen }) {
@@ -10,7 +10,7 @@ function ToggleMenu({ isOpen }) {
     >
       {isOpen && (
         <>
-          <TableSwitcher />
+          <ModeSwitcher />
         </>
       )}
     </div>

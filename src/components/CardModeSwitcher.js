@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "../css/modeSwitcherMobile.module.css";
+import styles from "../css/cardModeSwitcher.module.css";
 
-function ModeSwitcherMobile() {
+function CardModeSwitcher() {
   const [mode, setMode] = useState("info");
 
   const handleClick = (newMode) => {
@@ -35,4 +35,4 @@ function ModeSwitcherMobile() {
   );
 }
 
-export default ModeSwitcherMobile;
+export default CardModeSwitcher;

@@ -3,7 +3,7 @@ import { PhotoModeContext } from "../contexts/PhotoModeContext";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
 import styles from "../css/tableSwitcher.module.css";
 
-function TableSwitcher() {
+function ModeSwitcher() {
   const { handlePhotoMode } = useContext(PhotoModeContext).value;
   const [activated, setActivated] = useState(tableSwitcherData[0].id);
 
@@ -36,4 +36,4 @@ function TableSwitcher() {
   );
 }
 
-export default TableSwitcher;
+export default ModeSwitcher;
