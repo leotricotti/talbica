@@ -1,4 +1,4 @@
-.tableSwitcherContainer {
+.modeSwitcherContainer {
   width: 100%;
   height: 100%;
   display: flex;
@@ -6,45 +6,57 @@
   padding-top: 4rem;
 }
 
-.tableSwitcher {
+.modeSwitcher {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 5rem;
   height: 6.25rem;
   border: transparent;
-  background-color: var(--tableSwitcherBackgroundColor);
+  background-color: var(--modeSwitcherColorModeBackgroundColor);
 }
 
-.tableSwitcher:first-child {
+.modeSwitcher:first-child {
   border-radius: .5rem 0 0 .5rem;
 }
 
-.tableSwitcher:last-child {
+.modeSwitcher:last-child {
   border-radius: 0 .5rem .5rem 0;
 }
 
-.isActive {
-  background-color: var(--tableSwitcherActiveColor);
+.isActiveColorMode:first-child {
+  background-color: var(--modeSwitcherColorModeActiveBackground);
 }
 
-.tableSwitcherButton {
+.isActivePhotoMode:first-child {
+  background-color: var(--modeSwitcherPhotoModeBackgroundColor);
+}
+
+.isActivePhotoMode:last-child {
+  background-color: var(--modeSwitcherPhotoModeActiveBackgroundColor);
+}
+
+.modeSwitcherButton {
   width: 5rem;
   height: 6.25rem;
   border: transparent;
-  background-color: var(--tableswitcherBackgroundColor);
+  background-color: transparent;
 }
 
-.tableSwitcherIcon {
+.modeSwitcherIcon {
   width: 32px;
   height: 32px;
 }
 
-.tableSwitcherMenuTitle {
+.modeSwitcherMenuTitle {
   font-size: .8125rem;
   text-align: center;
   font-weight: 500;
   color: var(--textColor);
+}
+
+.photoModeMenuTitle {
+  color: var(--modeSwitcherPhotoModeTextColor);
 }
 
 body.photoModeActive {

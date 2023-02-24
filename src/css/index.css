@@ -36,20 +36,17 @@ Variables
   --colorLanthanoidHover: hsl(164, 46%, 75%, 0.7);
   --colorActinoidHover: hsl(172, 27%, 60%, 0.7);
   --spinnerColor: hsl(2, 97%, 69%);
-  --textColor: hsl(0, 0%, 0%);
-  --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
   --backgroundColor: rgba(255, 255, 255);
   --overlayBackgroundColor: hsl(0, 0%, 0%);
   --inputFieldBackgroundColor: hsl(0, 0%, 97%);
-  --tableSwitcherActiveColor: hsl(0, 0%, 100%);
-  --tableSwitcherBackgroundColor: hsl(0, 0%, 96%);
-  --tableSwitcherHoverColor: hsl(0, 0%, 93%);
-  --tableSwitcherActiveColor: hsl(0, 0%, 89%);
-  --modeSwitcherBackgroundColor: rgba(220, 220, 220, 0.6);
-  --modeSwitcherActiveBackgroundColor: rgba(0, 0, 0, 0.22);
-  --buttonColor: hsl(0, 0%, 100%);
-  --modeSwitcherActiveColor: hsl(0, 0%, 100%);
+  --modeSwitcherColorModeActiveBackground: hsl(0, 0%, 89%);
+  --modeSwitcherColorModeBackgroundColor: hsl(0, 0%, 96%);
+  --modeSwitcherPhotoModeBackgroundColor: hsla(0, 0%, 100%, 0.08);
+  --modeSwitcherPhotoModeActiveBackgroundColor: hsla(0, 0%, 58%, 0.281);
+  --modeSwitcherPhotoModeTextColor: rgba(255, 255, 255, 0.75);
   --mainTitleActiveColor: hsl(0, 0%, 100%);
+  --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
+  --textColor: hsl(0, 0%, 0%);
 }
 
 /*
