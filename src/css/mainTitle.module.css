@@ -11,3 +11,7 @@
   margin-bottom: 1.5rem;
   z-index: 2;
 }
+
+.photoModeActive {
+  color: var(--mainTitleActiveColor);
+}

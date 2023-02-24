@@ -3,7 +3,7 @@ import { useState, createContext } from "react";
 const PhotoModeContext = createContext();
 
 function PhotoModeProvider({ children }) {
-  const [photoMode, setPhotoMode] = useState([]);
+  const [photoMode, setPhotoMode] = useState(false);
 
   const handlePhotoMode = (id) => {
     if (id === 2) {
