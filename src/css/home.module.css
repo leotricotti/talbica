@@ -3,6 +3,7 @@
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 .625rem;
+  animation: colors .5s ease-in-out;
 }
 
 .photoModeActive {
@@ -12,4 +13,26 @@
   background-repeat: no-repeat;
   background-attachment: fixed, local;
   background-size: 350%;
+  animation: nebula .5s ease-in-out;
+}
+
+@keyframes nebula {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+@keyframes colors {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }

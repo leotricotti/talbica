@@ -45,6 +45,7 @@ function SearcBar({ dataFromApi }) {
         value={searchValue}
         onChange={handleInputChange}
       />
+      <div className={styles.caret}></div>
       <button className={styles.helpIcon} onClick={handleShowClick}></button>
       {showHelp && (
         <div className={styles.helpContainer}>

@@ -1,13 +1,23 @@
-import { useContext } from "react";
-import { PhotoModeContext } from "../contexts/PhotoModeContext";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
 import styles from "../css/modeSwitcher.module.css";
 
 function ModeSwitcher() {
-  const { handlePhotoMode, photoMode } = useContext(PhotoModeContext).value;
+  const colorMode = () => {
+    document.body.classList.add("colorMode");
+    document.body.classList.remove("photoMode");
+  };
+
+  const photoMode = () => {
+    document.body.classList.add("photoMode");
+    document.body.classList.remove("colorMode");
+  };
 
   const handleClick = (id) => {
-    handlePhotoMode(id);
+    if (id === 1) {
+      colorMode();
+    } else {
+      photoMode();
+    }
   };
 
   return (
@@ -15,9 +25,7 @@ function ModeSwitcher() {
       {tableSwitcherData.map((item) => (
         <button
           key={item.id}
-          className={` ${styles.modeSwitcher} ${
-            !photoMode ? styles.isActiveColorMode : styles.isActivePhotoMode
-          }`}
+          className={styles.modeSwitcher}
           onClick={() => handleClick(item.id)}
         >
           <div>
