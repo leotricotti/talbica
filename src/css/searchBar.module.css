@@ -27,31 +27,24 @@
   font-size: 1.3rem;
   border: transparent;
   border-radius: .8rem;
-  padding: 1.1rem 1rem;
+  padding: 1rem 1rem;
   caret-color: transparent;
   background-color: var(--inputFieldBackgroundColor);
 }
 
 .searchBar::placeholder {
-  font-size: 1.125rem;
-  opacity: .4;
+  font-size: 1.25rem;
+  opacity: .7;
 }
 
 .helpIcon {
+  background-image: var(--seacrhBarHelpIcon);
   background-repeat: no-repeat;
   background-position: center;
   width: 2rem;
   height: 2rem;
   cursor: pointer;
   opacity: .4;
-}
-
-.helpIconWhite {
-  background-image: url('../assets/images/icons/help-white.svg');
-}
-
-.helpIconBlack {
-  background-image: url('../assets/images/icons/help-black.svg');
 }
 
 @keyframes caretActive {

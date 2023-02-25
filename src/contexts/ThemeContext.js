@@ -3,15 +3,22 @@ import { useState, createContext } from "react";
 const ThemeContext = createContext();
 
 function ThemeProvider({ children }) {
-  const [photoMode, setPhotoMode] = useState(false);
-  const [colorMode, setColorMode] = useState(false);
+  const [themeHandler, setThemeHandler] = useState(false);
+
+  const handleThemeChange = (id) => {
+    if (id === 2) {
+      setThemeHandler(true);
+    } else {
+      setThemeHandler(false);
+    }
+  };
 
   const value = {
-    photoMode,
-    setPhotoMode,
-    colorMode,
-    setColorMode,
+    themeHandler,
+    handleThemeChange,
   };
+
+  console.log(themeHandler);
 
   return (
     <ThemeContext.Provider value={{ value }}>{children}</ThemeContext.Provider>

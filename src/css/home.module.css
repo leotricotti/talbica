@@ -18,12 +18,14 @@
 
 .colorMode {
   --backgroundColor: rgba(255, 255, 255);
-  --inputFieldTextColor: rgba(255, 255, 255, 0.75);
+  --inputFieldTextColor: hsl(0, 0%, 0%);
+  --inputFieldBackgroundColor: hsl(0, 0%, 95%);
   --textColor: hsl(0, 0%, 0%);
-  --inputFieldBackgroundColor: hsl(0, 0%, 97%);
-  --modeSwitcherActiveBackground: hsl(0, 0%, 89%);
-  --modeSwitcherColorModeBackgroundColor: hsl(0, 0%, 96%);
+  --modeSwitcherActiveBackgroundColor: hsl(0, 0%, 89%);
+  --modeSwitcherBackgroundColor: hsl(0, 0%, 96%);
+  --modeSwitcherTextColor: hsl(0, 0%, 0%);
   --mainTitleColor: hsl(0, 0%, 0%, .6);
+  --seacrhBarHelpIcon: url('../assets/images/icons/help-black.svg');
 }
 
 .photoMode {
@@ -34,6 +36,7 @@
   --mainTitleColor: hsl(0, 0%, 100%);
   --textColor: hsl(0, 0%, 100%);
   --caretColor: hsl(0, 0%, 46%);
+  --seacrhBarHelpIcon: url('../assets/images/icons/help-white.svg');
 }
 
 .backgroundImage {

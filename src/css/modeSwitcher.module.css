@@ -13,7 +13,7 @@
   width: 5rem;
   height: 6.25rem;
   border: transparent;
-  background-color: var(--modeSwitcherColorModeBackgroundColor);
+  background-color: var(--modeSwitcherBackgroundColor);
 }
 
 .modeSwitcher:first-child {
@@ -24,16 +24,8 @@
   border-radius: 0 .5rem .5rem 0;
 }
 
-.isActiveColorMode:first-child {
-  background-color: var(--modeSwitcherColorModeActiveBackground);
-}
-
-.isActivePhotoMode:first-child {
-  background-color: var(--modeSwitcherPhotoModeBackgroundColor);
-}
-
-.isActivePhotoMode:last-child {
-  background-color: var(--modeSwitcherPhotoModeActiveBackgroundColor);
+.modeSwitcherActive {
+  background-color: var(--modeSwitcherActiveBackgroundColor);
 }
 
 .modeSwitcherButton {
@@ -52,16 +44,5 @@
   font-size: .8125rem;
   text-align: center;
   font-weight: 500;
-  color: var(--textColor);
-}
-
-.photoModeMenuTitle {
-  color: var(--modeSwitcherPhotoModeTextColor);
-}
-
-body.photoModeActive {
-  background-image: url('../assets/images/background/static-nebula.jpg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  color: var(--modeSwitcherTextColor);
 }
