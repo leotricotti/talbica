@@ -45,7 +45,7 @@
 }
 
 .animationOpen {
-  animation: animationOpen .3s ease-in-out;
+  animation: animationOpen .5s ease-in-out;
 }
 
 @keyframes animationOpen {
@@ -73,17 +73,33 @@
 }
 
 .overlayOpen {
-  animation: overlayOpen .25s ease-in-out;
+  animation: overlayOpen .4s ease-in-out;
 }
 
 @keyframes overlayOpen {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: .8;
+  }
+}
+
+.overlayClose {
+  animation: overlayOpen .4s ease-in-out;
+}
+
+@keyframes overlayClose {
   from {
     transform: translateY(0);
     opacity: 0;
   }
 
   to {
-    transform: translateY(0);
+    transform: translateY(100%);
     opacity: .8;
   }
 }

@@ -1,32 +1,37 @@
 .openToggle {
-  height: 30vh;
-  animation: openToggle .3s ease-in-out;
+  height: 11rem;
+  animation: openToggle .5s ease-in-out;
 }
 
 @keyframes openToggle {
-  from {
+  0% {
     height: 0;
     opacity: 0;
   }
 
-  to {
-    height: 30vh;
+  75% {
+    height: 11rem;
+    opacity: 0;
+  }
+
+  100% {
+    height: 11rem;
     opacity: 1;
   }
 }
 
 .closeToggle {
   height: 0;
-  animation: closeToggle .3s ease-in-out;
+  animation: closeToggle .5s ease-in-out;
 }
 
 @keyframes closeToggle {
-  from {
+  0% {
+    height: 11rem;
     opacity: 1;
-    height: 30vh;
   }
 
-  to {
+  100% {
     height: 0;
     opacity: 0;
   }

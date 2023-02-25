@@ -23,13 +23,13 @@ function SearcBar({ dataFromApi }) {
   const handleShowClick = () => {
     setShowHelp(!showHelp);
     clearInput();
+    updateOverflow();
   };
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
     setShowResult(true);
     setSearchValue(inputValue);
-    updateOverflow();
     const filteredData = dataFromApi.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
@@ -49,7 +49,10 @@ function SearcBar({ dataFromApi }) {
       <button className={styles.helpIcon} onClick={handleShowClick}></button>
       {showHelp && (
         <div className={styles.helpContainer}>
-          <SearchBarHelp handleClose={handleShowClick} showHelp={showHelp} />
+          <SearchBarHelp
+            handleShowClick={handleShowClick}
+            showHelp={showHelp}
+          />
         </div>
       )}
       {showInfo.length > 0 && (

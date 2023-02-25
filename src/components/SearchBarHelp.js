@@ -2,12 +2,12 @@ import { useState } from "react";
 import iconClose from "../assets/images/icons/icon-close.svg";
 import styles from "../css/searchBarHelp.module.css";
 
-function SearchBarHelp({ handleClose }) {
+function SearchBarHelp({ handleShowClick }) {
   const [isAnimated, setIsAnimated] = useState(true);
 
   const handleClick = () => {
     setTimeout(() => {
-      handleClose();
+      handleShowClick();
     }, 300);
     setIsAnimated(false);
   };
@@ -15,7 +15,9 @@ function SearchBarHelp({ handleClose }) {
   return (
     <>
       <div
-        className={`${styles.overlay} ${isAnimated ? styles.overlayOpen : ""}`}
+        className={`${styles.overlay} ${
+          isAnimated ? styles.overlayOpen : styles.overlayClose
+        }`}
       ></div>
       <div
         className={`${styles.helpContainer}

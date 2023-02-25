@@ -4,7 +4,6 @@ export const StylesContext = createContext();
 
 export const StylesProvider = ({ children }) => {
   const [overflow, setOverflow] = useState(false);
-  const [toTop, setToTop] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [showInfo, setShowInfo] = useState([]);
 
@@ -12,16 +11,8 @@ export const StylesProvider = ({ children }) => {
     document.body.style.overflow = overflow ? "hidden" : "auto";
   }, [overflow]);
 
-  useEffect(() => {
-    document.documentElement.scrollTop = 0;
-  }, [toTop]);
-
   const updateOverflow = () => {
     setOverflow(!overflow);
-  };
-
-  const updateToTop = () => {
-    setToTop(!toTop);
   };
 
   const clearInput = () => {
@@ -31,8 +22,6 @@ export const StylesProvider = ({ children }) => {
 
   const value = {
     updateOverflow,
-    updateToTop,
-    toTop,
     clearInput,
     searchValue,
     setSearchValue,

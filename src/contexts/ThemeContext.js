@@ -18,8 +18,6 @@ function ThemeProvider({ children }) {
     handleThemeChange,
   };
 
-  console.log(themeHandler);
-
   return (
     <ThemeContext.Provider value={{ value }}>{children}</ThemeContext.Provider>
   );
