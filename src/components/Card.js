@@ -22,7 +22,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
     <>
       <div
         className={`${styles.cardOverlay} ${
-          showCard ? styles.overlayOpen : ""
+          showCard ? styles.overlayOpen : styles.overlayClose
         }`}
       ></div>
       <div

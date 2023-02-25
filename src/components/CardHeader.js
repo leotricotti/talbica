@@ -8,6 +8,7 @@ function CardHeader({ dataFromApi, backgroundColor }) {
   const item = dataFromApi;
   const history = useCutString(item.history);
   const formatMass = useFormatMass(item.atomicMass);
+
   const handleClick = () => {
     setShowMoreOpen(true);
   };
@@ -32,6 +33,7 @@ function CardHeader({ dataFromApi, backgroundColor }) {
         }}
       >
         <button
+          id="button"
           className={`${styles.cardBtn}  ${
             showMoreOpen ? styles.displayNone : ""
           }`}

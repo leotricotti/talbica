@@ -72,12 +72,12 @@
 
 .displayNone {
   display: none;
-  animation: btnClose .1s ease-in-out;
+  animation: btnClose .3s ease-in-out;
 }
 
 @keyframes btnClose {
   from {
-    display: block;
+    display: inline;
   }
 
   to {

@@ -79,31 +79,3 @@ Body Styles
 body {
   font-family: var(--ff-body);
 }
-
-body.colorMode {
-  --backgroundColor: rgba(255, 255, 255);
-  --inputFieldTextColor: rgba(255, 255, 255, 0.75);
-  --textColor: hsl(0, 0%, 0%);
-  --inputFieldBackgroundColor: hsl(0, 0%, 97%);
-  --modeSwitcherActiveBackground: hsl(0, 0%, 89%);
-  --modeSwitcherColorModeBackgroundColor: hsl(0, 0%, 96%);
-  --mainTitleColor: hsl(0, 0%, 0%, .6);
-}
-
-body.photoMode {
-  --inputFieldBackgroundColor: rgba(255, 255, 255, .7);
-  --inputFieldTextColor: hsl(0, 0%, 97%);
-  --modeSwitcherBackgroundColor: hsla(0, 0%, 100%, 0.08);
-  --modeSwitcherActiveBackgroundColor: hsla(0, 0%, 58%, 0.281);
-  --mainTitleColor: hsl(0, 0%, 100%);
-  --textColor: hsl(0, 0%, 100%);
-  --caretColor: hsl(0, 0%, 46%);
-}
-
-body.backgroundImage {
-  background-image: url('../assets/images/background/static-nebula.jpg');
-  background-size: 350%;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-attachment: fixed, local;
-}

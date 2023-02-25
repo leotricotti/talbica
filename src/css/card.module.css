@@ -41,7 +41,7 @@
 }
 
 .cardOpen {
-  animation: cardOpen .3s ease-in-out;
+  animation: cardOpen .5s ease-in-out;
 }
 
 @keyframes cardOpen {
@@ -55,7 +55,7 @@
 }
 
 .cardClose {
-  animation: cardClose .3s ease-in-out;
+  animation: cardClose .5s ease-in-out;
 }
 
 @keyframes cardClose {
@@ -69,7 +69,7 @@
 }
 
 .overlayOpen {
-  animation: overlayOpen .25s ease-in-out;
+  animation: overlayOpen .4s ease-in-out;
 }
 
 @keyframes overlayOpen {
@@ -81,5 +81,21 @@
   to {
     transform: translateY(0);
     opacity: .8;
+  }
+}
+
+.overlayClose {
+  animation: overlayClose .4s ease-in-out;
+}
+
+@keyframes overlayClose {
+  from {
+    transform: translateY(0);
+    opacity: .8;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 0;
   }
 }

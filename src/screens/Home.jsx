@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
-import { PhotoModeContext } from "../contexts/PhotoModeContext";
 import Spinner from "../components/Spinner";
 import Loader from "../components/Loader";
 import HeaderMobile from "../components/HeaderMobile";
@@ -10,7 +9,6 @@ import styles from "../css/home.module.css";
 
 function Home() {
   const { dataFromApi, error, isLoading } = useContext(DataContext).value;
-  const { photoMode } = useContext(PhotoModeContext).value;
 
   if (isLoading) {
     return <Loader />;
@@ -25,11 +23,7 @@ function Home() {
   }
 
   return (
-    <div
-      className={`${styles.tableContainer} ${
-        photoMode ? styles.photoModeActive : ""
-      } `}
-    >
+    <div className={`${styles.tableContainer} ${styles.colorMode}`}>
       <HeaderMobile />
       <SearcBar dataFromApi={dataFromApi} />
       <Table dataFromApi={dataFromApi} />
