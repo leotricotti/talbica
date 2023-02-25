@@ -5,9 +5,9 @@
   top: 38.5rem;
   left: 50%;
   transform: translate(-50%, 0);
-  background-color: var(--modeSwitcherBackgroundColor);
+  background-color: var(--cardModeSwitcherBackgroundColor);
   border-radius: 3.125rem;
-  padding: .25rem;
+  padding: 0 .25rem;
   backdrop-filter: blur(10px);
   z-index: 1;
   display: flex;
@@ -19,7 +19,7 @@
   position: absolute;
   display: block;
   content: '';
-  background-color: var(--modeSwitcherActiveBackgroundColor);
+  background-color: var(--cardModeSwitcherBackgroundActiveColor);
   width: calc(50% - .25rem);
   height: 2rem;
   border-radius: 2.5rem;
@@ -28,41 +28,35 @@
 }
 
 .infoActive {
-  transform: translate(0);
+  transform: translateX(0);
 }
 
 .photoActive {
-  transform: translate(100%);
+  transform: translateX(100%);
 }
 
 .modeSwitcherPhoto {
+  color: var(--cardModeSwitcherTextColor);
   width: 50%;
   font-size: 1.125rem;
   text-align: center;
   transition: all 0.7s ease-in-out;
+  font-weight: 600;
 }
 
 .modeSwitcherInfo {
+  color: var(--cardModeSwitcherTextColor);
   width: 50%;
   font-size: 1.125rem;
   text-align: center;
+  font-weight: 600;
   transition: all 0.7s ease-in-out;
 }
 
 .photoModeActive {
-  color: var(--modeSwitcherActiveColor);
+  color: var(--cardModeSwitcherActiveTextColor);
 }
 
 .infoModeActive {
-  color: var(--modeSwitcherActiveColor);
-}
-
-@keyframes switcherTranslation {
-  from {
-    transform: translate(-50%, 150%);
-  }
-
-  to {
-    transform: translate(-50%, 0);
-  }
+  color: var(--cardModeSwitcherActiveTextColor);
 }

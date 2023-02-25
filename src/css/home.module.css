@@ -17,13 +17,17 @@
 }
 
 .colorMode {
-  --backgroundColor: rgba(255, 255, 255);
+  --backgroundColor: hsl(0, 0%, 100%);
   --inputFieldTextColor: hsl(0, 0%, 0%);
   --inputFieldBackgroundColor: hsl(0, 0%, 95%);
   --textColor: hsl(0, 0%, 0%);
-  --modeSwitcherActiveBackgroundColor: hsl(0, 0%, 89%);
-  --modeSwitcherBackgroundColor: hsl(0, 0%, 96%);
   --modeSwitcherTextColor: hsl(0, 0%, 0%);
+  --modeSwitcherBackgroundColor: hsl(0, 0%, 96%);
+  --modeSwitcherBackgroundActiveColor: hsl(0, 0%, 89%);
+  --cardModeSwitcherTextColor: hsl(0, 0%, 44%);
+  --cardModeSwitcherActiveTextColor: hsl(0, 0%, 100%);
+  --cardModeSwitcherBackgroundColor: hsla(0, 0%, 86%, 0.6);
+  --cardModeSwitcherBackgroundActiveColor: rgba(0, 0, 0, 0.22);
   --mainTitleColor: hsl(0, 0%, 0%, .6);
   --seacrhBarHelpIcon: url('../assets/images/icons/help-black.svg');
 }
