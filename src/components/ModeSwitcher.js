@@ -3,7 +3,6 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import tableLegendData from "../assets/data/tableLegendData";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
 import TableLegend from "./TableLegend";
-import MobileFooter from "./MobileFooter";
 import styles from "../css/modeSwitcher.module.css";
 
 function ModeSwitcher() {
@@ -38,7 +37,6 @@ function ModeSwitcher() {
         ))}
       </div>
       <TableLegend items={tableLegendData} />
-      <MobileFooter developer={"Coded and developed by Leonardo Tricotti"} />
     </>
   );
 }

@@ -3,7 +3,7 @@ import styles from "../css/tableLegend.module.css";
 
 function TableLegend({ items }) {
   return (
-    <div className={styles.elementContainer}>
+    <div className={styles.tableContainer}>
       <h3 className={styles.elementTitle}>Element types</h3>
       <ul className={styles.listContainer}>
         {items.map((item) => (

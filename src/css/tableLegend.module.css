@@ -1,3 +1,7 @@
+.tableContainer {
+  padding-bottom: 2rem;
+}
+
 .elementTitle {
   color: var(--textColor);
   font-size: 1.5rem;
