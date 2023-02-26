@@ -3,19 +3,24 @@ import styles from "../css/tableLegend.module.css";
 
 function TableLegend({ items }) {
   return (
-    <div className={styles.container}>
-      <h3 className={styles.title}>Element types</h3>
-      {items.map((item) => (
-        <ul className={styles.listContainer}>
-          <NavLink to={item.url} key={item.id} className={styles.listItems}>
+    <div className={styles.elementContainer}>
+      <h3 className={styles.elementTitle}>Element types</h3>
+      <ul className={styles.listContainer}>
+        {items.map((item) => (
+          <NavLink
+            target="blank"
+            to={item.url}
+            key={item.id}
+            className={styles.listItems}
+          >
             <span
-              className={styles.color}
-              style={{ backgroundColor: item.color }}
+              className={styles.elementColor}
+              style={{ backgroundColor: `var(${item.color})` }}
             ></span>
-            <span>{item.name}</span>
+            <span className={styles.elementName}>{item.name}</span>
           </NavLink>
-        </ul>
-      ))}
+        ))}
+      </ul>
     </div>
   );
 }

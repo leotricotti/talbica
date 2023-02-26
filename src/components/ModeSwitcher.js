@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import TableLegend from "./TableLegend";
+import tableLegendData from "../assets/data/tableLegendData";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
 import styles from "../css/modeSwitcher.module.css";
 
@@ -35,7 +36,7 @@ function ModeSwitcher() {
           </button>
         ))}
       </div>
-      <TableLegend />
+      <TableLegend items={tableLegendData} />
     </>
   );
 }

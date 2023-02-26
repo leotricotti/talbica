@@ -1,0 +1,30 @@
+.elementTitle {
+  color: var(--textColor);
+  font-size: 1.5rem;
+  padding: 3rem 0 1.2rem 0;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItems {
+  display: flex;
+  align-items: center;
+  padding-bottom: .75rem;
+  cursor: pointer;
+}
+
+.elementColor {
+  display: inline-block;
+  width: 2.75rem;
+  height: .875rem;
+  margin-right: .5rem;
+}
+
+.elementName {
+  color: var(--textColor);
+  font-size: 1rem;
+  font-weight: 500;
+}
