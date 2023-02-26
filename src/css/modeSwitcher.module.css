@@ -1,3 +1,10 @@
+.container {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  padding-bottom: 3rem;
+}
+
 .modeSwitcherContainer {
   width: 100%;
   height: fit-content;

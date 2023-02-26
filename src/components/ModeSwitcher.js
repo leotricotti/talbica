@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
-import TableLegend from "./TableLegend";
 import tableLegendData from "../assets/data/tableLegendData";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
+import TableLegend from "./TableLegend";
+import MobileFooter from "./MobileFooter";
 import styles from "../css/modeSwitcher.module.css";
 
 function ModeSwitcher() {
@@ -15,7 +16,7 @@ function ModeSwitcher() {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.modeSwitcherContainer}>
         {tableSwitcherData.map((item) => (
           <button
@@ -37,7 +38,8 @@ function ModeSwitcher() {
         ))}
       </div>
       <TableLegend items={tableLegendData} />
-    </>
+      <MobileFooter developer={"Coded and developed by Leonardo Tricotti"} />
+    </div>
   );
 }
 
