@@ -16,7 +16,7 @@ function ModeSwitcher() {
   };
 
   return (
-    <div className={styles.container}>
+    <>
       <div className={styles.modeSwitcherContainer}>
         {tableSwitcherData.map((item) => (
           <button
@@ -39,7 +39,7 @@ function ModeSwitcher() {
       </div>
       <TableLegend items={tableLegendData} />
       <MobileFooter developer={"Coded and developed by Leonardo Tricotti"} />
-    </div>
+    </>
   );
 }
 
