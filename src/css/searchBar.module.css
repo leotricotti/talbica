@@ -32,8 +32,10 @@
 }
 
 .searchBar::placeholder {
+  color: var(--inputFieldTextColor);
+  font-family: var(--ff-body);
   font-size: 1.25rem;
-  opacity: .7;
+  font-weight: 500;
 }
 
 .helpIcon {

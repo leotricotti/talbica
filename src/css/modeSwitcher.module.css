@@ -25,7 +25,7 @@
 }
 
 .modeSwitcherActive {
-  background-color: var(--modeSwitcherBackgroundActiveColor);
+  background-color: var(--modeSwitcherActiveBackgroundColor);
 }
 
 .modeSwitcherIcon {

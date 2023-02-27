@@ -23,20 +23,20 @@
   --textColor: hsl(0, 0%, 0%);
   --modeSwitcherTextColor: hsl(0, 0%, 0%);
   --modeSwitcherBackgroundColor: hsl(0, 0%, 96%);
-  --modeSwitcherBackgroundActiveColor: hsl(0, 0%, 89%);
+  --modeSwitcherActiveBackgroundColor: hsl(0, 0%, 89%);
   --cardModeSwitcherTextColor: hsl(0, 0%, 44%);
   --cardModeSwitcherActiveTextColor: hsl(0, 0%, 100%);
   --cardModeSwitcherBackgroundColor: hsla(0, 0%, 86%, 0.6);
   --cardModeSwitcherBackgroundActiveColor: rgba(0, 0, 0, 0.22);
-  --mainTitleColor: hsl(0, 0%, 0%, .6);
   --seacrhBarHelpIcon: url('../assets/images/icons/help-black.svg');
 }
 
 .photoMode {
-  --inputFieldBackgroundColor: rgba(255, 255, 255, .7);
-  --inputFieldTextColor: hsl(0, 0%, 97%);
-  --modeSwitcherBackgroundColor: hsla(0, 0%, 100%, 0.08);
+  --inputFieldBackgroundColor: hsla(0, 0%, 100%, 0.08);
+  --inputFieldTextColor: hsla(0, 0%, 100%, 0.4);
+  --modeSwitcherBackgroundColor: rgba(149, 149, 149, 0.08);
   --modeSwitcherActiveBackgroundColor: hsla(0, 0%, 58%, 0.281);
+  --modeSwitcherTextColor: hsla(0, 0%, 100%, 0.75);
   --mainTitleColor: hsl(0, 0%, 100%);
   --textColor: hsl(0, 0%, 100%);
   --caretColor: hsl(0, 0%, 46%);
@@ -52,7 +52,7 @@
 }
 
 @keyframes backgroundImage {
-  from {
+  0% {
     opacity: 0;
   }
 

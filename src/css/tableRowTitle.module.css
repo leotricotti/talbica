@@ -1,4 +1,5 @@
 .title {
+  color: var(--textColor);
   font-size: 1.5rem;
   font-weight: 800;
   padding-bottom: .25rem;
