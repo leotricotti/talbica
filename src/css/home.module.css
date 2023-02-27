@@ -1,24 +1,15 @@
 .tableContainer {
   position: relative;
   max-width: 1600px;
+  background-color: var(--backgroundColor);
   margin: 0 auto;
   padding: 0 .625rem;
-  animation: colors .5s ease-in-out;
-}
-
-.photoModeActive {
-  background-image: url('../assets/images/background/static-nebula.jpg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed, local;
-  background-size: 350%;
-  animation: backgroundImage .5s ease-in-out;
+  animation: colorMode 1s ease 0s 1 normal forwards;
 }
 
 .colorMode {
   --backgroundColor: hsl(0, 0%, 100%);
-  --inputFieldTextColor: hsl(0, 0%, 0%);
+  --inputFieldTextColor: hsl(0, 0%, 0%, 0.4);
   --inputFieldBackgroundColor: hsl(0, 0%, 95%);
   --textColor: hsl(0, 0%, 0%);
   --modeSwitcherTextColor: hsl(0, 0%, 0%);
@@ -28,6 +19,7 @@
   --cardModeSwitcherActiveTextColor: hsl(0, 0%, 100%);
   --cardModeSwitcherBackgroundColor: hsla(0, 0%, 86%, 0.6);
   --cardModeSwitcherBackgroundActiveColor: rgba(0, 0, 0, 0.22);
+  --glossaryTextColor: hsl(0, 0%, 20%);
   --seacrhBarHelpIcon: url('../assets/images/icons/help-black.svg');
 }
 
@@ -40,6 +32,7 @@
   --mainTitleColor: hsl(0, 0%, 100%);
   --textColor: hsl(0, 0%, 100%);
   --caretColor: hsl(0, 0%, 46%);
+  --glossaryTextColor: hsla(0, 0%, 100%, 0.749);
   --seacrhBarHelpIcon: url('../assets/images/icons/help-white.svg');
 }
 
@@ -49,20 +42,28 @@
   background-position: top;
   background-repeat: no-repeat;
   background-attachment: fixed, local;
+  animation: backgroundImage 4.5s ease 0s 1 normal forwards;
 }
 
 @keyframes backgroundImage {
   0% {
-    opacity: 0;
+    background-position: left center;
+    background-size: 300%;
+    opacity: .7;
   }
 
-  to {
+  50% {
     opacity: 1;
+  }
+
+  100% {
+    background-position: left center;
+    background-size: 350%;
   }
 }
 
 
-@keyframes colors {
+@keyframes colorMode {
   from {
     opacity: 0;
   }

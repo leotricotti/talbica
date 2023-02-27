@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styles from "../css/tableLegend.module.css";
 
-function TableLegend({ items }) {
+function TableLegend({ items, themeHandler }) {
   return (
     <div className={styles.tableContainer}>
       <h3 className={styles.elementTitle}>Element types</h3>
@@ -14,7 +14,9 @@ function TableLegend({ items }) {
             className={styles.listItems}
           >
             <span
-              className={styles.elementColor}
+              className={`${styles.elementColor} ${
+                themeHandler ? styles.displayNone : ""
+              }`}
               style={{ backgroundColor: `var(${item.color})` }}
             ></span>
             <span className={styles.elementName}>{item.name}</span>

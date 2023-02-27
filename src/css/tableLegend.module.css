@@ -27,8 +27,12 @@
   margin-right: .5rem;
 }
 
+.elementColor.displayNone {
+  display: none;
+}
+
 .elementName {
-  color: var(--textColor);
+  color: var(--glossaryTextColor);
   font-size: 1rem;
   font-weight: 500;
 }

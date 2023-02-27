@@ -5,7 +5,7 @@ import ToggleBtn from "./ToggleBtn";
 import ToggleMenu from "./ToggleMenu";
 import styles from "../css/headerMobile.module.css";
 
-function HeaderMobile() {
+function HeaderMobile({ themeHandler }) {
   const { updateOverflow, clearInput } = useContext(StylesContext).value;
   const [isOpen, setIsopen] = useState(null);
 
@@ -24,7 +24,7 @@ function HeaderMobile() {
         classNameThree={isOpen ? styles.isActiveThree : ""}
         handleClick={handleClick}
       />
-      <ToggleMenu isOpen={isOpen} />
+      <ToggleMenu isOpen={isOpen} themeHandler={themeHandler} />
     </div>
   );
 }

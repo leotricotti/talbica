@@ -5,7 +5,7 @@ import tableSwitcherData from "../assets/data/tableSwitcherData";
 import TableLegend from "./TableLegend";
 import styles from "../css/modeSwitcher.module.css";
 
-function ModeSwitcher() {
+function ModeSwitcher({ themeHandler }) {
   const { handleThemeChange } = useContext(ThemeContext).value;
   const [isActive, setIsActive] = useState(tableSwitcherData[0].id);
 
@@ -36,7 +36,7 @@ function ModeSwitcher() {
           </button>
         ))}
       </div>
-      <TableLegend items={tableLegendData} />
+      <TableLegend items={tableLegendData} themeHandler={themeHandler} />
     </>
   );
 }
