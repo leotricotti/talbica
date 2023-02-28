@@ -89,17 +89,17 @@
 }
 
 .overlayClose {
-  animation: overlayOpen .4s ease-in-out;
+  animation: overlayClose .4s ease-in-out;
 }
 
 @keyframes overlayClose {
   from {
     transform: translateY(0);
-    opacity: 0;
+    opacity: 1;
   }
 
   to {
     transform: translateY(100%);
-    opacity: .8;
+    opacity: 0;
   }
 }

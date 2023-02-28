@@ -4,7 +4,7 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [dataFromApi, setDataFromApi] = useState(null);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ export const DataProvider = ({ children }) => {
         }, 1000);
       })
       .catch((err) => {
-        setError(err.message);
+        setError(true);
         setIsLoading(false);
       });
   }, [setError]);

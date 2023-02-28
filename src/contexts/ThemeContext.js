@@ -13,7 +13,6 @@ function ThemeProvider({ children }) {
     }
   };
 
-  console.log(themeHandler);
   const value = {
     themeHandler,
     handleThemeChange,

@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Spinner from "../components/Spinner";
-import Loader from "../components/Loader";
 import HeaderMobile from "../components/HeaderMobile";
 import Table from "../components/Table";
 import SearcBar from "../components/SearchBar";
@@ -12,10 +11,6 @@ function Home() {
   const { dataFromApi, error, isLoading } = useContext(DataContext).value;
   const { themeHandler } = useContext(ThemeContext).value;
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
   if (error) {
     return <p>{error}</p>;
   }
@@ -23,6 +18,8 @@ function Home() {
   if (!dataFromApi) {
     return <Spinner />;
   }
+
+  console.log(error);
 
   return (
     <div
@@ -34,7 +31,7 @@ function Home() {
     >
       <HeaderMobile themeHandler={themeHandler} />
       <SearcBar dataFromApi={dataFromApi} />
-      <Table dataFromApi={dataFromApi} />
+      <Table dataFromApi={dataFromApi} isLoading={isLoading} />
     </div>
   );
 }

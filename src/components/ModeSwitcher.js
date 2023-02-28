@@ -7,7 +7,7 @@ import styles from "../css/modeSwitcher.module.css";
 
 function ModeSwitcher({ themeHandler }) {
   const { handleThemeChange } = useContext(ThemeContext).value;
-  const [isActive, setIsActive] = useState(tableSwitcherData[0].id);
+  const [isActive, setIsActive] = useState(themeHandler ? 2 : 1);
 
   const handleClick = (id) => {
     handleThemeChange(id);
