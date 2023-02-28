@@ -32,6 +32,8 @@ export const DataProvider = ({ children }) => {
 
   const value = { dataFromApi, error, isLoading };
 
+  console.log(dataFromApi);
+
   return (
     <DataContext.Provider value={{ value }}>{children}</DataContext.Provider>
   );
