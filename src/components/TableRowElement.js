@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import { hoverColors } from "../assets/data/tableColors";
+import elementImages from "../assets/data/elementImages";
 import useFormatColorHover from "../customHooks/useFormatColorHover";
 import useFormatMass from "../customHooks/useFormatMass";
 import useTruncateName from "../customHooks/useFormatName";
@@ -11,10 +12,14 @@ import useRandomDelay from "../customHooks/useRandomDelay";
 import Card from "./Card";
 import styles from "../css/tableRowElement.module.css";
 
-function TableRowElement({ item, colors }) {
+function TableRowElement({ item, colors, themeHandler }) {
   const hoverColor = hoverColors.map((color) => {
     return color;
   });
+  const elementSymbol = item.symbol;
+  const imageFiltered = elementImages.find(
+    (elementImage) => elementImage.name === elementSymbol
+  )?.url;
   const { updateOverflow, updateToTop } = useContext(StylesContext).value;
   const [selectedElement, setSelectedElement] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -39,6 +44,8 @@ function TableRowElement({ item, colors }) {
     updateToTop();
   };
 
+  console.log(imageFiltered);
+
   return (
     <>
       <button
@@ -47,10 +54,13 @@ function TableRowElement({ item, colors }) {
         onMouseLeave={() => setIsHovered(false)}
         className={`${styles.tableRowElement} ${isFaded ? styles.show : ""}`}
         style={{
-          backgroundColor: `var(${
-            isHovered ? backgroundHoverColor : backgroundColor
-          })`,
+          background: themeHandler
+            ? `url(${imageFiltered})`
+            : `var(${isHovered ? backgroundHoverColor : backgroundColor})`,
           transitionDelay: `${!isHovered ? randomDelay : ""}`,
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
         }}
       >
         <span className={styles.atomicNumber}>{item.atomicNumber}</span>

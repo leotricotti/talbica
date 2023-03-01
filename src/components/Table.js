@@ -2,7 +2,7 @@ import TableRow from "./TableRow";
 import Loader from "./Loader";
 import styles from "../css/table.module.css";
 
-function Table({ isLoading, dataFromApi }) {
+function Table({ isLoading, dataFromApi, themeHandler }) {
   let prevPeriod;
 
   return (
@@ -10,7 +10,11 @@ function Table({ isLoading, dataFromApi }) {
       {isLoading ? (
         <Loader />
       ) : (
-        <TableRow dataFromApi={dataFromApi} prevPeriod={prevPeriod} />
+        <TableRow
+          dataFromApi={dataFromApi}
+          prevPeriod={prevPeriod}
+          themeHandler={themeHandler}
+        />
       )}
     </div>
   );

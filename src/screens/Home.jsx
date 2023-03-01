@@ -19,8 +19,6 @@ function Home() {
     return <Spinner />;
   }
 
-  console.log(error);
-
   return (
     <div
       className={`${styles.tableContainer} ${
@@ -31,7 +29,11 @@ function Home() {
     >
       <HeaderMobile themeHandler={themeHandler} />
       <SearcBar dataFromApi={dataFromApi} />
-      <Table dataFromApi={dataFromApi} isLoading={isLoading} />
+      <Table
+        dataFromApi={dataFromApi}
+        isLoading={isLoading}
+        themeHandler={themeHandler}
+      />
     </div>
   );
 }

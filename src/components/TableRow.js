@@ -4,7 +4,7 @@ import TableRowTitle from "./TableRowTitle";
 import { tableColors } from "../assets/data/tableColors";
 import styles from "../css/tableRow.module.css";
 
-function TableRow({ dataFromApi }) {
+function TableRow({ dataFromApi, themeHandler }) {
   const colors = tableColors.map((color) => {
     return color;
   });
@@ -28,6 +28,7 @@ function TableRow({ dataFromApi }) {
                 key={item.atomicNumber}
                 item={item}
                 colors={colors}
+                themeHandler={themeHandler}
               />
             ))}
           </div>
