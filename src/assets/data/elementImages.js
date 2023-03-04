@@ -1,6 +1,6 @@
 const elementImages = [
   {
-    id: 1,
+    name: "Ag",
     url: require("../images/elements-backgrounds/Ag.jpg"),
   },
   {
@@ -10,6 +10,10 @@ const elementImages = [
   {
     name: "Ar",
     url: require("../images/elements-backgrounds/Ar.jpg"),
+  },
+  {
+    name: "As",
+    url: require("../images/elements-backgrounds/As.jpg"),
   },
   {
     name: "Au",
@@ -154,6 +158,10 @@ const elementImages = [
   {
     name: "Lu",
     url: require("../images/elements-backgrounds/Lu.jpg"),
+  },
+  {
+    name: "Mn",
+    url: require("../images/elements-backgrounds/Mn.jpg"),
   },
   {
     name: "Mg",

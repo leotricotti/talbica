@@ -1,6 +1,7 @@
 .tableRowElement {
   width: 5.3rem;
   height: 6.125rem;
+  position: relative;
   color: #fff;
   display: flex;
   font-family: var(--font-family);
@@ -12,22 +13,14 @@
   cursor: pointer;
 }
 
-.tableRowElementPhoto {
+.elementOverlay {
   width: 5.3rem;
   height: 6.125rem;
-  color: #fff;
-  display: flex;
-  font-family: var(--font-family);
-  flex-direction: column;
-  border: transparent;
-  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--elementFade);
   border-radius: .5rem;
-  padding: .4375rem .3125rem;
-  cursor: pointer;
-}
-
-.show {
-  opacity: 1;
 }
 
 .atomicNumber {
@@ -42,6 +35,8 @@
   line-height: 2rem;
   margin-top: -.125rem;
   margin-bottom: .125rem;
+  position: relative;
+  z-index: 2;
 }
 
 .name {

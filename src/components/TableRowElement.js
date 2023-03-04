@@ -44,25 +44,32 @@ function TableRowElement({ item, colors, themeHandler }) {
     updateToTop();
   };
 
-  console.log(imageFiltered);
-
   return (
     <>
       <button
         onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`${styles.tableRowElement} ${isFaded ? styles.show : ""}`}
+        className={`${styles.tableRowElement}  ${isFaded ? styles.show : ""}`}
         style={{
-          background: themeHandler
-            ? `url(${imageFiltered})`
-            : `var(${isHovered ? backgroundHoverColor : backgroundColor})`,
+          ...(!themeHandler && {
+            backgroundColor: `var(${
+              isHovered ? backgroundHoverColor : backgroundColor
+            })`,
+          }),
+          ...(themeHandler && {
+            backgroundImage: `url(${imageFiltered})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }),
+          ...(imageFiltered === undefined && {
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(60px)",
+          }),
           transitionDelay: `${!isHovered ? randomDelay : ""}`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
         }}
       >
+        <div className={`${themeHandler ? styles.elementOverlay : ""}`}></div>
         <span className={styles.atomicNumber}>{item.atomicNumber}</span>
         <span className={styles.symbol}>{item.symbol}</span>
         <span className={styles.name}>{displayName}</span>
