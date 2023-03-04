@@ -2,17 +2,3 @@
   width: 100%;
   height: auto;
 }
-
-.isActiveOne {
-  transform-origin: center;
-  transform: translate3d(0, 8px, 0) rotate(45deg);
-}
-
-.isActiveTwo {
-  opacity: 0;
-}
-
-.isActiveThree {
-  transform-origin: center;
-  transform: translate3d(0, -10px, 0) rotate(-45deg);
-}

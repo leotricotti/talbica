@@ -18,12 +18,7 @@ function HeaderMobile({ themeHandler }) {
   return (
     <div className={styles.headerContainer}>
       <MainTitle title={"Periodic Table. Interactive Chemistry"} />
-      <ToggleBtn
-        classNameOne={isOpen ? styles.isActiveOne : ""}
-        classNameTwo={isOpen ? styles.isActiveTwo : ""}
-        classNameThree={isOpen ? styles.isActiveThree : ""}
-        handleClick={handleClick}
-      />
+      <ToggleBtn isOpen={isOpen} handleClick={handleClick} />
       <ToggleMenu isOpen={isOpen} themeHandler={themeHandler} />
     </div>
   );
