@@ -16,3 +16,43 @@
   transform-origin: center;
   transform: translate3d(0, -10px, 0) rotate(-45deg);
 }
+
+.openToggle {
+  animation: openToggle .5s ease-in-out;
+}
+
+@keyframes openToggle {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    height: 120vh;
+    opacity: 1;
+  }
+}
+
+.closeToggle {
+  animation: closeToggle .5s ease-in-out;
+}
+
+@keyframes closeToggle {
+  0% {
+    opacity: 1;
+    height: 100vh;
+  }
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}

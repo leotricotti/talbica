@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import MainTitle from "./MainTitle";
 import ToggleBtn from "./ToggleBtn";
-import ToggleMenu from "./ToggleMenu";
+import ModeSwitcher from "./ModeSwitcher";
 import styles from "../css/headerMobile.module.css";
 
 function HeaderMobile({ themeHandler }) {
@@ -24,7 +24,9 @@ function HeaderMobile({ themeHandler }) {
         classNameThree={isOpen ? styles.isActiveThree : ""}
         handleClick={handleClick}
       />
-      <ToggleMenu isOpen={isOpen} themeHandler={themeHandler} />
+      <div className={`${isOpen ? styles.openToggle : styles.closeToggle}`}>
+        {isOpen && <ModeSwitcher />}
+      </div>
     </div>
   );
 }
