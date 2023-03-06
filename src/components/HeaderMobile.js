@@ -5,7 +5,7 @@ import ToggleBtn from "./ToggleBtn";
 import ModeSwitcher from "./ModeSwitcher";
 import styles from "../css/headerMobile.module.css";
 
-function HeaderMobile({ themeHandler }) {
+function HeaderMobile() {
   const { updateOverflow, clearInput } = useContext(StylesContext).value;
   const [isOpen, setIsopen] = useState(null);
 

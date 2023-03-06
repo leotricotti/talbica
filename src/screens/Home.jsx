@@ -27,7 +27,7 @@ function Home() {
           : styles.colorMode
       }`}
     >
-      <HeaderMobile themeHandler={themeHandler} />
+      <HeaderMobile />
       <SearcBar dataFromApi={dataFromApi} />
       <Table
         dataFromApi={dataFromApi}
