@@ -1,17 +1,7 @@
-import { useState } from "react";
 import iconClose from "../assets/images/icons/icon-close.svg";
 import styles from "../css/searchBarHelp.module.css";
 
-function SearchBarHelp({ handleShowClick }) {
-  const [isAnimated, setIsAnimated] = useState(true);
-
-  const handleClick = () => {
-    setTimeout(() => {
-      handleShowClick();
-    }, 300);
-    setIsAnimated(false);
-  };
-
+function SearchBarHelp({ handleClickShowHelp, isAnimated }) {
   return (
     <>
       <div
@@ -23,7 +13,7 @@ function SearchBarHelp({ handleShowClick }) {
         className={`${styles.helpContainer}
       ${isAnimated ? styles.animationOpen : styles.animationClose}`}
       >
-        <button className={styles.closeBtn} onClick={handleClick}>
+        <button className={styles.closeBtn} onClick={handleClickShowHelp}>
           <img src={iconClose} alt="Close button" />
         </button>
         <h3 className={styles.title}>Search by name</h3>

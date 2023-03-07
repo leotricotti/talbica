@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
 import styles from "../css/tableLegend.module.css";
 
-function TableLegend({ items, themeHandler }) {
+function ModeSwitcherTableLegend({ items, themeHandler }) {
+  console.log(themeHandler);
+
   return (
     <div className={styles.tableContainer}>
       <h3 className={styles.elementTitle}>Element types</h3>
@@ -27,4 +29,4 @@ function TableLegend({ items, themeHandler }) {
   );
 }
 
-export default TableLegend;
+export default ModeSwitcherTableLegend;

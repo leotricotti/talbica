@@ -1,19 +1,9 @@
-import { useContext, useState } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
 import tableLegendData from "../assets/data/tableLegendData";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
-import TableLegend from "./TableLegend";
+import ModeSwitcherTableLegend from "./ModeSwitcherTableLegend";
 import styles from "../css/modeSwitcher.module.css";
 
-function ModeSwitcher({ themeHandler }) {
-  const { handleThemeChange } = useContext(ThemeContext).value;
-  const [isActive, setIsActive] = useState(themeHandler ? 2 : 1);
-
-  const handleClick = (id) => {
-    handleThemeChange(id);
-    setIsActive(id);
-  };
-
+function ModeSwitcher({ themeHandler, isActive, handleClickTheme }) {
   return (
     <>
       <div className={styles.modeSwitcherContainer}>
@@ -23,7 +13,7 @@ function ModeSwitcher({ themeHandler }) {
             className={`${styles.modeSwitcher} ${
               isActive === item.id ? styles.modeSwitcherActive : ""
             }`}
-            onClick={() => handleClick(item.id)}
+            onClick={() => handleClickTheme(item.id)}
           >
             <div>
               <img
@@ -36,7 +26,10 @@ function ModeSwitcher({ themeHandler }) {
           </button>
         ))}
       </div>
-      <TableLegend items={tableLegendData} themeHandler={themeHandler} />
+      <ModeSwitcherTableLegend
+        items={tableLegendData}
+        themeHandler={themeHandler}
+      />
     </>
   );
 }

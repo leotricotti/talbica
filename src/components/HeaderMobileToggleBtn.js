@@ -1,6 +1,6 @@
 import styles from "../css/toggleBtn.module.css";
 
-function ToggleBtn({
+function HeaderMobileToggleBtn({
   classNameOne,
   classNameTwo,
   classNameThree,
@@ -21,4 +21,4 @@ function ToggleBtn({
   );
 }
 
-export default ToggleBtn;
+export default HeaderMobileToggleBtn;
