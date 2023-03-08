@@ -44,7 +44,7 @@
   padding: 1rem 1.250rem;
 }
 
-.animationOpen {
+/* .animationOpen {
   animation: animationOpen .5s ease-in-out;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .animationClose {
-  animation: animationClose .3s ease-in-out;
+  animation: animationClose .5s ease-in-out;
 }
 
 @keyframes animationClose {
@@ -102,4 +102,4 @@
     transform: translateY(100%);
     opacity: 0;
   }
-}
+} */

@@ -19,7 +19,7 @@ function SearcBar({ dataFromApi }) {
   } = useContext(StylesContext).value;
   const [showHelp, setShowHelp] = useState(false);
   const [showResult, setShowResult] = useState(false);
-  const [isAnimated, setIsAnimated] = useState(null);
+  const [isAnimated, setIsAnimated] = useState(false);
 
   const handleClickShowHelp = () => {
     setTimeout(() => {
@@ -56,12 +56,10 @@ function SearcBar({ dataFromApi }) {
       <div className={styles.caret}></div>
       <button className={styles.helpIcon} onClick={handleShowClick}></button>
       {showHelp && (
-        <div className={styles.helpContainer}>
-          <SearchBarHelp
-            handleClickShowHelp={handleClickShowHelp}
-            isAnimated={isAnimated}
-          />
-        </div>
+        <SearchBarHelp
+          handleClickShowHelp={handleClickShowHelp}
+          isAnimated={isAnimated}
+        />
       )}
       {showInfo.length > 0 && (
         <>
