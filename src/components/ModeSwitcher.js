@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import tableLegendData from "../assets/data/tableLegendData";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
-import TableLegend from "./TableLegend";
+import ElementTypes from "./ElementTypes";
 import styles from "../css/modeSwitcher.module.css";
 
 function ModeSwitcher({ themeHandler }) {
@@ -36,7 +36,7 @@ function ModeSwitcher({ themeHandler }) {
           </button>
         ))}
       </div>
-      <TableLegend items={tableLegendData} themeHandler={themeHandler} />
+      <ElementTypes items={tableLegendData} themeHandler={themeHandler} />
     </>
   );
 }

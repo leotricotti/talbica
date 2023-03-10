@@ -18,13 +18,27 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
     clearInput();
   };
 
-  return (
-    <>
+  function Overlay() {
+    return (
       <div
-        className={`${styles.cardOverlay} ${
+        className={`${styles.overlay} ${
           showCard ? styles.overlayOpen : styles.overlayClose
         }`}
       ></div>
+    );
+  }
+
+  function CloseBtn() {
+    return (
+      <button className={styles.closeBtn} onClick={handleClose}>
+        <div className={styles.closeIcon}></div>
+      </button>
+    );
+  }
+
+  return (
+    <>
+      <Overlay />
       <div
         className={`${styles.cardContainer} ${
           showCard ? styles.cardOpen : styles.cardClose
@@ -33,9 +47,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
           backgroundColor: `var(${backgroundColor})`,
         }}
       >
-        <button className={styles.closeBtn} onClick={handleClose}>
-          <div className={styles.closeIcon}></div>
-        </button>
+        <CloseBtn />
         <CardHeader
           dataFromApi={dataFromApi}
           backgroundColor={backgroundColor}
