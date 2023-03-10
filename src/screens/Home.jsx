@@ -4,7 +4,6 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import Spinner from "../components/Spinner";
 import HeaderMobile from "../components/HeaderMobile";
 import Table from "../components/Table";
-import SearcBar from "../components/SearchBar";
 import styles from "../css/home.module.css";
 
 function Home() {
@@ -27,8 +26,7 @@ function Home() {
           : styles.colorMode
       }`}
     >
-      <HeaderMobile themeHandler={themeHandler} />
-      <SearcBar dataFromApi={dataFromApi} />
+      <HeaderMobile themeHandler={themeHandler} dataFromApi={dataFromApi} />
       <Table
         dataFromApi={dataFromApi}
         isLoading={isLoading}
