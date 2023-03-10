@@ -3,6 +3,7 @@ import { DataContext } from "../contexts/DataContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Spinner from "../components/Spinner";
 import HeaderMobile from "../components/HeaderMobile";
+import SearcBar from "../components/SearchBar";
 import Table from "../components/Table";
 import styles from "../css/home.module.css";
 
@@ -26,12 +27,8 @@ function Home() {
           : styles.colorMode
       }`}
     >
-<<<<<<< HEAD
       <HeaderMobile />
       <SearcBar dataFromApi={dataFromApi} />
-=======
-      <HeaderMobile themeHandler={themeHandler} dataFromApi={dataFromApi} />
->>>>>>> branch
       <Table
         dataFromApi={dataFromApi}
         isLoading={isLoading}

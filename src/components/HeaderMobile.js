@@ -2,10 +2,22 @@ import { useState, useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import { StylesContext } from "../contexts/StylesContext";
 import MainTitle from "./MainTitle";
-<<<<<<< HEAD
-import HeaderMobileToggleBtn from "./HeaderMobileToggleBtn";
 import ModeSwitcher from "./ModeSwitcher";
 import styles from "../css/headerMobile.module.css";
+
+function ToggleLine({ isOpen, style }) {
+  <span className={`${styles.toggleLineThree} ${isOpen ? { style } : ""}`} />;
+}
+
+function ToggleBtn({ isOpen, handleClick }) {
+  return (
+    <button className={styles.toggleButton} onClick={handleClick}>
+      <ToggleLine isOpen={isOpen} style={styles.isActiveOne} />
+      <ToggleLine isOpen={isOpen} style={styles.isActiveTwo} />
+      <ToggleLine isOpen={isOpen} style={styles.isActiveThree} />
+    </button>
+  );
+}
 
 function HeaderMobile() {
   const { handleThemeChange, themeHandler } = useContext(ThemeContext).value;
@@ -17,16 +29,6 @@ function HeaderMobile() {
     handleThemeChange(id);
     setIsActive(id);
   };
-=======
-import ToggleBtn from "./ToggleBtn";
-import ToggleMenu from "./ToggleMenu";
-import SearchBar from "./SearchBar";
-import styles from "../css/headerMobile.module.css";
-
-function HeaderMobile({ themeHandler, dataFromApi }) {
-  const { updateOverflow, clearInput } = useContext(StylesContext).value;
-  const [isOpen, setIsopen] = useState(false);
->>>>>>> branch
 
   const handleClick = () => {
     setIsopen(!isOpen);
@@ -37,13 +39,7 @@ function HeaderMobile({ themeHandler, dataFromApi }) {
   return (
     <div className={styles.headerContainer}>
       <MainTitle title={"Periodic Table. Interactive Chemistry"} />
-<<<<<<< HEAD
-      <HeaderMobileToggleBtn
-        classNameOne={isOpen ? styles.isActiveOne : ""}
-        classNameTwo={isOpen ? styles.isActiveTwo : ""}
-        classNameThree={isOpen ? styles.isActiveThree : ""}
-        handleClick={handleClick}
-      />
+      <ToggleBtn isOpen={isOpen} handleClick={handleClick} />
       <div className={`${isOpen ? styles.openToggle : styles.closeToggle}`}>
         {isOpen && (
           <ModeSwitcher
@@ -53,11 +49,6 @@ function HeaderMobile({ themeHandler, dataFromApi }) {
           />
         )}
       </div>
-=======
-      <ToggleBtn isOpen={isOpen} handleClick={handleClick} />
-      <ToggleMenu isOpen={isOpen} themeHandler={themeHandler} />
-      <SearchBar dataFromApi={dataFromApi} />
->>>>>>> branch
     </div>
   );
 }

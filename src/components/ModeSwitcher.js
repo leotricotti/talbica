@@ -1,10 +1,6 @@
 import tableLegendData from "../assets/data/tableLegendData";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
-<<<<<<< HEAD
-import ModeSwitcherTableLegend from "./ModeSwitcherTableLegend";
-=======
 import ElementTypes from "./ElementTypes";
->>>>>>> branch
 import styles from "../css/modeSwitcher.module.css";
 
 function ModeSwitcher({ themeHandler, isActive, handleClickTheme }) {
@@ -30,14 +26,7 @@ function ModeSwitcher({ themeHandler, isActive, handleClickTheme }) {
           </button>
         ))}
       </div>
-<<<<<<< HEAD
-      <ModeSwitcherTableLegend
-        items={tableLegendData}
-        themeHandler={themeHandler}
-      />
-=======
       <ElementTypes items={tableLegendData} themeHandler={themeHandler} />
->>>>>>> branch
     </>
   );
 }
