@@ -5,7 +5,7 @@ function Title({ title }) {
   return <h3 className={styles.elementTitle}>{title}</h3>;
 }
 
-function NavElemtList({ items, themeHandler }) {
+function NavElement({ items, themeHandler }) {
   return (
     <ul className={styles.listContainer}>
       {items.map((item) => (
@@ -32,7 +32,7 @@ function ElementTypes({ items, themeHandler }) {
   return (
     <div className={styles.tableContainer}>
       <Title title="Element types" />
-      <NavElemtList items={items} themeHandler={themeHandler} />
+      <NavElement items={items} themeHandler={themeHandler} />
     </div>
   );
 }
