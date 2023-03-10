@@ -5,19 +5,18 @@ import styles from "../css/cardHeader.module.css";
 
 function CardHeader({ dataFromApi, backgroundColor }) {
   const [showMoreOpen, setShowMoreOpen] = useState(false);
-  const item = dataFromApi;
-  const history = useCutString(item.history);
-  const formatMass = useFormatMass(item.atomicMass);
+  const history = useCutString(dataFromApi.history);
+  const formatMass = useFormatMass(dataFromApi.atomicMass);
 
   const handleClick = () => {
     setShowMoreOpen(true);
   };
 
   return (
-    <div key={item.atomicNumber} className={styles.cardlHeaderContainer}>
-      <span className={styles.atomicNumber}>{item.atomicNumber}</span>
-      <span className={styles.symbol}>{item.symbol}</span>
-      <span className={styles.name}>{item.name}</span>
+    <div key={dataFromApi.atomicNumber} className={styles.cardlHeaderContainer}>
+      <span className={styles.atomicNumber}>{dataFromApi.atomicNumber}</span>
+      <span className={styles.symbol}>{dataFromApi.symbol}</span>
+      <span className={styles.name}>{dataFromApi.name}</span>
       <span className={styles.atomicMass}>{formatMass}</span>
       <p
         className={`${styles.description} ${

@@ -1,6 +1,7 @@
 .headerContainer {
   width: 100%;
   height: auto;
+<<<<<<< HEAD
 }
 
 .isActiveOne {
@@ -55,4 +56,6 @@
     opacity: 0;
     height: 0;
   }
+=======
+>>>>>>> branch
 }
