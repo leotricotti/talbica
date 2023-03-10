@@ -5,6 +5,39 @@ import CardBody from "./CarBody";
 import CardModeSwitcher from "./CardModeSwitcher";
 import styles from "../css/card.module.css";
 
+function CardContainer({ children, backgroundColor, showCard }) {
+  return (
+    <div
+      className={`${styles.cardContainer} ${
+        showCard ? styles.cardOpen : styles.cardClose
+      }`}
+      style={{
+        backgroundColor: `var(${backgroundColor})`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function Overlay({ showCard }) {
+  return (
+    <div
+      className={`${styles.cardOverlay} ${
+        showCard ? styles.overlayOpen : styles.overlayClose
+      }`}
+    />
+  );
+}
+
+function CloseBtn({ handleClose }) {
+  return (
+    <button className={styles.closeBtn} onClick={handleClose}>
+      <div className={styles.closeIcon}></div>
+    </button>
+  );
+}
+
 function Card({ dataFromApi, backgroundColor, onClose }) {
   const { updateOverflow, clearInput } = useContext(StylesContext).value;
   const [showCard, setShowCard] = useState(true);
@@ -18,43 +51,18 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
     clearInput();
   };
 
-  function Overlay() {
-    return (
-      <div
-        className={`${styles.overlay} ${
-          showCard ? styles.overlayOpen : styles.overlayClose
-        }`}
-      ></div>
-    );
-  }
-
-  function CloseBtn() {
-    return (
-      <button className={styles.closeBtn} onClick={handleClose}>
-        <div className={styles.closeIcon}></div>
-      </button>
-    );
-  }
-
   return (
     <>
-      <Overlay />
-      <div
-        className={`${styles.cardContainer} ${
-          showCard ? styles.cardOpen : styles.cardClose
-        }`}
-        style={{
-          backgroundColor: `var(${backgroundColor})`,
-        }}
-      >
-        <CloseBtn />
+      <Overlay showCard={showCard} />
+      <CardContainer backgroundColor={backgroundColor} showCard={showCard}>
+        <CloseBtn handleClose={handleClose} />
         <CardHeader
           dataFromApi={dataFromApi}
           backgroundColor={backgroundColor}
         />
         <CardBody dataFromApi={dataFromApi} />
         <CardModeSwitcher />
-      </div>
+      </CardContainer>
     </>
   );
 }
