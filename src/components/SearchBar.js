@@ -5,6 +5,26 @@ import SearchBarResults from "./SearchBarResult";
 import SearchBarHelp from "./SearchBarHelp";
 import styles from "../css/searchBar.module.css";
 
+function Caret() {
+  return <div className={styles.caret} />;
+}
+
+function Input({ searchValue, handleInputChange }) {
+  return (
+    <input
+      className={styles.searchBar}
+      type="text"
+      placeholder="Type element name"
+      value={searchValue}
+      onChange={handleInputChange}
+    />
+  );
+}
+
+function Button({ handleShowClick }) {
+  return <button className={styles.helpIcon} onClick={handleShowClick} />;
+}
+
 function SearcBar({ dataFromApi }) {
   const colors = tableColors.map((color) => {
     return color;
@@ -46,15 +66,9 @@ function SearcBar({ dataFromApi }) {
 
   return (
     <div className={styles.searchBarContainer}>
-      <input
-        className={styles.searchBar}
-        type="text"
-        placeholder="Type element name"
-        value={searchValue}
-        onChange={handleInputChange}
-      />
-      <div className={styles.caret}></div>
-      <button className={styles.helpIcon} onClick={handleShowClick}></button>
+      <Caret />
+      <Input searchValue={searchValue} handleInputChange={handleInputChange} />
+      <Button handleShowClick={handleShowClick} />
       {showHelp && (
         <SearchBarHelp
           handleClickShowHelp={handleClickShowHelp}
@@ -62,13 +76,11 @@ function SearcBar({ dataFromApi }) {
         />
       )}
       {showInfo.length > 0 && (
-        <>
-          <SearchBarResults
-            showInfo={showInfo}
-            colors={colors}
-            showResult={showResult}
-          />
-        </>
+        <SearchBarResults
+          showInfo={showInfo}
+          colors={colors}
+          showResult={showResult}
+        />
       )}
     </div>
   );
