@@ -6,7 +6,7 @@ import ModeSwitcher from "./ModeSwitcher";
 import styles from "../css/headerMobile.module.css";
 
 function ToggleLine({ isOpen, styleLine, styleActive }) {
-  return <span className={`${styleLine} ${isOpen ? { styleActive } : ""}`} />;
+  return <span className={`${styleLine} ${isOpen ? styleActive : ""}`} />;
 }
 
 function ToggleBtn({ isOpen, handleClick }) {
