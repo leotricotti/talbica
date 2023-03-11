@@ -1,14 +1,11 @@
 import iconClose from "../assets/images/icons/icon-close.svg";
+import Overlay from "./Overlay";
 import styles from "../css/searchBarHelp.module.css";
 
 function SearchBarHelp({ handleClickShowHelp, isAnimated }) {
   return (
     <>
-      <div
-        className={`${styles.overlay} ${
-          isAnimated ? styles.overlayOpen : styles.overlayClose
-        }`}
-      ></div>
+      <Overlay handleOverlay={isAnimated} />
       <div
         className={`${styles.helpContainer}
       ${isAnimated ? styles.animationOpen : styles.animationClose}`}

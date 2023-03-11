@@ -7,10 +7,6 @@ import SearcBar from "../components/SearchBar";
 import Table from "../components/Table";
 import styles from "../css/home.module.css";
 
-function Overlay() {
-  return <div className={styles.overlay} />;
-}
-
 function ErrorModal() {
   return (
     <div className={styles.errorModal}>
@@ -28,7 +24,6 @@ function Home() {
   if (error) {
     return (
       <>
-        <Overlay />
         <ErrorModal />
       </>
     );

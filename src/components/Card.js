@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
+import Overlay from "./Overlay";
 import CardHeader from "./CardHeader";
 import CardBody from "./CarBody";
 import CardModeSwitcher from "./CardModeSwitcher";
@@ -17,16 +18,6 @@ function CardContainer({ children, backgroundColor, showCard }) {
     >
       {children}
     </div>
-  );
-}
-
-function Overlay({ showCard }) {
-  return (
-    <div
-      className={`${styles.cardOverlay} ${
-        showCard ? styles.overlayOpen : styles.overlayClose
-      }`}
-    />
   );
 }
 
@@ -53,7 +44,7 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
 
   return (
     <>
-      <Overlay showCard={showCard} />
+      <Overlay handleOverlay={showCard} />
       <CardContainer backgroundColor={backgroundColor} showCard={showCard}>
         <CloseBtn handleClose={handleClose} />
         <CardHeader
