@@ -1,6 +1,52 @@
 .headerContainer {
   width: 100%;
-  height: auto;
+  min-height: 5rem;
+  max-height: auto;
+}
+
+.toggleButton {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: .625rem;
+  top: 1rem;
+  cursor: pointer;
+}
+
+.toggleLineOne {
+  width: 2rem;
+  height: 2px;
+  background: #fc6b64;
+  position: absolute;
+  top: 2px;
+  right: 0;
+  transition-property: transform;
+  transition-duration: .15s;
+  transition-timing-function: ease;
+}
+
+.toggleLineTwo {
+  width: 2rem;
+  height: 2px;
+  top: .625rem;
+  right: 0;
+  content: '';
+  position: absolute;
+  background-color: #fac05c;
+  opacity: 1;
+}
+
+.toggleLineThree {
+  width: 2rem;
+  height: 2px;
+  content: '';
+  top: 1.25rem;
+  right: 0%;
+  position: absolute;
+  background-color: #75a3e2;
+  transition-property: transform;
+  transition-duration: .15s;
+  transition-timing-function: ease;
 }
 
 .isActiveOne {

@@ -5,16 +5,28 @@ import MainTitle from "./MainTitle";
 import ModeSwitcher from "./ModeSwitcher";
 import styles from "../css/headerMobile.module.css";
 
-function ToggleLine({ isOpen, style }) {
-  <span className={`${styles.toggleLineThree} ${isOpen ? { style } : ""}`} />;
+function ToggleLine({ isOpen, styleLine, styleActive }) {
+  return <span className={`${styleLine} ${isOpen ? { styleActive } : ""}`} />;
 }
 
 function ToggleBtn({ isOpen, handleClick }) {
   return (
     <button className={styles.toggleButton} onClick={handleClick}>
-      <ToggleLine isOpen={isOpen} style={styles.isActiveOne} />
-      <ToggleLine isOpen={isOpen} style={styles.isActiveTwo} />
-      <ToggleLine isOpen={isOpen} style={styles.isActiveThree} />
+      <ToggleLine
+        isOpen={isOpen}
+        styleLine={styles.toggleLineOne}
+        styleActive={styles.isActiveOne}
+      />
+      <ToggleLine
+        isOpen={isOpen}
+        styleLine={styles.toggleLineTwo}
+        styleActive={styles.isActiveTwo}
+      />
+      <ToggleLine
+        isOpen={isOpen}
+        styleLine={styles.toggleLineThree}
+        styleActive={styles.isActiveThree}
+      />
     </button>
   );
 }
