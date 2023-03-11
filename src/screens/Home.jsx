@@ -11,8 +11,27 @@ function Home() {
   const { dataFromApi, error, isLoading } = useContext(DataContext).value;
   const { themeHandler } = useContext(ThemeContext).value;
 
+  function Overlay() {
+    return <div className={styles.overlay} />;
+  }
+
+  function ErrorModal() {
+    return (
+      <div className={styles.errorModal}>
+        <h1 className={styles.errorMessage}>
+          Connection failed. Please try again later.
+        </h1>
+      </div>
+    );
+  }
+
   if (error) {
-    return <p>{error}</p>;
+    return (
+      <>
+        <Overlay />
+        <ErrorModal />
+      </>
+    );
   }
 
   if (!dataFromApi) {
