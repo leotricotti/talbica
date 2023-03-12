@@ -64,10 +64,10 @@ function SearcBar({ dataFromApi }) {
     setShowInfo(filteredData);
   };
 
-  const handleCaretPosition = (e) => {
-    const caretPosition = e.target.selectionStart;
-    updateOverflow(caretPosition);
-  };
+  // const handleCaretPosition = (e) => {
+  //   const caretPosition = e.target.selectionStart;
+  //   updateOverflow(caretPosition);
+  // };
 
   return (
     <div className={styles.searchBarContainer}>
