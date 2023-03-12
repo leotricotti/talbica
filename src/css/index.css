@@ -39,6 +39,7 @@ Variables
   --overlayBackgroundColor: hsl(0, 0%, 0%);
   --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
   --elementFade: hsl(0, 0%, 0%, .2);
+  --caretColor: hsl(0, 0%, 46%);
 }
 
 /*
