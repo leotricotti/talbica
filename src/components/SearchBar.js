@@ -9,7 +9,7 @@ function Caret() {
   return <div className={styles.caret} />;
 }
 
-function Input({ searchValue, handleInputChange }) {
+function Input({ searchValue, handleInputChange, handleKeyUp }) {
   return (
     <input
       className={styles.searchBar}
@@ -17,12 +17,13 @@ function Input({ searchValue, handleInputChange }) {
       placeholder="Type element name"
       value={searchValue}
       onChange={handleInputChange}
+      onKeyUp={handleKeyUp}
     />
   );
 }
 
-function Button({ handleShowClick }) {
-  return <button className={styles.helpIcon} onClick={handleShowClick} />;
+function Button({ handleClick }) {
+  return <button className={styles.helpIcon} onClick={handleClick} />;
 }
 
 function SearcBar({ dataFromApi }) {
@@ -31,32 +32,24 @@ function SearcBar({ dataFromApi }) {
   });
   const {
     updateOverflow,
+    updateToTop,
     clearInput,
     searchValue,
     setSearchValue,
     showInfo,
     setShowInfo,
   } = useContext(StylesContext).value;
-  const [showHelp, setShowHelp] = useState(false);
-  const [showResult, setShowResult] = useState(false);
-  const [isAnimated, setIsAnimated] = useState(false);
+  const [showCard, setShowCard] = useState(false);
 
-  const handleClickShowHelp = () => {
-    setTimeout(() => {
-      handleShowClick();
-    }, 300);
-    setIsAnimated(false);
-  };
-
-  const handleShowClick = () => {
-    setShowHelp(!showHelp);
-    clearInput();
+  const handleClick = () => {
     updateOverflow();
+    clearInput();
+    setShowCard(!showCard);
+    updateToTop();
   };
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
-    setShowResult(true);
     setSearchValue(inputValue);
     const filteredData = dataFromApi.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
@@ -64,27 +57,17 @@ function SearcBar({ dataFromApi }) {
     setShowInfo(filteredData);
   };
 
-  // const handleCaretPosition = (e) => {
-  //   const caretPosition = e.target.selectionStart;
-  //   updateOverflow(caretPosition);
-  // };
-
   return (
     <div className={styles.searchBarContainer}>
       <Caret />
       <Input searchValue={searchValue} handleInputChange={handleInputChange} />
-      <Button handleShowClick={handleShowClick} />
-      {showHelp && (
-        <SearchBarHelp
-          handleClickShowHelp={handleClickShowHelp}
-          isAnimated={isAnimated}
-        />
-      )}
-      {showInfo.length > 0 && (
+      <Button handleClick={handleClick} />
+      {showCard && <SearchBarHelp handleClickShowHelp={handleClick} />}
+      {showCard.length > 0 && (
         <SearchBarResults
           showInfo={showInfo}
           colors={colors}
-          showResult={showResult}
+          showResult={showCard}
         />
       )}
     </div>
