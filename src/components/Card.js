@@ -9,9 +9,7 @@ import styles from "../css/card.module.css";
 function CardContainer({ children, backgroundColor, showCard }) {
   return (
     <div
-      className={`${styles.cardContainer} ${
-        showCard ? styles.cardOpen : styles.cardClose
-      }`}
+      className={`${styles.cardContainer} ${showCard ? styles.cardOpen : ""}`}
       style={{
         backgroundColor: `var(${backgroundColor})`,
       }}
