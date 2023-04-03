@@ -5,7 +5,7 @@ import Spinner from "../components/Spinner";
 import HeaderMobile from "../components/HeaderMobile";
 import SearcBar from "../components/SearchBar";
 import Table from "../components/Table";
-import styles from "./home.module.css";
+import styles from "./mobileApp.module.css";
 
 function ErrorModal() {
   return (
@@ -17,7 +17,7 @@ function ErrorModal() {
   );
 }
 
-function Home() {
+function MobileApp() {
   const { dataFromApi, error, isLoading } = useContext(DataContext).value;
   const { themeHandler } = useContext(ThemeContext).value;
 
@@ -52,4 +52,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default MobileApp;

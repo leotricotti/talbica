@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { DataProvider } from "./contexts/DataContext";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { StylesProvider } from "./contexts/StylesContext";
-import Home from "./screens/Home";
+import MobileApp from "./screens/MobileApp";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <DataProvider>
         <StylesProvider>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<MobileApp />} />
           </Routes>
         </StylesProvider>
       </DataProvider>
