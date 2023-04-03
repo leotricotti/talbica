@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import styles from "../css/elementTypes.module.css";
+import styles from "./elementTypes.module.css";
 
 function Title({ title }) {
   return <h3 className={styles.elementTitle}>{title}</h3>;

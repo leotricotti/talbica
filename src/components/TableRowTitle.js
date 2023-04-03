@@ -1,4 +1,4 @@
-import styles from "../css/tableRowTitle.module.css";
+import styles from "./tableRowTitle.module.css";
 
 function TableRowTitle({ period, groupBlock }) {
   return groupBlock === "lanthanoid" || groupBlock === "actinoid" ? (

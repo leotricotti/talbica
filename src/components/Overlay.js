@@ -1,4 +1,4 @@
-import styles from "../css/overlay.module.css";
+import styles from "./overlay.module.css";
 
 function Overlay({ handleOverlay }) {
   return (

@@ -1,6 +1,6 @@
 import iconClose from "../assets/images/icons/icon-close.svg";
 import Overlay from "./Overlay";
-import styles from "../css/searchBarHelp.module.css";
+import styles from "./searchBarHelp.module.css";
 
 function SearchBarHelp({ handleClickShowHelp, isAnimated }) {
   return (

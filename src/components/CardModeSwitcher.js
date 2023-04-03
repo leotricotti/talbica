@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../css/cardModeSwitcher.module.css";
+import styles from "./cardModeSwitcher.module.css";
 
 function CardModeSwitcher() {
   const [mode, setMode] = useState("info");

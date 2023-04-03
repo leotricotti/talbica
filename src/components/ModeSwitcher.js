@@ -1,7 +1,7 @@
 import tableLegendData from "../assets/data/tableLegendData";
 import tableSwitcherData from "../assets/data/tableSwitcherData";
 import ElementTypes from "./ElementTypes";
-import styles from "../css/modeSwitcher.module.css";
+import styles from "./modeSwitcher.module.css";
 
 function Switcher({ isActive, handleClickTheme }) {
   return (

@@ -3,7 +3,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { StylesContext } from "../contexts/StylesContext";
 import MainTitle from "./MainTitle";
 import ModeSwitcher from "./ModeSwitcher";
-import styles from "../css/headerMobile.module.css";
+import styles from "./headerMobile.module.css";
 
 function ToggleLine({ isOpen, styleLine, styleActive }) {
   return <span className={`${styleLine} ${isOpen ? styleActive : ""}`} />;

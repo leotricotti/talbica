@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import TableRowElement from "./TableRowElement";
-import styles from "../css/searchBarResults.module.css";
+import styles from "./searchBarResults.module.css";
 
 function SearchBarResults({ showInfo, colors }) {
   const { toTop } = useContext(StylesContext).value;

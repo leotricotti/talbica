@@ -2,9 +2,9 @@ import { useState, useContext } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import Overlay from "./Overlay";
 import CardHeader from "./CardHeader";
-import CardBody from "./CarBody";
+import CardBody from "./CardBody";
 import CardModeSwitcher from "./CardModeSwitcher";
-import styles from "../css/card.module.css";
+import styles from "./card.module.css";
 
 function CardContainer({ children, backgroundColor, showCard }) {
   return (

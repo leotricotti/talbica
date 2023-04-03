@@ -1,4 +1,4 @@
-import styles from "../css/loader.module.css";
+import styles from "./loader.module.css";
 
 function ElementItem({ itemStyle, value }) {
   return <span className={itemStyle}>{value}</span>;

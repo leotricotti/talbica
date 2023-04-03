@@ -1,6 +1,6 @@
 import TableRow from "./TableRow";
 import Loader from "./Loader";
-import styles from "../css/table.module.css";
+import styles from "./table.module.css";
 
 function Table({ isLoading, dataFromApi, themeHandler }) {
   let prevPeriod;

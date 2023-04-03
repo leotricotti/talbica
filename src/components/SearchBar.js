@@ -3,7 +3,7 @@ import { StylesContext } from "../contexts/StylesContext";
 import { tableColors } from "../assets/data/tableColors";
 import SearchBarResults from "./SearchBarResult";
 import SearchBarHelp from "./SearchBarHelp";
-import styles from "../css/searchBar.module.css";
+import styles from "./searchBar.module.css";
 
 function Caret() {
   return <div className={styles.caret} />;

@@ -10,7 +10,7 @@ import useFormatColorName from "../customHooks/useFormatColorName";
 import useFadeIn from "../customHooks/useFadeIn";
 import useRandomDelay from "../customHooks/useRandomDelay";
 import Card from "./Card";
-import styles from "../css/tableRowElement.module.css";
+import styles from "./tableRowElement.module.css";
 
 function TableRowElement({ item, colors, themeHandler }) {
   const hoverColor = hoverColors.map((color) => {

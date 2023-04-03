@@ -1,4 +1,4 @@
-import styles from "../css/cardBody.module.css";
+import styles from "./cardBody.module.css";
 
 function Title({ title }) {
   return <h3 className={styles.cardBodyTitle}>{title}</h3>;
