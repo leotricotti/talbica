@@ -5,7 +5,7 @@ import Spinner from "../components/Spinner";
 import HeaderMobile from "../components/HeaderMobile";
 import SearcBar from "../components/SearchBar";
 import Table from "../components/Table";
-import styles from "../css/home.module.css";
+import styles from "./home.module.css";
 
 function ErrorModal() {
   return (
