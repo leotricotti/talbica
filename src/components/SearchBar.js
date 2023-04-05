@@ -62,19 +62,24 @@ function SearcBar({ dataFromApi }) {
   };
 
   return (
-    <div className={styles.searchBarContainer}>
-      <Caret />
-      <Input searchValue={searchValue} handleInputChange={handleInputChange} />
-      <Button handleClick={handleClick} />
+    <>
       <SearchBarHelp handleShowHelp={handleShowHelp} showHelp={showHelp} />
-      {showCard.length > 0 && (
-        <SearchBarResults
-          showInfo={showInfo}
-          colors={colors}
-          showResult={showCard}
+      <div className={styles.searchBarContainer}>
+        <Caret />
+        <Input
+          searchValue={searchValue}
+          handleInputChange={handleInputChange}
         />
-      )}
-    </div>
+        <Button handleClick={handleClick} />
+        {showCard.length > 0 && (
+          <SearchBarResults
+            showInfo={showInfo}
+            colors={colors}
+            showResult={showCard}
+          />
+        )}
+      </div>
+    </>
   );
 }
 

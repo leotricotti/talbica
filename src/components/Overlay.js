@@ -1,7 +1,13 @@
 import styles from "./overlay.module.css";
 
-function Overlay() {
-  return <div className={styles.overlay} />;
+function Overlay({ handleOverlay }) {
+  return (
+    <div
+      className={`${styles.overlay} ${
+        handleOverlay ? styles.showOverlay : ""
+      } `}
+    />
+  );
 }
 
 export default Overlay;

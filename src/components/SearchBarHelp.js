@@ -21,18 +21,20 @@ function HelpContent({ title, text }) {
 
 function SearchBarHelp({ handleShowHelp, showHelp }) {
   return (
-    <div
-      className={`${styles.helpContainer}
-    ${showHelp ? styles.helpOpen : ""}`}
-    >
+    <>
       <Overlay handleOverlay={showHelp} />
-      <CloseButton handleShowHelp={handleShowHelp} />
-      <HelpContent
-        title="Search by name"
-        text="Type a compound name in the search field. If the compound is found, the
+      <div
+        className={`${styles.helpContainer}
+    ${showHelp ? styles.helpOpen : ""}`}
+      >
+        <CloseButton handleShowHelp={handleShowHelp} />
+        <HelpContent
+          title="Search by name"
+          text="Type a compound name in the search field. If the compound is found, the
         App will display its component."
-      />
-    </div>
+        />
+      </div>
+    </>
   );
 }
 
