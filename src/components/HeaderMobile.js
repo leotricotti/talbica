@@ -52,14 +52,16 @@ function HeaderMobile() {
     <div className={styles.headerContainer}>
       <MainTitle title={"Periodic Table. Interactive Chemistry"} />
       <ToggleBtn isOpen={isOpen} handleClick={handleClick} />
-      <div className={`${isOpen ? styles.openToggle : styles.closeToggle}`}>
-        {isOpen && (
-          <ModeSwitcher
-            handleClickTheme={handleClickTheme}
-            isActive={isActive}
-            themeHandler={themeHandler}
-          />
-        )}
+      <div
+        className={`${styles.toggleMenu} ${
+          isOpen ? styles.toggleMenuVisible : ""
+        }`}
+      >
+        <ModeSwitcher
+          handleClickTheme={handleClickTheme}
+          isActive={isActive}
+          themeHandler={themeHandler}
+        />
       </div>
     </div>
   );

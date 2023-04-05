@@ -1,6 +1,4 @@
 .tableRowElement {
-  width: 5.3rem;
-  height: 6.125rem;
   position: relative;
   color: #fff;
   display: flex;
@@ -14,8 +12,6 @@
 }
 
 .elementOverlay {
-  width: 5.3rem;
-  height: 6.125rem;
   position: absolute;
   top: 0;
   left: 0;
