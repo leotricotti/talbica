@@ -3,7 +3,7 @@
   height: 100vh;
   background-color: #fff;
   position: absolute;
-  top: 3rem;
+  top: 0;
   left: 0;
   padding-top: 1.25rem;
   color: var(--textColor);
@@ -12,14 +12,32 @@
   border-radius: 1rem 1rem 0 0;
   opacity: 1;
   z-index: 7;
+  transform: translateY(120%);
+  transition: all .4s ease-in;
+}
+
+.helpOpen {
+  transform: translateY(0);
+}
+
+.helpContent {
+  background-color: var(--backgroundColor);
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .closeBtn {
   width: 1.5rem;
   height: 1.5rem;
   position: absolute;
-  top: 2rem;
+  top: 1rem;
   right: 1rem;
+  z-index: 9999;
 }
 
 .title {
@@ -31,32 +49,4 @@
 .text {
   font-size: .9375rem;
   padding: 1rem 1.250rem;
-}
-
-.animationOpen {
-  animation: animationOpen .5s ease-in-out;
-}
-
-@keyframes animationOpen {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-.animationClose {
-  animation: animationClose .5s ease-in-out;
-}
-
-@keyframes animationClose {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(100%);
-  }
 }

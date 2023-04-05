@@ -35,6 +35,7 @@ Variables
   --colorTransitionMetalHover: hsl(209, 59%, 75%, 0.7);
   --colorLanthanoidHover: hsl(164, 46%, 75%, 0.7);
   --colorActinoidHover: hsl(172, 27%, 60%, 0.7);
+  --backgroundColor: hsl(0, 0%, 100%);
   --spinnerColor: hsl(2, 97%, 69%);
   --overlayBackgroundColor: hsl(0, 0%, 0%);
   --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -85,4 +86,6 @@ Body Styles
 body {
   font-family: var(--ff-body);
   overflow-x: hidden;
+  position: relative;
+  background-color: var(--backgroundColor);
 }

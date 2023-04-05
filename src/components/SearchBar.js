@@ -40,13 +40,17 @@ function SearcBar({ dataFromApi }) {
     setShowInfo,
   } = useContext(StylesContext).value;
   const [showCard, setShowCard] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
 
   const handleClick = () => {
     updateOverflow();
     clearInput();
     setShowCard(!showCard);
     updateToTop();
+    setShowHelp(!showHelp);
   };
+
+  const handleShowHelp = () => setShowHelp(!showHelp);
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -62,7 +66,7 @@ function SearcBar({ dataFromApi }) {
       <Caret />
       <Input searchValue={searchValue} handleInputChange={handleInputChange} />
       <Button handleClick={handleClick} />
-      {showCard && <SearchBarHelp handleClickShowHelp={handleClick} />}
+      <SearchBarHelp handleShowHelp={handleShowHelp} showHelp={showHelp} />
       {showCard.length > 0 && (
         <SearchBarResults
           showInfo={showInfo}
