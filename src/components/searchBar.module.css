@@ -20,7 +20,8 @@
   position: absolute;
   z-index: 3;
   top: .6rem;
-  left: .6rem;
+  left: 0;
+  margin-left: .6rem;
   animation: caretAnimation 1.5s linear infinite;
   transition: all .2 ease-in;
 }

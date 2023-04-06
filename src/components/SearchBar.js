@@ -5,10 +5,12 @@ import SearchBarResults from "./SearchBarResult";
 import SearchBarHelp from "./SearchBarHelp";
 import styles from "./searchBar.module.css";
 
-function Input({ searchValue, handleInputChange }) {
+function Input({ searchValue, caretPosition, handleInputChange }) {
   return (
     <>
-      <span className={styles.caret}>|</span>
+      <span className={styles.caret} style={{ left: `${caretPosition}px` }}>
+        |
+      </span>
       <input
         className={styles.searchBar}
         type="text"
@@ -39,6 +41,7 @@ function SearcBar({ dataFromApi }) {
   } = useContext(StylesContext).value;
   const [showCard, setShowCard] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
+  const [caretPosition, setCaretPosition] = useState(parseInt(0));
 
   const handleClick = () => {
     updateOverflow();
@@ -52,6 +55,7 @@ function SearcBar({ dataFromApi }) {
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
+    setCaretPosition(inputValue.length * 12);
     setSearchValue(inputValue);
     const filteredData = dataFromApi.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
@@ -65,6 +69,7 @@ function SearcBar({ dataFromApi }) {
       <div className={styles.searchBarContainer}>
         <Input
           searchValue={searchValue}
+          caretPosition={caretPosition}
           handleInputChange={handleInputChange}
         />
         <Button handleClick={handleClick} />
