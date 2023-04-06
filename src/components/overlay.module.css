@@ -5,14 +5,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  opacity: .8;
+  opacity: .5;
   z-index: 3;
-  visibility: hidden;
+  opacity: 0;
   transform: translateY(30%);
   transition: all .5s ease-in;
 }
 
 .showOverlay {
-  visibility: visible;
+  opacity: 1;
   transform: translateY(0);
 }

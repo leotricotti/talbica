@@ -8,7 +8,10 @@ import styles from "./searchBar.module.css";
 function Input({ searchValue, caretPosition, handleInputChange }) {
   return (
     <>
-      <span className={styles.caret} style={{ left: `${caretPosition}px` }}>
+      <span
+        className={`${styles.caret} ${styles.caretTraslate}`}
+        style={{ left: `${caretPosition}.px`, transition: "all .2s ease-in" }}
+      >
         |
       </span>
       <input
@@ -51,7 +54,10 @@ function SearcBar({ dataFromApi }) {
     setShowHelp(!showHelp);
   };
 
-  const handleShowHelp = () => setShowHelp(!showHelp);
+  const handleShowHelp = () => {
+    setShowHelp(!showHelp);
+    updateOverflow();
+  };
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
@@ -62,6 +68,8 @@ function SearcBar({ dataFromApi }) {
     );
     setShowInfo(filteredData);
   };
+
+  console.log(showCard);
 
   return (
     <>
