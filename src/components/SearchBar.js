@@ -5,20 +5,18 @@ import SearchBarResults from "./SearchBarResult";
 import SearchBarHelp from "./SearchBarHelp";
 import styles from "./searchBar.module.css";
 
-function Caret() {
-  return <div className={styles.caret} />;
-}
-
-function Input({ searchValue, handleInputChange, handleKeyUp }) {
+function Input({ searchValue, handleInputChange }) {
   return (
-    <input
-      className={styles.searchBar}
-      type="text"
-      placeholder="Type element name"
-      value={searchValue}
-      onChange={handleInputChange}
-      onKeyUp={handleKeyUp}
-    />
+    <>
+      <span className={styles.caret}>|</span>
+      <input
+        className={styles.searchBar}
+        type="text"
+        placeholder="Type element name"
+        value={searchValue}
+        onChange={handleInputChange}
+      />
+    </>
   );
 }
 
@@ -65,7 +63,6 @@ function SearcBar({ dataFromApi }) {
     <>
       <SearchBarHelp handleShowHelp={handleShowHelp} showHelp={showHelp} />
       <div className={styles.searchBarContainer}>
-        <Caret />
         <Input
           searchValue={searchValue}
           handleInputChange={handleInputChange}

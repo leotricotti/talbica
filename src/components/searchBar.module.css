@@ -3,30 +3,26 @@
   position: relative;
 }
 
-.caret {
-  display: inline;
-  width: .025rem;
-  height: 1.3rem;
-  background-color: var(--caretColor);
-  position: absolute;
-  top: 1.05rem;
-  left: .95rem;
-  animation: caretActive 1.5s ease infinite;
-  z-index: 999;
-}
-
-.caretActive {
-  display: block;
-}
-
 .searchBar {
   width: 88%;
+  position: relative;
   font-size: 1.3rem;
   border: transparent;
   border-radius: .8rem;
   padding: 1rem 1rem;
   caret-color: transparent;
   background-color: var(--inputFieldBackgroundColor);
+}
+
+.caret {
+  color: var(--caretColor);
+  font-size: 1.3rem;
+  position: absolute;
+  z-index: 3;
+  top: .6rem;
+  left: .6rem;
+  animation: caretAnimation 1.5s linear infinite;
+  transition: all .2 ease-in;
 }
 
 .searchBar::placeholder {
@@ -49,20 +45,19 @@
   top: .5rem;
 }
 
-@keyframes caretActive {
+@keyframes caretAnimation {
   0% {
-    transform: scaleY(100%);
-    opacity: 1;
+    opacity: .8;
+    transform: scaleY(1);
   }
 
   50% {
-    transform: scaleY(150%);
-    opacity: .3;
-    width: .005;
+    opacity: .2;
+    transform: scaleY(1.8);
   }
 
   100% {
-    transform: scaleY(100%);
-    opacity: 1;
+    opacity: .8;
+    transform: scaleY(1);
   }
 }
