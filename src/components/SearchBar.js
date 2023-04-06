@@ -61,6 +61,11 @@ function SearcBar({ dataFromApi }) {
 
   const handleInputChange = (e) => {
     const inputValue = e.target.value;
+    if (inputValue.length <= 0) {
+      setShowInfo([]);
+    }
+
+    console.log(inputValue.length);
     setCaretPosition(inputValue.length * 12);
     setSearchValue(inputValue);
     const filteredData = dataFromApi.filter((item) =>
@@ -68,8 +73,6 @@ function SearcBar({ dataFromApi }) {
     );
     setShowInfo(filteredData);
   };
-
-  console.log(showCard);
 
   return (
     <>
@@ -81,14 +84,14 @@ function SearcBar({ dataFromApi }) {
           handleInputChange={handleInputChange}
         />
         <Button handleClick={handleClick} />
-        {showCard.length > 0 && (
-          <SearchBarResults
-            showInfo={showInfo}
-            colors={colors}
-            showResult={showCard}
-          />
-        )}
       </div>
+      {showInfo.length > 0 && showInfo.length < 118 && (
+        <SearchBarResults
+          showInfo={showInfo}
+          colors={colors}
+          showResult={showCard}
+        />
+      )}
     </>
   );
 }

@@ -1,4 +1,5 @@
 .tableRowElement {
+  width: 100%;
   position: relative;
   color: #fff;
   display: flex;
