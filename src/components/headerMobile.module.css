@@ -2,6 +2,7 @@
   width: 100%;
   min-height: 6rem;
   max-height: auto;
+  background-color: var(--backgroundColor);
 }
 
 .toggleButton {
@@ -61,15 +62,4 @@
 .isActiveThree {
   transform-origin: center;
   transform: translate3d(0, -10px, 0) rotate(-45deg);
-}
-
-.toggleMenu {
-  opacity: 0;
-  height: 0;
-  transition: all .4s ease-in;
-}
-
-.toggleMenuVisible {
-  opacity: 1;
-  height: 100vh;
 }

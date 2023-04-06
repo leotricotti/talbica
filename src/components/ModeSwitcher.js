@@ -5,7 +5,7 @@ import styles from "./modeSwitcher.module.css";
 
 function Switcher({ isActive, handleClickTheme }) {
   return (
-    <div className={styles.modeSwitcherContainer}>
+    <div className={styles.switcherContainer}>
       {tableSwitcherData.map((item) => (
         <button
           key={item.id}
@@ -28,12 +28,16 @@ function Switcher({ isActive, handleClickTheme }) {
   );
 }
 
-function ModeSwitcher({ themeHandler, isActive, handleClickTheme }) {
+function ModeSwitcher({ themeHandler, isOpen, isActive, handleClickTheme }) {
   return (
-    <>
+    <div
+      className={`${styles.modeSwitcherContainer} ${
+        isOpen ? styles.modeSwitcherVisible : ""
+      }`}
+    >
       <Switcher isActive={isActive} handleClickTheme={handleClickTheme} />
       <ElementTypes items={tableLegendData} themeHandler={themeHandler} />
-    </>
+    </div>
   );
 }
 
