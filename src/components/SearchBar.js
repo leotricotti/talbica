@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import { tableColors } from "../assets/data/tableColors";
 import SearchBarResults from "./SearchBarResult";
@@ -16,10 +16,9 @@ function Input({ searchValue, caretPosition, handleInputChange }) {
       </span>
       <input
         className={styles.searchBar}
-        type="text"
-        placeholder="Type element name"
         value={searchValue}
         onChange={handleInputChange}
+        placeholder="Type element to search"
       />
     </>
   );
@@ -46,6 +45,8 @@ function SearcBar({ dataFromApi }) {
   const [showHelp, setShowHelp] = useState(false);
   const [caretPosition, setCaretPosition] = useState(parseInt(0));
 
+  console.log(caretPosition);
+
   const handleClick = () => {
     updateOverflow();
     clearInput();
@@ -65,8 +66,12 @@ function SearcBar({ dataFromApi }) {
       setShowInfo([]);
     }
 
-    console.log(inputValue.length);
-    setCaretPosition(inputValue.length * 12);
+    if (inputValue === "l" || inputValue === "i") {
+      setCaretPosition(inputValue.length * 6);
+    } else {
+      setCaretPosition(inputValue.length * 10);
+    }
+
     setSearchValue(inputValue);
     const filteredData = dataFromApi.filter((item) =>
       item.name.toLowerCase().includes(inputValue.toLowerCase())
@@ -79,8 +84,8 @@ function SearcBar({ dataFromApi }) {
       <SearchBarHelp handleShowHelp={handleShowHelp} showHelp={showHelp} />
       <div className={styles.searchBarContainer}>
         <Input
-          searchValue={searchValue}
           caretPosition={caretPosition}
+          searchValue={searchValue}
           handleInputChange={handleInputChange}
         />
         <Button handleClick={handleClick} />
