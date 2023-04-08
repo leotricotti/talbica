@@ -1,11 +1,7 @@
-import { useContext } from "react";
-import { StylesContext } from "../contexts/StylesContext";
 import TableRowElement from "./TableRowElement";
 import styles from "./searchBarResults.module.css";
 
-function SearchBarResults({ showInfo, colors }) {
-  const { toTop } = useContext(StylesContext).value;
-
+function SearchBarResults({ toTop, showInfo, colors }) {
   return (
     <div className={`${styles.resultsContainer} ${toTop ? styles.toTop : ""}`}>
       {showInfo.map((item) => {
