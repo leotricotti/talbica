@@ -20,9 +20,11 @@ function TableRowElement({ item, colors, themeHandler, colorMode }) {
   const imageFiltered = elementImages.find(
     (elementImage) => elementImage.name === elementSymbol
   )?.url;
+
   const { updateOverflow, updateToTop } = useContext(StylesContext).value;
-  const [selectedElement, setSelectedElement] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [showCard, setShowCard] = useState(false);
+
   const displayMass = useFormatMass(item.atomicMass);
   const displayName = useTruncateName(item.name);
   const isFaded = useFadeIn(1);
@@ -33,15 +35,15 @@ function TableRowElement({ item, colors, themeHandler, colorMode }) {
   const backgroundHoverColor = useFilterColor(formatedHoverColor, hoverColor);
 
   const handleClick = () => {
-    setSelectedElement(true);
     updateOverflow();
     updateToTop();
+    setShowCard(true);
   };
 
-  const handleCLose = () => {
-    setSelectedElement(false);
+  const handleClose = () => {
     updateOverflow();
     updateToTop();
+    setShowCard(false);
   };
 
   return (
@@ -77,14 +79,12 @@ function TableRowElement({ item, colors, themeHandler, colorMode }) {
         <span className={styles.name}>{displayName}</span>
         <span className={styles.atomicMass}>{displayMass}</span>
       </button>
-      {selectedElement && (
-        <Card
-          dataFromApi={item}
-          onClose={handleCLose}
-          backgroundColor={backgroundColor}
-          selectedElement={selectedElement}
-        />
-      )}
+      <Card
+        showCard={showCard}
+        handleClose={handleClose}
+        dataFromApi={item}
+        backgroundColor={backgroundColor}
+      />
     </>
   );
 }

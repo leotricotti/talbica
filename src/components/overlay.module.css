@@ -1,15 +1,17 @@
 .overlay {
   width: 100%;
-  height: 0;
+  height: 100vh;
   background-color: var(--overlayBackgroundColor);
   position: absolute;
   top: 0;
   left: 0;
   opacity: .5;
-  transition: all .5s ease-in;
+  visibility: hidden;
+  transition: all 10s ease-in;
   z-index: 5;
+
 }
 
 .showOverlay {
-  height: 100vh;
+  visibility: visible;
 }

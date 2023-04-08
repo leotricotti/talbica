@@ -5,7 +5,7 @@ import SearchBarResults from "./SearchBarResult";
 import SearchBarHelp from "./SearchBarHelp";
 import styles from "./searchBar.module.css";
 
-function Input({ id, searchValue, handleInputChange }) {
+function Input({ searchValue, handleInputChange }) {
   return (
     <input
       className={styles.searchBar}

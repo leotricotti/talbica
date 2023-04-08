@@ -1,5 +1,3 @@
-import { useState, useContext } from "react";
-import { StylesContext } from "../contexts/StylesContext";
 import Overlay from "./Overlay";
 import CardHeader from "./CardHeader";
 import CardBody from "./CardBody";
@@ -27,16 +25,7 @@ function CloseBtn({ handleClose }) {
   );
 }
 
-function Card({ dataFromApi, backgroundColor, onClose }) {
-  const { updateOverflow, clearInput } = useContext(StylesContext).value;
-  const [showCard, setShowCard] = useState(true);
-
-  const handleClose = () => {
-    setShowCard(false);
-    updateOverflow();
-    clearInput();
-  };
-
+function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
   return (
     <>
       <Overlay handleOverlay={showCard} />

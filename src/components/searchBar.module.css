@@ -39,11 +39,7 @@
     caret-color: var(--caretColor);
   }
 
-  50% {
-    caret-color: transparent;
-  }
-
   100% {
-    caret-color: var(--caretColor);
+    caret-color: transparent;
   }
 }
