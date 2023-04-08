@@ -32,9 +32,6 @@ function Card({ dataFromApi, backgroundColor, onClose }) {
   const [showCard, setShowCard] = useState(true);
 
   const handleClose = () => {
-    setTimeout(() => {
-      onClose();
-    }, 300);
     setShowCard(false);
     updateOverflow();
     clearInput();
