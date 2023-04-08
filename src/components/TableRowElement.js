@@ -12,7 +12,7 @@ import useRandomDelay from "../customHooks/useRandomDelay";
 import Card from "./Card";
 import styles from "./tableRowElement.module.css";
 
-function TableRowElement({ item, colors, themeHandler }) {
+function TableRowElement({ item, colors, themeHandler, colorMode }) {
   const hoverColor = hoverColors.map((color) => {
     return color;
   });
@@ -62,10 +62,12 @@ function TableRowElement({ item, colors, themeHandler }) {
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }),
-          ...(imageFiltered === undefined && {
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            backdropFilter: "blur(60px)",
-          }),
+          ...(themeHandler && imageFiltered === undefined
+            ? {
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backdropFilter: "blur(60px)",
+              }
+            : {}),
           transitionDelay: `${!isHovered ? randomDelay : ""}`,
         }}
       >
