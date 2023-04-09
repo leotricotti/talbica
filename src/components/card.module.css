@@ -10,7 +10,7 @@
   z-index: 5;
   visibility: hidden;
   transform: translateY(120%);
-  transition: all .6s ease-in;
+  transition: all .5s ease-in;
 }
 
 .cardOpen {
