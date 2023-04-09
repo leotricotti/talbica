@@ -33,7 +33,8 @@ function ToggleBtn({ isOpen, handleClick }) {
 
 function HeaderMobile() {
   const { handleThemeChange, themeHandler } = useContext(ThemeContext).value;
-  const { updateOverflow, clearInput } = useContext(StylesContext).value;
+  const { updateOverflow, overflow, clearInput } =
+    useContext(StylesContext).value;
   const [isOpen, setIsopen] = useState(null);
   const [isActive, setIsActive] = useState(themeHandler ? 2 : 1);
 
@@ -44,12 +45,20 @@ function HeaderMobile() {
 
   const handleClick = () => {
     setIsopen(!isOpen);
-    updateOverflow();
+    if (overflow) {
+      updateOverflow(false);
+    } else {
+      updateOverflow(true);
+    }
     clearInput();
   };
 
   return (
-    <div className={styles.headerContainer}>
+    <div
+      className={`${styles.headerContainer} ${
+        isOpen ? styles.modeSwitcherVisible : ""
+      }`}
+    >
       <MainTitle title={"Periodic Table. Interactive Chemistry"} />
       <ToggleBtn isOpen={isOpen} handleClick={handleClick} />
       <ModeSwitcher

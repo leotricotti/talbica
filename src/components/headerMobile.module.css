@@ -1,8 +1,12 @@
 .headerContainer {
   width: 100%;
-  min-height: 6rem;
-  max-height: auto;
+  height: 6rem;
   background-color: var(--backgroundColor);
+  transition: all .5s ease-in-out;
+}
+
+.modeSwitcherVisible {
+  height: 100vh;
 }
 
 .toggleButton {

@@ -17,7 +17,7 @@ function Input({ searchValue, handleInputChange }) {
   );
 }
 
-function Button({ handleClick }) {
+function HelpButton({ handleClick }) {
   return <button className={styles.helpIcon} onClick={handleClick} />;
 }
 
@@ -39,7 +39,7 @@ function SearcBar({ dataFromApi }) {
   const [showHelp, setShowHelp] = useState(false);
 
   const handleClick = () => {
-    updateOverflow();
+    updateOverflow(true);
     clearInput();
     setShowCard(!showCard);
     updateToTop();
@@ -48,7 +48,7 @@ function SearcBar({ dataFromApi }) {
 
   const handleShowHelp = () => {
     setShowHelp(!showHelp);
-    updateOverflow();
+    updateOverflow(false);
   };
 
   const handleInputChange = (e) => {
@@ -62,6 +62,8 @@ function SearcBar({ dataFromApi }) {
       item.name.toLowerCase().includes(inputValue.toLowerCase())
     );
     setShowInfo(filteredData);
+
+    updateOverflow(true);
   };
 
   return (
@@ -72,7 +74,7 @@ function SearcBar({ dataFromApi }) {
           searchValue={searchValue}
           handleInputChange={handleInputChange}
         />
-        <Button handleClick={handleClick} />
+        <HelpButton handleClick={handleClick} />
       </div>
       {showInfo.length > 0 && showInfo.length < 118 && (
         <SearchBarResults

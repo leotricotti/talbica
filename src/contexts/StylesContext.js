@@ -19,8 +19,8 @@ export const StylesProvider = ({ children }) => {
     });
   }, [toTop]);
 
-  const updateOverflow = () => {
-    setOverflow(!overflow);
+  const updateOverflow = (value) => {
+    setOverflow(value);
   };
 
   const updateToTop = () => {
@@ -34,6 +34,7 @@ export const StylesProvider = ({ children }) => {
 
   const value = {
     updateOverflow,
+    overflow,
     updateToTop,
     toTop,
     clearInput,
