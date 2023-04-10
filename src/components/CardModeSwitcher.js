@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./cardModeSwitcher.module.css";
 
-function CardModeSwitcher() {
+function CardModeSwitcher({ showCard }) {
   const [mode, setMode] = useState("info");
 
   const handleClick = (newMode) => {
@@ -9,7 +9,11 @@ function CardModeSwitcher() {
   };
 
   return (
-    <div className={styles.modeSwitcherContainer}>
+    <div
+      className={`${styles.modeSwitcherContainer} ${
+        showCard ? styles.modeSwitcherContainerActve : ""
+      }`}
+    >
       <div
         className={`${styles.modeSwitcherActive} ${
           mode === "info" ? styles.infoActive : styles.photoActive

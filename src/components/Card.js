@@ -1,7 +1,6 @@
 import Overlay from "./Overlay";
 import CardHeader from "./CardHeader";
 import CardBody from "./CardBody";
-import CardModeSwitcher from "./CardModeSwitcher";
 import styles from "./card.module.css";
 
 function CardContainer({ children, backgroundColor, showCard }) {
@@ -36,7 +35,6 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
           backgroundColor={backgroundColor}
         />
         <CardBody dataFromApi={dataFromApi} />
-        <CardModeSwitcher />
       </CardContainer>
     </>
   );

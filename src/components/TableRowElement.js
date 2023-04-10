@@ -10,6 +10,7 @@ import useFormatColorName from "../customHooks/useFormatColorName";
 import useFadeIn from "../customHooks/useFadeIn";
 import useRandomDelay from "../customHooks/useRandomDelay";
 import Card from "./Card";
+import CardModeSwitcher from "./CardModeSwitcher";
 import styles from "./tableRowElement.module.css";
 
 function TableRowElement({ item, colors, themeHandler, colorMode }) {
@@ -87,6 +88,7 @@ function TableRowElement({ item, colors, themeHandler, colorMode }) {
         dataFromApi={item}
         backgroundColor={backgroundColor}
       />
+      <CardModeSwitcher showCard={showCard} />
     </>
   );
 }
