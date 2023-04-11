@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import cardPhotoModeImage from "../assets/data/cardPhotoModeImage";
 import Overlay from "./Overlay";
 import CardHeader from "./CardHeader";
 import CardBody from "./CardBody";
@@ -57,13 +58,11 @@ function CloseBtn({ handleClose }) {
   );
 }
 
-function Card({
-  dataFromApi,
-  backgroundColor,
-  imageFiltered,
-  showCard,
-  handleClose,
-}) {
+function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
+  const imageFiltered = cardPhotoModeImage.find(
+    (elementImage) => elementImage.name === elementSymbol
+  )?.url;
+
   const { cardThemeHandler } = useContext(ThemeContext).value;
 
   return cardThemeHandler ? (
