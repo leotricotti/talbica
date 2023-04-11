@@ -27,15 +27,15 @@ function CardPhotoContainer({
 }) {
   return (
     <div
-      className={`${styles.cardPhotoContainer} ${
-        showCard ? styles.cardOpen : ""
-      }`}
+      className={`${styles.cardContainer} ${showCard ? styles.cardOpen : ""}`}
       style={{
         ...(showCard && {
           backgroundColor: "var(--backgroundColorCard)",
           backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
+          backgroundPosition: "50% 40%",
+          marginBottom: "2rem",
         }),
         ...(themePhotoHandler && backgroundImage === undefined
           ? {
@@ -50,10 +50,10 @@ function CardPhotoContainer({
   );
 }
 
-function CloseBtn({ handleClose }) {
+function CloseBtn({ icon, handleClose }) {
   return (
     <button className={styles.closeBtn} onClick={handleClose}>
-      <div className={styles.closeIcon}></div>
+      <div className={icon}></div>
     </button>
   );
 }
@@ -75,14 +75,14 @@ function Card({
     <>
       <Overlay handleOverlay={showCard} />
       <CardPhotoContainer backgroundImage={imageFiltered} showCard={showCard}>
-        <CloseBtn handleClose={handleClose} />
+        <CloseBtn icon={styles.iconBlack} handleClose={handleClose} />
       </CardPhotoContainer>
     </>
   ) : (
     <>
       <Overlay handleOverlay={showCard} />
       <CardColorContainer backgroundColor={backgroundColor} showCard={showCard}>
-        <CloseBtn handleClose={handleClose} />
+        <CloseBtn icon={styles.iconWhite} handleClose={handleClose} />
         <CardHeader
           dataFromApi={dataFromApi}
           backgroundColor={backgroundColor}

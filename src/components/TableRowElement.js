@@ -87,9 +87,9 @@ function TableRowElement({ item, colors, themeHandler }) {
         handleClose={handleClose}
         dataFromApi={item}
         backgroundColor={backgroundColor}
-        imageFiltered={imageFiltered}
+        elementSymbol={elementSymbol}
       />
-      <CardModeSwitcher showCard={showCard} elementSymbol={item.symbol} />
+      <CardModeSwitcher showCard={showCard} />
     </>
   );
 }
