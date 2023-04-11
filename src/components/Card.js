@@ -58,7 +58,13 @@ function CloseBtn({ handleClose }) {
   );
 }
 
-function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
+function Card({
+  dataFromApi,
+  backgroundColor,
+  showCard,
+  handleClose,
+  elementSymbol,
+}) {
   const imageFiltered = cardPhotoModeImage.find(
     (elementImage) => elementImage.name === elementSymbol
   )?.url;
