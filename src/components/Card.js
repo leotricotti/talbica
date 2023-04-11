@@ -59,14 +59,8 @@ function CloseBtn({ icon, handleClose }) {
   );
 }
 
-function Card({
-  dataFromApi,
-  backgroundColor,
-  showCard,
-  handleClose,
-  elementSymbol,
-  standardState,
-}) {
+function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
+  const elementSymbol = dataFromApi.symbol;
   const imageFiltered = cardPhotoModeImage.find(
     (elementImage) => elementImage.name === elementSymbol
   )?.url;
@@ -79,7 +73,7 @@ function Card({
       <CardPhotoContainer
         backgroundImage={imageFiltered}
         showCard={showCard}
-        standardState={standardState}
+        standardState={dataFromApi.standardState}
       >
         <CloseBtn icon={styles.iconBlack} handleClose={handleClose} />
       </CardPhotoContainer>

@@ -17,7 +17,6 @@ function TableRowElement({ item, colors, themeHandler }) {
   const hoverColor = hoverColors.map((color) => {
     return color;
   });
-  const standardState = item.standardState;
   const elementSymbol = item.symbol;
   const imageFiltered = elementImages.find(
     (elementImage) => elementImage.name === elementSymbol
@@ -88,8 +87,6 @@ function TableRowElement({ item, colors, themeHandler }) {
         handleClose={handleClose}
         dataFromApi={item}
         backgroundColor={backgroundColor}
-        elementSymbol={elementSymbol}
-        standardState={standardState}
       />
       <CardModeSwitcher showCard={showCard} />
     </>
