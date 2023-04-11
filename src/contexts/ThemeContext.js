@@ -16,12 +16,8 @@ function ThemeProvider({ children }) {
     }
   };
 
-  const handleCardThemeChange = (mode) => {
-    if (mode === "photo") {
-      setCardThemeHandler(true);
-    } else {
-      setCardThemeHandler(false);
-    }
+  const handleCardThemeChange = () => {
+    setCardThemeHandler(!cardThemeHandler);
   };
 
   const value = {

@@ -1,14 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import styles from "./cardModeSwitcher.module.css";
 
 function CardModeSwitcher({ showCard }) {
-  const { handleCardThemeChange } = useContext(ThemeContext).value;
-  const [mode, setMode] = useState("info");
+  const { cardThemeHandler, handleCardThemeChange } =
+    useContext(ThemeContext).value;
 
-  const handleClick = (newMode) => {
-    setMode(newMode);
-    handleCardThemeChange(newMode);
+  console.log(cardThemeHandler);
+
+  const handleClick = () => {
+    handleCardThemeChange();
   };
 
   return (
@@ -19,12 +20,12 @@ function CardModeSwitcher({ showCard }) {
     >
       <div
         className={`${styles.modeSwitcherActive} ${
-          mode === "info" ? styles.infoActive : styles.photoActive
+          cardThemeHandler ? styles.photoActive : styles.infoActive
         }`}
       ></div>
       <button
         className={`${styles.modeSwitcherInfo} ${
-          mode === "info" ? styles.infoModeActive : ""
+          cardThemeHandler ? "" : styles.infoModeActive
         }`}
         onClick={() => handleClick("info")}
       >
@@ -32,7 +33,7 @@ function CardModeSwitcher({ showCard }) {
       </button>
       <button
         className={`${styles.modeSwitcherPhoto} ${
-          mode === "photo" ? styles.photoModeActive : ""
+          cardThemeHandler ? styles.photoModeActive : ""
         }`}
         onClick={() => handleClick("photo")}
       >

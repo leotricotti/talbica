@@ -24,17 +24,18 @@ function CardPhotoContainer({
   backgroundImage,
   showCard,
   themePhotoHandler,
+  standardState,
 }) {
   return (
     <div
       className={`${styles.cardContainer} ${showCard ? styles.cardOpen : ""}`}
       style={{
         ...(showCard && {
-          backgroundColor: "var(--backgroundColorCard)",
+          backgroundColor: `${standardState === "gas" ? "#000" : "#fff"}`,
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "50% 40%",
+          backgroundPosition: "50% 45%",
           marginBottom: "2rem",
         }),
         ...(themePhotoHandler && backgroundImage === undefined
@@ -64,6 +65,7 @@ function Card({
   showCard,
   handleClose,
   elementSymbol,
+  standardState,
 }) {
   const imageFiltered = cardPhotoModeImage.find(
     (elementImage) => elementImage.name === elementSymbol
@@ -74,7 +76,11 @@ function Card({
   return cardThemeHandler ? (
     <>
       <Overlay handleOverlay={showCard} />
-      <CardPhotoContainer backgroundImage={imageFiltered} showCard={showCard}>
+      <CardPhotoContainer
+        backgroundImage={imageFiltered}
+        showCard={showCard}
+        standardState={standardState}
+      >
         <CloseBtn icon={styles.iconBlack} handleClose={handleClose} />
       </CardPhotoContainer>
     </>
