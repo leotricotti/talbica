@@ -13,7 +13,7 @@ import Card from "./Card";
 import CardModeSwitcher from "./CardModeSwitcher";
 import styles from "./tableRowElement.module.css";
 
-function TableRowElement({ item, colors, themeHandler, colorMode }) {
+function TableRowElement({ item, colors, themeHandler }) {
   const hoverColor = hoverColors.map((color) => {
     return color;
   });
@@ -87,6 +87,7 @@ function TableRowElement({ item, colors, themeHandler, colorMode }) {
         handleClose={handleClose}
         dataFromApi={item}
         backgroundColor={backgroundColor}
+        imageFiltered={imageFiltered}
       />
       <CardModeSwitcher showCard={showCard} />
     </>

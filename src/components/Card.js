@@ -1,14 +1,47 @@
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 import Overlay from "./Overlay";
 import CardHeader from "./CardHeader";
 import CardBody from "./CardBody";
 import styles from "./card.module.css";
 
-function CardContainer({ children, backgroundColor, showCard }) {
+function CardColorContainer({ children, backgroundColor, showCard }) {
   return (
     <div
       className={`${styles.cardContainer} ${showCard ? styles.cardOpen : ""}`}
       style={{
         backgroundColor: `var(${backgroundColor})`,
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function CardPhotoContainer({
+  children,
+  backgroundImage,
+  showCard,
+  themePhotoHandler,
+}) {
+  return (
+    <div
+      className={`${styles.cardPhotoContainer} ${
+        showCard ? styles.cardOpen : ""
+      }`}
+      style={{
+        ...(showCard && {
+          backgroundColor: "var(--backgroundColorCard)",
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }),
+        ...(themePhotoHandler && backgroundImage === undefined
+          ? {
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(60px)",
+            }
+          : {}),
       }}
     >
       {children}
@@ -24,18 +57,33 @@ function CloseBtn({ handleClose }) {
   );
 }
 
-function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
-  return (
+function Card({
+  dataFromApi,
+  backgroundColor,
+  imageFiltered,
+  showCard,
+  handleClose,
+}) {
+  const { cardThemeHandler } = useContext(ThemeContext).value;
+
+  return cardThemeHandler ? (
     <>
       <Overlay handleOverlay={showCard} />
-      <CardContainer backgroundColor={backgroundColor} showCard={showCard}>
+      <CardPhotoContainer backgroundImage={imageFiltered} showCard={showCard}>
+        <CloseBtn handleClose={handleClose} />
+      </CardPhotoContainer>
+    </>
+  ) : (
+    <>
+      <Overlay handleOverlay={showCard} />
+      <CardColorContainer backgroundColor={backgroundColor} showCard={showCard}>
         <CloseBtn handleClose={handleClose} />
         <CardHeader
           dataFromApi={dataFromApi}
           backgroundColor={backgroundColor}
         />
         <CardBody dataFromApi={dataFromApi} />
-      </CardContainer>
+      </CardColorContainer>
     </>
   );
 }

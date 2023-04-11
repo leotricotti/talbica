@@ -4,18 +4,31 @@ const ThemeContext = createContext();
 
 function ThemeProvider({ children }) {
   const [themeHandler, setThemeHandler] = useState(false);
+  const [cardThemeHandler, setCardThemeHandler] = useState(false);
 
   const handleThemeChange = (id) => {
     if (id === 2) {
       setThemeHandler(true);
+      setCardThemeHandler(true);
     } else {
       setThemeHandler(false);
+      setCardThemeHandler(false);
+    }
+  };
+
+  const handleCardThemeChange = (mode) => {
+    if (mode === "photo") {
+      setCardThemeHandler(true);
+    } else {
+      setCardThemeHandler(false);
     }
   };
 
   const value = {
     themeHandler,
     handleThemeChange,
+    cardThemeHandler,
+    handleCardThemeChange,
   };
 
   return (

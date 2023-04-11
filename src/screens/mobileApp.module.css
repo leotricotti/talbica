@@ -47,6 +47,7 @@
 
 .photoMode {
   --backgroundColor: transparent;
+  --backgroundColorCard: hsl(0, 0%, 100%);
   --inputFieldBackgroundColor: hsla(0, 0%, 100%, 0.08);
   --inputFieldTextColor: hsla(0, 0%, 100%, 0.4);
   --modeSwitcherBackgroundColor: rgba(149, 149, 149, 0.08);

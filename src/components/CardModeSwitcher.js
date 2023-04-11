@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 import styles from "./cardModeSwitcher.module.css";
 
 function CardModeSwitcher({ showCard }) {
+  const { handleCardThemeChange } = useContext(ThemeContext).value;
   const [mode, setMode] = useState("info");
 
   const handleClick = (newMode) => {
     setMode(newMode);
+    handleCardThemeChange(newMode);
   };
 
   return (
