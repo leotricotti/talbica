@@ -6,8 +6,6 @@ function CardModeSwitcher({ showCard }) {
   const { cardThemeHandler, handleCardThemeChange } =
     useContext(ThemeContext).value;
 
-  console.log(cardThemeHandler);
-
   const handleClick = () => {
     handleCardThemeChange();
   };
