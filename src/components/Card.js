@@ -23,7 +23,6 @@ function CardPhotoContainer({
   children,
   backgroundImage,
   showCard,
-  themePhotoHandler,
   standardState,
 }) {
   return (
@@ -38,10 +37,10 @@ function CardPhotoContainer({
           backgroundPosition: "50% 45%",
           marginBottom: "2rem",
         }),
-        ...(themePhotoHandler && backgroundImage === undefined
+        ...(showCard && backgroundImage === undefined
           ? {
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-              backdropFilter: "blur(60px)",
+              backgroundColor: "rgba(0, 0, 0, .8)",
+              backdropFilter: "blur(15px)",
             }
           : {}),
       }}
@@ -78,7 +77,9 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
       >
         <CloseBtn
           icon={`${
-            standardState === "gas" ? styles.iconWhite : styles.iconBlack
+            standardState === "gas" || imageFiltered === undefined
+              ? styles.iconWhite
+              : styles.iconBlack
           }`}
           handleClose={handleClose}
         />

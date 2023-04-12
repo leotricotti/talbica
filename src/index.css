@@ -41,6 +41,7 @@ Variables
   --ff-body: 'Open Sans', Helvetica, Arial, sans-serif;
   --elementFade: hsl(0, 0%, 0%, .2);
   --caretColor: hsl(0, 0%, 46%);
+  --infoCardInactiveTabColor: hsla(0, 0%, 100%, 0.4);
 }
 
 /*

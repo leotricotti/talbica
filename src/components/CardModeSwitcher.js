@@ -25,6 +25,13 @@ function CardModeSwitcher({ showCard }) {
         className={`${styles.modeSwitcherInfo} ${
           cardThemeHandler ? "" : styles.infoModeActive
         }`}
+        style={{
+          color: `${
+            cardThemeHandler
+              ? "var(  --infoCardInactiveTabColor)"
+              : "var(--cardModeSwitcherActiveTextColor)"
+          }`,
+        }}
         onClick={() => handleClick("info")}
       >
         Info
