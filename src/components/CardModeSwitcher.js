@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import styles from "./cardModeSwitcher.module.css";
 
-function CardModeSwitcher({ showCard }) {
+function CardModeSwitcher({ showCard, standardState }) {
   const { cardThemeHandler, handleCardThemeChange } =
     useContext(ThemeContext).value;
 
@@ -27,8 +27,8 @@ function CardModeSwitcher({ showCard }) {
         }`}
         style={{
           color: `${
-            cardThemeHandler
-              ? "var(  --infoCardInactiveTabColor)"
+            standardState === "gas"
+              ? "var( --infoCardInactiveTabColor)"
               : "var(--cardModeSwitcherActiveTextColor)"
           }`,
         }}

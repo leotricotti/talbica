@@ -52,7 +52,6 @@
 }
 
 .modeSwitcherInfo {
-  color: var(--cardModeSwitcherTextColor);
   width: 50%;
   font-size: 1.125rem;
   text-align: center;
