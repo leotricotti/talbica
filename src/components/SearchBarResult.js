@@ -1,9 +1,9 @@
 import TableRowElement from "./TableRowElement";
 import styles from "./searchBarResults.module.css";
 
-function SearchBarResults({ toTop, showInfo, colors }) {
+function SearchBarResults({ showInfo, colors }) {
   return (
-    <div className={`${styles.resultsContainer} ${toTop ? styles.toTop : ""}`}>
+    <div className={styles.resultsContainer}>
       {showInfo.map((item) => {
         return (
           <div key={item.atomicNumber} className={styles.element}>
