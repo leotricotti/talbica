@@ -27,9 +27,11 @@ function CardModeSwitcher({ showCard, standardState }) {
         }`}
         style={{
           color: `${
-            standardState === "gas"
+            standardState === "gas" && cardThemeHandler
               ? "var( --infoCardInactiveTabColor)"
-              : "var(--cardModeSwitcherActiveTextColor)"
+              : cardThemeHandler
+              ? "var(--mobileSwitcherColor)"
+              : "var(--cardModeSwitcherActiveTextColor )"
           }`,
         }}
         onClick={() => handleClick("info")}

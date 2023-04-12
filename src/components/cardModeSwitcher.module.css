@@ -62,7 +62,3 @@
 .photoModeActive {
   color: var(--cardModeSwitcherActiveTextColor);
 }
-
-.infoModeActive {
-  color: var(--cardModeSwitcherActiveTextColor);
-}

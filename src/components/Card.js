@@ -58,6 +58,17 @@ function CloseBtn({ icon, handleClose }) {
   );
 }
 
+function Element({ item }) {
+  return (
+    <div className={styles.elementContainer}>
+      <span className={styles.atomicNumber}>{item.atomicNumber}</span>
+      <span className={styles.symbol}>{item.symbol}</span>
+      <span className={styles.name}>{item.name}</span>
+      <span className={styles.atomicMass}>{item.atomicNumber}</span>
+    </div>
+  );
+}
+
 function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
   const standardState = dataFromApi.standardState;
   const elementSymbol = dataFromApi.symbol;
@@ -83,6 +94,7 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
           }`}
           handleClose={handleClose}
         />
+        <Element item={dataFromApi} />
       </CardPhotoContainer>
     </>
   ) : (

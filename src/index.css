@@ -43,6 +43,9 @@ Variables
   --caretColor: hsl(0, 0%, 46%);
   --infoCardInactiveTabColor: hsla(0, 0%, 100%, 0.4);
   --mobileSwitcherColor: hsl(0, 0%, 44%);
+  --mobileCardElementBackground: rgba(255, 255, 255, 0.7);
+  --photoCardBorderColor: rgba(0, 0, 0, 0.2);
+  --photoCardTextColor: #2c2c2c;
 }
 
 /*
