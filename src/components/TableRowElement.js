@@ -22,8 +22,7 @@ function TableRowElement({ item, colors, themeHandler }) {
     (elementImage) => elementImage.name === elementSymbol
   )?.url;
 
-  const { updateOverflow, updateToTop, clearInput } =
-    useContext(StylesContext).value;
+  const { updateOverflow, clearInput } = useContext(StylesContext).value;
   const [isHovered, setIsHovered] = useState(false);
   const [showCard, setShowCard] = useState(false);
 
@@ -38,13 +37,11 @@ function TableRowElement({ item, colors, themeHandler }) {
 
   const handleClick = () => {
     updateOverflow(true);
-    updateToTop();
     setShowCard(true);
   };
 
   const handleClose = () => {
     updateOverflow(false);
-    updateToTop();
     setShowCard(false);
     clearInput();
   };
