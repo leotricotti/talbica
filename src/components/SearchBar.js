@@ -27,8 +27,6 @@ function SearcBar({ dataFromApi }) {
   });
   const {
     updateOverflow,
-    updateToTop,
-    toTop,
     clearInput,
     searchValue,
     setSearchValue,
@@ -42,7 +40,6 @@ function SearcBar({ dataFromApi }) {
     updateOverflow(true);
     clearInput();
     setShowCard(!showCard);
-    updateToTop();
     setShowHelp(!showHelp);
   };
 
@@ -81,7 +78,6 @@ function SearcBar({ dataFromApi }) {
           showInfo={showInfo}
           colors={colors}
           showResult={showCard}
-          toTop={toTop}
         />
       )}
     </>
