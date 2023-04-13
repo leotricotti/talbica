@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
+import useFormatMass from "../customHooks/useFormatMass";
 import cardPhotoModeImage from "../assets/data/cardPhotoModeImage";
 import Overlay from "./Overlay";
 import CardHeader from "./CardHeader";
@@ -58,13 +59,18 @@ function CloseBtn({ icon, handleClose }) {
   );
 }
 
-function Element({ item }) {
+function Element({ item, standardState, displayMass }) {
+  console.log(standardState);
   return (
-    <div className={styles.elementContainer}>
+    <div
+      className={`${styles.elementContainer} ${
+        standardState === "gas" ? styles.photoModeActive : ""
+      }`}
+    >
       <span className={styles.atomicNumber}>{item.atomicNumber}</span>
       <span className={styles.symbol}>{item.symbol}</span>
       <span className={styles.name}>{item.name}</span>
-      <span className={styles.atomicMass}>{item.atomicNumber}</span>
+      <span className={styles.atomicMass}>{displayMass}</span>
     </div>
   );
 }
@@ -72,6 +78,7 @@ function Element({ item }) {
 function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
   const standardState = dataFromApi.standardState;
   const elementSymbol = dataFromApi.symbol;
+  const displayMass = useFormatMass(dataFromApi.atomicMass);
   const imageFiltered = cardPhotoModeImage.find(
     (elementImage) => elementImage.name === elementSymbol
   )?.url;
@@ -94,7 +101,11 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
           }`}
           handleClose={handleClose}
         />
-        <Element item={dataFromApi} />
+        <Element
+          item={dataFromApi}
+          displayMass={displayMass}
+          standardState={standardState}
+        />
       </CardPhotoContainer>
     </>
   ) : (
