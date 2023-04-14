@@ -60,7 +60,6 @@ function CloseBtn({ icon, handleClose }) {
 }
 
 function Element({ item, standardState, displayMass }) {
-  console.log(standardState);
   return (
     <div
       className={`${styles.elementContainer} ${

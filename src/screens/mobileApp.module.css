@@ -43,6 +43,7 @@
   --cardModeSwitcherBackgroundActiveColor: rgba(0, 0, 0, 0.22);
   --glossaryTextColor: hsl(0, 0%, 20%);
   --seacrhBarHelpIcon: url('../assets/images/icons/help-black.svg');
+  --textColorHelpBar: hsl(0, 0%, 0%);
 }
 
 .photoMode {
@@ -53,11 +54,20 @@
   --modeSwitcherBackgroundColor: rgba(149, 149, 149, 0.08);
   --modeSwitcherActiveBackgroundColor: hsla(0, 0%, 58%, 0.281);
   --modeSwitcherTextColor: hsla(0, 0%, 100%, 0.75);
+  --cardModeSwitcherTextColor: hsl(0, 0%, 44%);
+  --cardModeSwitcherActiveTextColor: hsl(0, 0%, 100%);
+  --cardModeSwitcherBackgroundColor: hsla(0, 0%, 86%, 0.6);
+  --cardModeSwitcherBackgroundActiveColor: rgba(0, 0, 0, 0.22);
   --mainTitleColor: hsl(0, 0%, 100%);
   --textColor: hsl(0, 0%, 100%);
+  --textColorHelpBar: hsl(0, 0%, 0%);
   --caretColor: hsl(0, 0%, 46%);
   --glossaryTextColor: hsla(0, 0%, 100%, 0.749);
   --seacrhBarHelpIcon: url('../assets/images/icons/help-white.svg');
+  --photoCardBorderBlack: rgba(0, 0, 0, 0.2);
+  --photoCardBorderWhite: rgba(255, 255, 255, 0.4);
+  --photoCardTextBlack: #2c2c2c;
+  --photoCardTextWhite: white;
 }
 
 .backgroundImage {
