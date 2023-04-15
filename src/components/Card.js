@@ -25,13 +25,22 @@ function CardPhotoContainer({
   backgroundImage,
   showCard,
   standardState,
+  elementSymbol,
 }) {
   return (
     <div
       className={`${styles.cardContainer} ${showCard ? styles.cardOpen : ""}`}
       style={{
         ...(showCard && {
-          backgroundColor: `${standardState === "gas" ? "#000" : "#fff"}`,
+          backgroundColor: `${
+            elementSymbol === "N" || elementSymbol === "F"
+              ? "#bde1ed"
+              : elementSymbol === "Tc"
+              ? "#e8e9eb"
+              : standardState === "gas"
+              ? "#000"
+              : "#fff"
+          }`,
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -91,6 +100,7 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
         backgroundImage={imageFiltered}
         showCard={showCard}
         standardState={standardState}
+        elementSymbol={elementSymbol}
       >
         <CloseBtn
           icon={`${
