@@ -37,7 +37,9 @@ function CardPhotoContainer({
               ? "#bde1ed"
               : elementSymbol === "Tc"
               ? "#e8e9eb"
-              : standardState === "gas"
+              : elementSymbol === "I"
+              ? "#aeae9bfa"
+              : standardState === "gas" || elementSymbol === "Na"
               ? "#000"
               : "#fff"
           }`,
@@ -68,11 +70,15 @@ function CloseBtn({ icon, handleClose }) {
   );
 }
 
-function Element({ item, standardState, displayMass }) {
+function Element({ item, displayMass }) {
+  const standardState = item.standardState;
+  const symbol = item.symbol;
   return (
     <div
       className={`${styles.elementContainer} ${
-        standardState === "gas" ? styles.photoModeActive : ""
+        standardState === "gas" || symbol === "I" || symbol === "Na"
+          ? styles.photoModeActive
+          : ""
       }`}
     >
       <span className={styles.atomicNumber}>{item.atomicNumber}</span>
@@ -104,17 +110,15 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
       >
         <CloseBtn
           icon={`${
-            standardState === "gas" || imageFiltered === undefined
+            standardState === "gas" ||
+            imageFiltered === undefined ||
+            elementSymbol === "Na"
               ? styles.iconWhite
               : styles.iconBlack
           }`}
           handleClose={handleClose}
         />
-        <Element
-          item={dataFromApi}
-          displayMass={displayMass}
-          standardState={standardState}
-        />
+        <Element item={dataFromApi} displayMass={displayMass} />
       </CardPhotoContainer>
     </>
   ) : (

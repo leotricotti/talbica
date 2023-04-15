@@ -22,16 +22,12 @@ function CardModeSwitcher({ showCard, standardState }) {
         }`}
       ></div>
       <button
-        className={`${styles.modeSwitcherInfo} ${
-          cardThemeHandler ? "" : styles.infoModeActive
-        }`}
+        className={styles.modeSwitcherInfo}
         style={{
           color: `${
-            standardState === "gas" && cardThemeHandler
-              ? "var( --infoCardInactiveTabColor)"
-              : cardThemeHandler
-              ? "var(--mobileSwitcherColor)"
-              : "var(--cardModeSwitcherActiveTextColor )"
+            standardState === "gas" &&
+            cardThemeHandler &&
+            "var( --infoCardInactiveTabColor)"
           }`,
         }}
         onClick={() => handleClick("info")}
