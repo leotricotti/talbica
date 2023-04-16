@@ -54,7 +54,7 @@
   --modeSwitcherBackgroundColor: rgba(149, 149, 149, 0.08);
   --modeSwitcherActiveBackgroundColor: hsla(0, 0%, 58%, 0.281);
   --modeSwitcherTextColor: hsla(0, 0%, 100%, 0.75);
-  --cardModeSwitcherTextColor: rgba(255, 255, 255, 0.75);
+  --cardModeSwitcherTextColor: hsl(0, 0%, 74%);
   --cardModeSwitcherActiveTextColor: hsl(0, 0%, 100%);
   --cardModeSwitcherBackgroundColor: hsla(0, 0%, 24%, 0.6);
   --cardModeSwitcherBackgroundActiveColor: rgba(170, 170, 170, 0.22);
