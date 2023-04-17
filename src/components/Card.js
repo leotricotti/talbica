@@ -29,7 +29,11 @@ function CardPhotoContainer({
 }) {
   return (
     <div
-      className={`${styles.cardContainer} ${showCard ? styles.cardOpen : ""}`}
+      className={`${
+        backgroundImage === undefined
+          ? styles.elementCentered
+          : styles.cardContainer
+      } ${showCard ? styles.cardOpen : ""}`}
       style={{
         ...(showCard && {
           backgroundColor: `${
@@ -70,16 +74,20 @@ function CloseBtn({ icon, handleClose }) {
   );
 }
 
-function Element({ item, displayMass }) {
+function Element({ item, displayMass, backgroundImage }) {
   const standardState = item.standardState;
   const symbol = item.symbol;
   return (
     <div
       className={`${styles.elementContainer} ${
-        standardState === "gas" || symbol === "I" || symbol === "Na"
+        standardState === "gas" ||
+        symbol === "I" ||
+        symbol === "Na" ||
+        backgroundImage === undefined
           ? styles.photoModeActive
           : ""
       }`}
+      style={{ left: `${backgroundImage === undefined ? "0" : "1rem"}` }}
     >
       <span className={styles.atomicNumber}>{item.atomicNumber}</span>
       <span className={styles.symbol}>{item.symbol}</span>
@@ -118,7 +126,11 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
           }`}
           handleClose={handleClose}
         />
-        <Element item={dataFromApi} displayMass={displayMass} />
+        <Element
+          item={dataFromApi}
+          displayMass={displayMass}
+          backgroundImage={imageFiltered}
+        />
       </CardPhotoContainer>
     </>
   ) : (

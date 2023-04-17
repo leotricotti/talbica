@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../contexts/ThemeContext";
 import styles from "./cardModeSwitcher.module.css";
 
-function CardModeSwitcher({ showCard, standardState }) {
+function CardModeSwitcher({ showCard }) {
   const { cardThemeHandler, handleCardThemeChange } =
     useContext(ThemeContext).value;
 
@@ -25,7 +25,7 @@ function CardModeSwitcher({ showCard, standardState }) {
         className={`${styles.modeSwitcherInfo} ${
           cardThemeHandler ? "" : styles.infoModeActive
         }`}
-        onClick={() => handleClick("info")}
+        onClick={handleClick}
       >
         Info
       </button>
@@ -33,7 +33,7 @@ function CardModeSwitcher({ showCard, standardState }) {
         className={`${styles.modeSwitcherPhoto} ${
           cardThemeHandler ? styles.photoModeActive : ""
         }`}
-        onClick={() => handleClick("photo")}
+        onClick={handleClick}
       >
         Photo
       </button>
