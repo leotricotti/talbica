@@ -52,8 +52,6 @@ function TableRowElement({ item, colors, themeHandler }) {
     clearInput();
   };
 
-  console.log(isFadedIn);
-
   return (
     <>
       <button

@@ -11,7 +11,8 @@
   border-radius: .8rem;
   padding: 1rem 1rem;
   background-color: var(--inputFieldBackgroundColor);
-  animation: blinkCaret 1.2s infinite;
+  animation: blinkCaret 1s infinite;
+  transition: all .5s ease-in;
 }
 
 .searchBar::placeholder {
