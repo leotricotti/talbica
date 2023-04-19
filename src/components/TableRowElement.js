@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { StylesContext } from "../contexts/StylesContext";
 import { hoverColors } from "../assets/data/tableColors";
 import elementImages from "../assets/data/elementImages";
@@ -7,7 +7,6 @@ import useFormatMass from "../customHooks/useFormatMass";
 import useTruncateName from "../customHooks/useFormatName";
 import useFilterColor from "../customHooks/useFilterColor";
 import useFormatColorName from "../customHooks/useFormatColorName";
-import useFadeIn from "../customHooks/useFadeIn";
 import useRandomDelay from "../customHooks/useRandomDelay";
 import Card from "./Card";
 import CardModeSwitcher from "./CardModeSwitcher";
@@ -26,10 +25,16 @@ function TableRowElement({ item, colors, themeHandler }) {
   const { updateOverflow, clearInput } = useContext(StylesContext).value;
   const [isHovered, setIsHovered] = useState(false);
   const [showCard, setShowCard] = useState(false);
+  const [isFadedIn, setIsFadeIn] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsFadeIn(false);
+    }, 2500);
+  });
 
   const displayMass = useFormatMass(item.atomicMass);
   const displayName = useTruncateName(item.name);
-  const isFaded = useFadeIn(1);
   const randomDelay = useRandomDelay(null);
   const formatedColor = useFormatColorName(item.groupBlock);
   const backgroundColor = useFilterColor(formatedColor, colors);
@@ -47,13 +52,15 @@ function TableRowElement({ item, colors, themeHandler }) {
     clearInput();
   };
 
+  console.log(isFadedIn);
+
   return (
     <>
       <button
         onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`${styles.tableRowElement}  ${isFaded ? styles.show : ""}`}
+        className={styles.tableRowElement}
         style={{
           ...(!themeHandler && {
             backgroundColor: `var(${
@@ -71,10 +78,9 @@ function TableRowElement({ item, colors, themeHandler }) {
                 backdropFilter: "blur(60px)",
               }
             : {}),
-          transitionDelay: `${!isHovered ? randomDelay : ""}`,
+          transitionDelay: `${isFadedIn ? randomDelay : ""}`,
         }}
       >
-        <div className={`${themeHandler ? styles.elementOverlay : ""}`}></div>
         <span className={styles.atomicNumber}>{item.atomicNumber}</span>
         <span className={styles.symbol}>{item.symbol}</span>
         <span className={styles.name}>{displayName}</span>

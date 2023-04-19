@@ -10,6 +10,7 @@
   border-radius: .5rem;
   padding: .4375rem .3125rem;
   cursor: pointer;
+  transition: all .1s ease-in;
 }
 
 .elementOverlay {
@@ -41,7 +42,7 @@
   font-weight: 600;
 }
 
-.tableRowElement.atomicMass {
+.tableRowElement {
   font-size: .75rem;
   font-weight: 500;
   margin-top: .1rem;
