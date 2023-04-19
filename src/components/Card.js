@@ -43,7 +43,9 @@ function CardPhotoContainer({
               ? "#e8e9eb"
               : elementSymbol === "I"
               ? "#aeae9bfa"
-              : standardState === "gas" || elementSymbol === "Na"
+              : standardState === "gas" ||
+                elementSymbol === "Na" ||
+                elementSymbol === "Rh"
               ? "#000"
               : "#fff"
           }`,
@@ -83,11 +85,28 @@ function Element({ item, displayMass, backgroundImage }) {
         standardState === "gas" ||
         symbol === "I" ||
         symbol === "Na" ||
+        symbol === "Rh" ||
         backgroundImage === undefined
           ? styles.photoModeActive
           : ""
       }`}
-      style={{ left: `${backgroundImage === undefined ? "0" : "1rem"}` }}
+      style={{
+        left: `${backgroundImage === undefined ? "0" : "1rem"}`,
+        backgroundColor: `${
+          symbol === "N" || symbol === "F"
+            ? "#bde1ed"
+            : symbol === "Tc"
+            ? "#e8e9eb"
+            : symbol === "I"
+            ? "#aeae9bfa"
+            : backgroundImage === undefined
+            ? "rgba(0, 0, 0, .8)"
+            : standardState === "gas" || symbol === "Na" || symbol === "Rh"
+            ? "#000"
+            : "#fff"
+        }`,
+        backdropFilter: `${backgroundImage === undefined ? "blur(15px)" : ""}`,
+      }}
     >
       <span className={styles.atomicNumber}>{item.atomicNumber}</span>
       <span className={styles.symbol}>{item.symbol}</span>
@@ -120,7 +139,8 @@ function Card({ dataFromApi, backgroundColor, showCard, handleClose }) {
           icon={`${
             standardState === "gas" ||
             imageFiltered === undefined ||
-            elementSymbol === "Na"
+            elementSymbol === "Na" ||
+            elementSymbol === "Rh"
               ? styles.iconWhite
               : styles.iconBlack
           }`}
