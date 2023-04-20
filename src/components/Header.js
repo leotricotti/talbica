@@ -3,7 +3,7 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { StylesContext } from "../contexts/StylesContext";
 import MainTitle from "./MainTitle";
 import ModeSwitcher from "./ModeSwitcher";
-import styles from "./headerMobile.module.css";
+import styles from "./header.module.css";
 
 function ToggleLine({ isOpen, styleLine, styleActive }) {
   return <span className={`${styleLine} ${isOpen ? styleActive : ""}`} />;
@@ -31,7 +31,7 @@ function ToggleBtn({ isOpen, handleClick }) {
   );
 }
 
-function HeaderMobile() {
+function Header() {
   const { handleThemeChange, themeHandler } = useContext(ThemeContext).value;
   const { updateOverflow, overflow, clearInput } =
     useContext(StylesContext).value;
@@ -71,4 +71,4 @@ function HeaderMobile() {
   );
 }
 
-export default HeaderMobile;
+export default Header;
