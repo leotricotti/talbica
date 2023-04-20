@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../contexts/DataContext";
 import { ThemeContext } from "../contexts/ThemeContext";
 import Spinner from "../components/Spinner";
@@ -20,13 +20,24 @@ function ErrorModal() {
 function TableApp() {
   const { dataFromApi, error, isLoading } = useContext(DataContext).value;
   const { themeHandler } = useContext(ThemeContext).value;
-  const [scale, setScale] = useState(false);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+    if (windowWidth > 500) {
+      document.body.style.transform = "scale(.5)";
+    } else {
+      document.body.style.transform = "scale(1)";
+    }
+  };
 
   useEffect(() => {
-    if (window.screen.width > 500) {
-      setScale(true);
-    }
-  }, [scale]);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   if (error) {
     return (
@@ -47,7 +58,6 @@ function TableApp() {
           ? `${styles.photoMode} ${styles.backgroundImage}`
           : styles.colorMode
       }`}
-      style={{ scale: `${scale ? ".5" : "1"}`, height: "1156px" }}
     >
       <Header />
       <SearcBar dataFromApi={dataFromApi} />

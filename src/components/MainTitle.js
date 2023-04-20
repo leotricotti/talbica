@@ -1,7 +1,15 @@
 import styles from "./mainTitle.module.css";
 
 function MainTitle({ title }) {
-  return <h1 className={styles.mainTitle}>{title}</h1>;
+  const [part1, part2] = title.split(".");
+
+  return (
+    <h1 className={styles.mainTitle}>
+      {part1}.
+      <br />
+      {part2}
+    </h1>
+  );
 }
 
 export default MainTitle;
