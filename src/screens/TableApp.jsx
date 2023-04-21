@@ -21,23 +21,7 @@ function TableApp() {
   const { dataFromApi, error, isLoading } = useContext(DataContext).value;
   const { themeHandler } = useContext(ThemeContext).value;
 
-  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // const handleResize = () => {
-  //   setWindowWidth(window.innerWidth);
-  //   if (windowWidth > 500) {
-  //     document.body.style.transform = "scale(.5)";
-  //   } else {
-  //     document.body.style.transform = "scale(1)";
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // });
+  console.log(dataFromApi);
 
   if (error) {
     return (
