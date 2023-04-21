@@ -4,7 +4,7 @@ export function useFormatName(name) {
   const [displayName, setDisplayName] = useState(null);
 
   useEffect(() => {
-    const truncatedName = name.length > 8 ? `${name.slice(0, 8)}...` : name;
+    const truncatedName = name.length > 6 ? `${name.slice(0, 6)}...` : name;
 
     setDisplayName(truncatedName);
   }, [name]);
