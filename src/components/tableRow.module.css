@@ -3,6 +3,17 @@
   height: auto;
 }
 
+.title {
+  color: var(--textColor);
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding-bottom: .25rem;
+}
+
+.groupTitle {
+  text-transform: capitalize;
+}
+
 .tableRow {
   width: 100%;
   height: auto;
@@ -13,4 +24,19 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: .3rem;
+}
+
+@media(min-width: 1000px) {
+  .title {
+    display: none;
+  }
+
+  .tableRow {
+    margin-bottom: 0;
+  }
+
+  .tableRowGrid {
+    grid-template-columns: repeat(18, 1fr);
+    gap: 0;
+  }
 }
