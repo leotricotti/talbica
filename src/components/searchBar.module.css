@@ -4,12 +4,12 @@
 }
 
 .searchBar {
-  width: 88%;
+  width: 90%;
   position: relative;
   font-size: 1.3rem;
   border: transparent;
   border-radius: .8rem;
-  padding: 1rem 1rem;
+  padding: 1rem;
   background-color: var(--inputFieldBackgroundColor);
   animation: blinkCaret 1s infinite;
   transition: all .5s ease-in;
@@ -32,7 +32,8 @@
   opacity: .4;
   position: absolute;
   right: 0;
-  top: .5rem;
+  top: .6rem;
+  margin-left: .5rem;
 }
 
 @keyframes blinkCaret {
@@ -42,5 +43,24 @@
 
   100% {
     caret-color: transparent;
+  }
+}
+
+@media(min-width: 1000px) {
+  .searchBarContainer {
+    display: flex;
+    justify-content: center;
+    top: -3rem;
+  }
+
+  .searchBar {
+    width: 65%;
+    padding: .7rem;
+    border-radius: .5rem;
+  }
+
+  .helpIcon {
+    top: .4rem;
+    right: 8.3rem;
   }
 }
