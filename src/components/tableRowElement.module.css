@@ -50,4 +50,16 @@
     border-radius: 0;
     margin-top: 0;
   }
+
+  .atomicNumber {
+    font-size: .625rem;
+  }
+
+  .symbol {
+    font-size: 1.75rem;
+  }
+
+  .name {
+    font-size: .625rem;
+  }
 }

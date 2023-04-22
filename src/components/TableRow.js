@@ -1,3 +1,4 @@
+import { useState, useEffect, Fragment } from "react";
 import useFilterData from "../customHooks/useFilterData";
 import TableRowElement from "./TableRowElement";
 import { tableColors } from "../assets/data/tableColors";
@@ -18,35 +19,105 @@ function TableRow({ dataFromApi, themeHandler }) {
     return color;
   });
   const filteredData = useFilterData(dataFromApi);
+  const [bigTable, setBigTable] = useState(true);
+
+  useEffect(() => {
+    function handleResize() {
+      setBigTable(window.innerWidth >= 500);
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <div className={styles.tableRowContainer}>
-      {filteredData.map(({ type, period, groupBlock, items }) => (
-        <div
-          className={styles.tableRow}
-          key={type === "period" ? period : groupBlock}
-        >
-          {type === "period" ? (
-            <TableRowTitle period={period} />
-          ) : (
-            <TableRowTitle groupBlock={groupBlock} />
-          )}
-          <div className={styles.tableRowGrid}>
-            {items.map((item) => (
-              <TableRowElement
-                key={item.atomicNumber}
-                item={item}
-                colors={colors}
-                themeHandler={themeHandler}
-              />
-            ))}
-            {Array.from({ length: 18 - items.length }, (_, index) => (
-              <div key={index} className={styles.emptyCell}></div>
-            ))}
-          </div>
+    <>
+      {bigTable ? (
+        <>
+          {filteredData.map(({ items }) => (
+            <div className={styles.tableRowGrid}>
+              {items.map((item, index) => {
+                if (item.symbol === "H") {
+                  return (
+                    <Fragment key={index}>
+                      <TableRowElement
+                        key={item.atomicNumber}
+                        item={item}
+                        colors={colors}
+                        themeHandler={themeHandler}
+                      />
+                      {[...Array(16)].map((_, i) => (
+                        <div
+                          key={`empty-${i}`}
+                          className={styles.emptyCell}
+                        ></div>
+                      ))}
+                    </Fragment>
+                  );
+                }
+                if (item.symbol === "Be" || item.symbol === "Mg") {
+                  return (
+                    <Fragment key={index}>
+                      <TableRowElement
+                        key={item.atomicNumber}
+                        item={item}
+                        colors={colors}
+                        themeHandler={themeHandler}
+                      />
+                      {[...Array(10)].map((_, i) => (
+                        <div
+                          key={`empty-${i}`}
+                          className={styles.emptyCell}
+                        ></div>
+                      ))}
+                    </Fragment>
+                  );
+                } else {
+                  // Add elements
+                  return (
+                    <TableRowElement
+                      key={item.atomicNumber}
+                      item={item}
+                      colors={colors}
+                      themeHandler={themeHandler}
+                    />
+                  );
+                }
+              })}
+            </div>
+          ))}
+        </>
+      ) : (
+        <div className={styles.tableRowContainer}>
+          {filteredData.map(({ type, period, groupBlock, items }) => (
+            <div
+              className={styles.tableRow}
+              key={type === "period" ? period : groupBlock}
+            >
+              {type === "period" ? (
+                <TableRowTitle period={period} />
+              ) : (
+                <TableRowTitle groupBlock={groupBlock} />
+              )}
+              <div className={styles.tableRowGrid}>
+                {items.map((item) => (
+                  <TableRowElement
+                    key={item.atomicNumber}
+                    item={item}
+                    colors={colors}
+                    themeHandler={themeHandler}
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
 }
 
