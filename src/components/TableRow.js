@@ -38,12 +38,13 @@ function TableRow({ dataFromApi, themeHandler }) {
     <>
       {bigTable ? (
         <>
-          {filteredData.map(({ items }) => (
-            <div className={styles.tableRowGrid}>
-              {items.map((item, index) => {
+          {filteredData.map(({ items }, index) => (
+            <div className={styles.tableRowGrid} key={`row-${index}`}>
+              {" "}
+              {items.map((item) => {
                 if (item.symbol === "H") {
                   return (
-                    <Fragment key={index}>
+                    <Fragment key={item.symbol}>
                       <TableRowElement
                         key={item.atomicNumber}
                         item={item}
@@ -52,7 +53,7 @@ function TableRow({ dataFromApi, themeHandler }) {
                       />
                       {[...Array(16)].map((_, i) => (
                         <div
-                          key={`empty-${i}`}
+                          key={`empty-${i + 2000}`}
                           className={styles.emptyCell}
                         ></div>
                       ))}
@@ -61,7 +62,7 @@ function TableRow({ dataFromApi, themeHandler }) {
                 }
                 if (item.symbol === "Be" || item.symbol === "Mg") {
                   return (
-                    <Fragment key={index}>
+                    <Fragment key={item.symbol}>
                       <TableRowElement
                         key={item.atomicNumber}
                         item={item}
@@ -93,7 +94,7 @@ function TableRow({ dataFromApi, themeHandler }) {
         </>
       ) : (
         <div className={styles.tableRowContainer}>
-          {filteredData.map(({ type, period, groupBlock, items }) => (
+          {filteredData.map(({ type, period, groupBlock, items }, index) => (
             <div
               className={styles.tableRow}
               key={type === "period" ? period : groupBlock}
@@ -103,7 +104,7 @@ function TableRow({ dataFromApi, themeHandler }) {
               ) : (
                 <TableRowTitle groupBlock={groupBlock} />
               )}
-              <div className={styles.tableRowGrid}>
+              <div className={styles.tableRowGrid} key={`row-${index}`}>
                 {items.map((item) => (
                   <TableRowElement
                     key={item.atomicNumber}
