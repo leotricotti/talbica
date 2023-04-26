@@ -21,8 +21,6 @@ function TableApp() {
   const { dataFromApi, error, isLoading } = useContext(DataContext).value;
   const { themeHandler } = useContext(ThemeContext).value;
 
-  console.log(dataFromApi);
-
   if (error) {
     return (
       <>

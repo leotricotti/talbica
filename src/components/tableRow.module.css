@@ -1,6 +1,7 @@
 .tableRowContainer {
   width: 100%;
   height: auto;
+  position: relative;
 }
 
 .title {
@@ -27,6 +28,7 @@
 }
 
 @media(min-width: 1000px) {
+
   .title {
     display: none;
   }

@@ -2,4 +2,11 @@
   width: 100%;
   height: auto;
   padding: 1.5rem 0 5rem 0;
+  position: relative;
+}
+
+@media(min-width: 1000px) {
+  .tableWrapper {
+    top: -6rem;
+  }
 }

@@ -107,7 +107,5 @@
 @media(min-width: 1000px) {
   .tableContainer {
     transform: scale(1);
-
-
   }
 }
