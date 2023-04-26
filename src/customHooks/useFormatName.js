@@ -4,9 +4,21 @@ export function useFormatName(name) {
   const [displayName, setDisplayName] = useState(null);
 
   useEffect(() => {
-    const truncatedName = name.length > 6 ? `${name.slice(0, 6)}...` : name;
+    const updateName = () => {
+      const screenWidth = window.innerWidth;
+      const truncatedName =
+        name.length > (screenWidth > 1000 ? 8 : 6)
+          ? `${name.slice(0, screenWidth > 1000 ? 7 : 6)}...`
+          : name;
+      setDisplayName(truncatedName);
+    };
+    updateName();
 
-    setDisplayName(truncatedName);
+    window.addEventListener("resize", updateName);
+
+    return () => {
+      window.removeEventListener("resize", updateName);
+    };
   }, [name]);
 
   return displayName;
