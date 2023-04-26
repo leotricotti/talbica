@@ -53,19 +53,19 @@
   }
 
   .atomicNumber {
-    font-size: .625rem;
+    font-size: .5rem;
   }
 
   .symbol {
     font-size: 1.75rem;
-    line-height: 22px;
+    margin-bottom: 0rem;
   }
 
   .name {
-    font-size: .625rem;
+    font-size: .61rem;
   }
 
   .atomicMass {
-    font-size: .625rem;
+    font-size: .5rem;
   }
 }

@@ -65,18 +65,50 @@ function TableRowElement({ item, colors, themeHandler }) {
               isHovered ? backgroundHoverColor : backgroundColor
             })`,
           }),
+
           ...(themeHandler && {
             backgroundImage: `url(${imageFiltered})`,
             backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
           }),
+
           ...(themeHandler && imageFiltered === undefined
             ? {
                 backgroundColor: "rgba(255, 255, 255, 0.1)",
                 backdropFilter: "blur(60px)",
               }
             : {}),
+
           transitionDelay: `${isFadedIn ? randomDelay : ""}`,
+          ...(item.symbol === "H" || item.symbol === "He"
+            ? {
+                borderRadius: ".3125rem .3125rem 0 0 ",
+              }
+            : {}),
+
+          ...(item.symbol === "Fr" || item.symbol === "Ac"
+            ? {
+                borderRadius: "0 0 0 .3125rem",
+              }
+            : {}),
+
+          ...(item.symbol === "Og" || item.symbol === "Lr"
+            ? {
+                borderRadius: "0 0 .3125rem 0",
+              }
+            : {}),
+
+          ...(item.symbol === "La" || item.symbol === "B"
+            ? {
+                borderRadius: ".3125rem 0 0 0",
+              }
+            : {}),
+
+          ...(item.symbol === "Lu" || item.symbol === "Be"
+            ? {
+                borderRadius: "0 .3125rem 0 0 ",
+              }
+            : {}),
         }}
       >
         <span className={styles.atomicNumber}>{item.atomicNumber}</span>
