@@ -5,11 +5,7 @@ export function useFormatName(name) {
 
   useEffect(() => {
     const updateName = () => {
-      const screenWidth = window.innerWidth;
-      const truncatedName =
-        name.length > (screenWidth > 1000 ? 8 : 6)
-          ? `${name.slice(0, screenWidth > 1000 ? 7 : 6)}...`
-          : name;
+      const truncatedName = name.length > 7 ? `${name.slice(0, 5)}...` : name;
       setDisplayName(truncatedName);
     };
     updateName();
