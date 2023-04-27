@@ -50,6 +50,7 @@ function TableRow({ dataFromApi, themeHandler }) {
                         item={item}
                         colors={colors}
                         themeHandler={themeHandler}
+                        filteredData={items}
                       />
                       {[...Array(16)].map((_, i) => (
                         <div
@@ -68,6 +69,7 @@ function TableRow({ dataFromApi, themeHandler }) {
                         item={item}
                         colors={colors}
                         themeHandler={themeHandler}
+                        filteredData={items}
                       />
                       {[...Array(10)].map((_, i) => (
                         <div
@@ -85,6 +87,7 @@ function TableRow({ dataFromApi, themeHandler }) {
                       item={item}
                       colors={colors}
                       themeHandler={themeHandler}
+                      filteredData={items}
                     />
                   );
                 }

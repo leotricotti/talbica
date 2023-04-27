@@ -12,10 +12,13 @@ import Card from "./Card";
 import CardModeSwitcher from "./CardModeSwitcher";
 import styles from "./tableRowElement.module.css";
 
-function TableRowElement({ item, colors, themeHandler }) {
+function TableRowElement({ item, colors, filteredData, themeHandler }) {
   const hoverColor = hoverColors.map((color) => {
     return color;
   });
+
+  console.log(filteredData);
+
   const standardState = item.standardState;
   const elementSymbol = item.symbol;
   const imageFiltered = elementImages.find(
@@ -107,6 +110,13 @@ function TableRowElement({ item, colors, themeHandler }) {
           ...(item.symbol === "Lu" || item.symbol === "Be"
             ? {
                 borderRadius: "0 .3125rem 0 0 ",
+              }
+            : {}),
+
+          ...((item.symbol === "La" && item.period === "6") ||
+          (item.symbol === "Ac" && item.period === "7")
+            ? {
+                borderRadius: "none",
               }
             : {}),
         }}
