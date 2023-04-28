@@ -21,7 +21,6 @@ function useFilterData(data) {
       }
     });
 
-    // Group the data with the modified period values
     for (const period in dataByPeriod) {
       const items = dataByPeriod[period].filter(
         (item) =>
@@ -33,10 +32,17 @@ function useFilterData(data) {
       );
 
       if (items.length > 0) {
+        const filteredItems = items.map((item) => {
+          const newItem = { ...item };
+          if (item.symbol === "La" || item.symbol === "Ac") {
+            newItem.identifier = "La";
+          }
+          return newItem;
+        });
         filteredData.push({
           type: "period",
           period,
-          items: items,
+          items: filteredItems,
         });
       }
     }

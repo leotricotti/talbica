@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { DataContext } from "../contexts/DataContext";
 import { ThemeContext } from "../contexts/ThemeContext";
+import Loader from "../components/Loader";
 import Spinner from "../components/Spinner";
 import Header from "../components/Header";
 import SearcBar from "../components/SearchBar";
@@ -41,13 +42,19 @@ function TableApp() {
           : styles.colorMode
       }`}
     >
-      <Header />
-      <SearcBar dataFromApi={dataFromApi} />
-      <Table
-        dataFromApi={dataFromApi}
-        isLoading={isLoading}
-        themeHandler={themeHandler}
-      />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Header />
+          <SearcBar dataFromApi={dataFromApi} />
+          <Table
+            dataFromApi={dataFromApi}
+            isLoading={isLoading}
+            themeHandler={themeHandler}
+          />
+        </>
+      )}
     </div>
   );
 }

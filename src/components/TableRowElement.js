@@ -12,12 +12,10 @@ import Card from "./Card";
 import CardModeSwitcher from "./CardModeSwitcher";
 import styles from "./tableRowElement.module.css";
 
-function TableRowElement({ item, colors, filteredData, themeHandler }) {
+function TableRowElement({ item, colors, data, themeHandler }) {
   const hoverColor = hoverColors.map((color) => {
     return color;
   });
-
-  console.log(filteredData);
 
   const standardState = item.standardState;
   const elementSymbol = item.symbol;
@@ -113,8 +111,8 @@ function TableRowElement({ item, colors, filteredData, themeHandler }) {
               }
             : {}),
 
-          ...((item.symbol === "La" && item.period === "6") ||
-          (item.symbol === "Ac" && item.period === "7")
+          ...((item.symbol === "La" && item.identifier === "La") ||
+          (item.symbol === "Ac" && item.identifier === "La")
             ? {
                 borderRadius: "none",
               }
